@@ -56,3 +56,8 @@ export function addProductSuccess(product) {
    
 } 
 
+export function deleteProduct(id){
+    axios.delete(URL+"/"+id).then(function (response) {   
+    }) 
+    window.history.back()
+}

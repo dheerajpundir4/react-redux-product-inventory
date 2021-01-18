@@ -1,5 +1,5 @@
 import React from 'react';
-import Product from './Product';
+import SingleProduct from './SingleProduct';
 
 export default class ProductList extends React.Component{
     render(){
@@ -9,7 +9,7 @@ export default class ProductList extends React.Component{
 
         let productNodes=this.props.products.map(product=>
             (
-                <Product  productName={product.productName} quantity={product.quantity} price={product.price}/>
+                <SingleProduct productName={product.productName} quantity={product.quantity} price={product.price}/>
             ));
              
             console.log(productNodes);
@@ -17,8 +17,7 @@ export default class ProductList extends React.Component{
                 <>
                      <table border="1px solid black">
           <thead>
-            <tr>
-           
+            <tr>           
               <th>Product Name</th>
               <th>Quantity</th>
               <th>Price</th>
