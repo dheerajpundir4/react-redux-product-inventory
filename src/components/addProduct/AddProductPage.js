@@ -5,18 +5,18 @@ import toastr from 'toastr';
 
 import { Link } from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
-import ProductForm from './ProductForm';
+import AddProductForm from './AddProductForm';
 //import ProductActions from '../actions/ProductActions';
 
 
-import * as productActions from '../actions/productActions';
+import * as productActions from '../../actions/productActions';
 
 class AddProductPage extends React.Component{
     render(){
         return(
             <div>
               <h3>Add Product Using Redux</h3>
-            <ProductForm onSave={this.props.saveProduct}/>
+            <AddProductForm onSave={this.props.saveProduct}/>
           
             </div>
         );

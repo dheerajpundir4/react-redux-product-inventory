@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, useFormik } from 'formik';
 
-export default function ProductForm(props) {
+export default function AddProductForm(props) {
     
     const { handleSubmit, handleChange, values, errors } = useFormik(
         {

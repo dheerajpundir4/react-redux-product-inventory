@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleProduct from './SingleProduct';
+import SingleProduct from './SingleProduct.js';
 
 export default class ProductList extends React.Component{
     render(){
