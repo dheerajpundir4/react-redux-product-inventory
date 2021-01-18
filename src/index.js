@@ -10,7 +10,6 @@ import {loadProduct} from './actions/productActions';
 
 const store = configureStore();
 
-console.log("==index.js==")
 store.dispatch(loadProduct());
 
 ReactDOM.render(

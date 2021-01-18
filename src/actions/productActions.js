@@ -22,7 +22,6 @@ export function addProductSuccess(product) {
   export function loadProduct() {
     console.log("calling load product");
     return function(dispatch) {
-        console.log("==loadProduct==");
 
         axios.get('http://localhost:4000/products')
         .then(response => {
@@ -31,9 +30,7 @@ export function addProductSuccess(product) {
         }
         )
         .catch(error => { throw error     
-         });        
-  
-        console.log("==loadProduct2==");    
+         });  
    };
   }
 
@@ -48,7 +45,7 @@ export function addProductSuccess(product) {
       
      }).then(function (response) {
      
-      //console.log(response); 
+  
      
     }) 
     window.history.back()
