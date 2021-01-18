@@ -12,12 +12,13 @@ const _clone=function(item){
   return JSON.parse(JSON.stringify(item));
 }
 
-export function loadProductsSuccess(products) {
-   
-    return { type: types.LOAD_PRODUCTS_SUCCESS, products };
-  }
+
+
+export const loadProductsSuccess=(products)=>{
+  return { type: types.LOAD_PRODUCTS_SUCCESS, products };
+}
   
-export function addProductSuccess(product) {
+export const addProductSuccess=(product)=> {
     return { type: types.ADD_PRODUCT_SUCCESS, product: product};
   }
 
@@ -38,23 +39,30 @@ export function addProductSuccess(product) {
    };
   }
 
-  export function addProduct(product){   
-   
-     currentID=currentID+1;  
-     axios.post(URL,{
-      id: currentID,
-      productName: product.productName,
-      quantity: product.quantity,
-      price:product.price
+  export function addProduct(product){  
+    
+    return dispatch=>{     
+      currentID=currentID+1;  
+      axios.post(URL,{
+       id: currentID,
+       productName: product.productName,
+       quantity: product.quantity,
+       price:product.price
+       
+      }).then(response=> {   
+         dispatch(addProductSuccess(product))
       
-     }).then(function (response) {
+     }) 
+
+    }  
      
-  
-     
-    }) 
-    window.history.back()
+   window.history.back()
    
 } 
+
+const add=(product)=>{
+ 
+}
 
 export function deleteProduct(id){
     axios.delete(URL+"/"+id).then(function (response) {   

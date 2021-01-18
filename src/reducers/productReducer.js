@@ -3,7 +3,7 @@ import initialState from './initialState';
 import {addProduct} from '../actions/productActions'
 
 export default function productReducer(state = initialState.products, action) {
-
+  
  
     switch (action.type) {
       case types.LOAD_PRODUCTS_SUCCESS:
@@ -11,7 +11,7 @@ export default function productReducer(state = initialState.products, action) {
   
       case types.ADD_PRODUCT_SUCCESS:
     
-        addProduct(action.product);       
+       // addProduct(action.product);       
         return [          
           ...state,
           Object.assign({}, action.product)
