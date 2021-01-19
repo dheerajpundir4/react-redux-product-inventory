@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Redirect, Switch, NavLink } from 'react-router-dom';
 import AllProductPage from './components/displayProduct/AllProductPage';
 import AboutPage from './components/AboutPage';
-import AddProductPage from './components/addProduct/AddProductPage';
+import AddProductPage from './components/curd/AddProductPage';
 import ProductDetailsPage from './components/ProductDetailsPage';
 import Login from './components/Login';
 import Signup from './components/Signup';

@@ -11,7 +11,7 @@ export default function productReducer(state = initialState.products, action) {
   
       case types.ADD_PRODUCT_SUCCESS:
     
-       // addProduct(action.product);       
+       // curd(action.product);
         return [          
           ...state,
           Object.assign({}, action.product)
