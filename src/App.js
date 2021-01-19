@@ -36,7 +36,7 @@ export default class App extends React.Component{
                 <AllProductPage/>
               </Route>
               <Route path="/addProduct" component={AddProductPage} />
-              <Route path="/products/:id" component={DisplayProductDetail} />
+              <Route path="/view/:id" component={DisplayProductDetail} />
               <Route path="/delete/:id" component={DeleteProductPage} />
               <Route path="/edit/:id" component={EditProductPage} />
               <Route exact path="/">

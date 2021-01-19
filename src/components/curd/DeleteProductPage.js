@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import * as actioncreator from '../../actions/productActions';
+import { act } from 'react-dom/cjs/react-dom-test-utils.production.min';
 
 class DeleteProductPage extends React.Component {
 
@@ -31,7 +33,7 @@ class DeleteProductPage extends React.Component {
             <td>{p[0].price}</td>
           </tr>
         </table>
-
+        {this.props.deleteProduct(p[0].id)}
         <a href="javascript:history.go(-1)"> Back </a>
       </div>
     );
@@ -45,8 +47,10 @@ const mapStatetoProps = (state) => {
 }
 
 const mapDispatchtoProps = (dispatch) => {
-  return {
 
+ 
+  return {    
+    deleteProduct:(id) => dispatch(actioncreator.deleteProduct(id))
   }
 }
 
