@@ -16,6 +16,13 @@ export default function productReducer(state = initialState.products, action) {
           ...state,
           Object.assign({}, action.product)
         ]; 
+
+
+        case types.DELETE_PRODUCT_SUCCESS:
+    
+          let newState = state.filter(product => product.id != action.id); // ES6 arrow fns
+          window.history.back();
+          return newState;
      
   
       default:

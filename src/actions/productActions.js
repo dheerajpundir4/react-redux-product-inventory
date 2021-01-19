@@ -22,6 +22,10 @@ export const addProductSuccess=(product)=> {
     return { type: types.ADD_PRODUCT_SUCCESS, product: product};
   }
 
+  export const deleteProductSuccess=(id)=> {
+    return { type: types.DELETE_PRODUCT_SUCCESS, product: id};
+  }
+
 
 
   export function loadProduct() {
@@ -61,7 +65,11 @@ export const addProductSuccess=(product)=> {
 } 
 
 export function deleteProduct(id){
-    axios.delete(URL+"/"+id).then(function (response) {   
+  return dispatch=>{   
+    
+    axios.delete(URL+"/"+id).then(response => {   
+      dispatch(deleteProductSuccess(id))  
     }) 
-    window.history.back()
+  
+}
 }
