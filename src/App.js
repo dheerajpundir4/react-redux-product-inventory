@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch, NavLink } from 'react
 import AllProductPage from './components/displayProduct/AllProductPage';
 import AboutPage from './components/AboutPage';
 import AddProductPage from './components/curd/AddProductPage';
-import ProductDetailsPage from './components/ProductDetailsPage';
+import DisplayProductDetail from './components/curd/DisplayProductDetail';
 import Login from './components/Login';
 import Signup from './components/Signup';
 
@@ -33,7 +33,7 @@ export default class App extends React.Component{
                 <AllProductPage/>
               </Route>
               <Route path="/addProduct" component={AddProductPage} />
-              <Route path="/products/:id" component={ProductDetailsPage} />
+              <Route path="/products/:id" component={DisplayProductDetail} />
               <Route exact path="/">
                 <AboutPage/>
               </Route>
