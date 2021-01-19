@@ -14,7 +14,10 @@ const SingleProduct=({id, productName,quantity,price})=>(
     <td> {quantity}</td>
     <td> {price}</td>   
     <td>
-      <Link to={"/products/"+id} style={{ textDecoration: 'none'}}>View</Link>      
+      <Link to={"/products/"+id} style={{ textDecoration: 'none'}}>View</Link>
+      <Link to={"/delete/"+id} style={{ textDecoration: 'none'}}>Delete</Link>
+      <Link to={"/edit/"+id} style={{ textDecoration: 'none'}}>Edit</Link>     
+        
     </td>
   </tr>
  

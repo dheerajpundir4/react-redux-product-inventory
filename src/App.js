@@ -6,6 +6,9 @@ import AddProductPage from './components/curd/AddProductPage';
 import DisplayProductDetail from './components/curd/DisplayProductDetail';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import DeleteProductPage from './components/curd/DeleteProductPage';
+import EditProductPage from './components/curd/EditProductPage';
+
 
 
 class Links extends React.Component{
@@ -34,6 +37,8 @@ export default class App extends React.Component{
               </Route>
               <Route path="/addProduct" component={AddProductPage} />
               <Route path="/products/:id" component={DisplayProductDetail} />
+              <Route path="/delete/:id" component={DeleteProductPage} />
+              <Route path="/edit/:id" component={EditProductPage} />
               <Route exact path="/">
                 <AboutPage/>
               </Route>
