@@ -50,19 +50,15 @@ export const addProductSuccess=(product)=> {
        price:product.price
        
       }).then(response=> {   
-         dispatch(addProductSuccess(product))
-      
+         dispatch(addProductSuccess(product))  
+         window.history.back()    
      }) 
 
     }  
      
-   window.history.back()
+  
    
 } 
-
-const add=(product)=>{
- 
-}
 
 export function deleteProduct(id){
     axios.delete(URL+"/"+id).then(function (response) {   
