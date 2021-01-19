@@ -17,24 +17,8 @@ class DeleteProductPage extends React.Component {
    
 
     return (
-      <div>
-        <h2>Delete Product Page</h2>
-        <table>
-          <tr>
-            <th>id</th>
-            <th>Name</th>
-            <th>price</th>
-            <th>quantity</th>
-          </tr>
-          <tr>
-            <td>{p[0].id}</td>
-            <td>{p[0].productName}</td>
-            <td>{p[0].quantity}</td>
-            <td>{p[0].price}</td>
-          </tr>
-        </table>
-        {this.props.deleteProduct(p[0].id)}
-        <a href="javascript:history.go(-1)"> Back </a>
+      <div>       
+        {this.props.deleteProduct(p[0].id)}       
       </div>
     );
   }
