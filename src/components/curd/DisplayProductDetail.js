@@ -1,24 +1,53 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class DisplayProductDetail extends React.Component {
+class DisplayProductDetail extends React.Component {
 
-  
   render() {
-   /* if (window.confirm('Are you sure you want to view the details?')) {
-       
-      } else {
-        window.history.go(-1);
-      }*/
-     
+    let p = this.props.products.filter((product) => {
+      console.log(product.id)
+      console.log(this.props.match.params.id)
+      return product.id == this.props.match.params.id
+    }) 
+
+    
+   
+
     return (
-      
       <div>
-          <h2>Product Details</h2>
-        <b> Product Name:</b> {this.props.match.params.id} 
-        <br/><br/>
+        <h2>Product Description</h2>
+        <table>
+          <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>price</th>
+            <th>quantity</th>
+          </tr>
+          <tr>
+            <td>{p[0].id}</td>
+            <td>{p[0].productName}</td>
+            <td>{p[0].quantity}</td>
+            <td>{p[0].price}</td>
+          </tr>
+        </table>
+
         <a href="javascript:history.go(-1)"> Back </a>
       </div>
     );
   }
 }
+
+const mapStatetoProps = (state) => {
+  return {
+    products: state.products
+  }
+}
+
+const mapDispatchtoProps = (dispatch) => {
+  return {
+
+  }
+}
+
+export default connect(mapStatetoProps, mapDispatchtoProps)(DisplayProductDetail);
