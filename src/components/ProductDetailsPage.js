@@ -5,11 +5,11 @@ export default class ProductDetailsPage extends React.Component {
 
   
   render() {
-    if (window.confirm('Are you sure you want to view the details?')) {
+   /* if (window.confirm('Are you sure you want to view the details?')) {
        
       } else {
         window.history.go(-1);
-      }
+      }*/
      
     return (
       
