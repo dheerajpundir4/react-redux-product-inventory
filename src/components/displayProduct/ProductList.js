@@ -2,14 +2,11 @@ import React from 'react';
 import SingleProduct from './SingleProduct.js';
 
 export default class ProductList extends React.Component{
-    render(){
-      
-      console.log("we are in product list");
-      console.log(this.props);
-
+    render(){      
+     
         let productNodes=this.props.products.map(product=>
             (
-                <SingleProduct productName={product.productName} quantity={product.quantity} price={product.price}/>
+                <SingleProduct id={product.id} productName={product.productName} quantity={product.quantity} price={product.price}/>
             ));
              
             console.log(productNodes);

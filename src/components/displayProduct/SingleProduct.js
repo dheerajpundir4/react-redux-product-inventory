@@ -14,7 +14,7 @@ const SingleProduct=({id, productName,quantity,price})=>(
     <td> {quantity}</td>
     <td> {price}</td>   
     <td>
-      <Link to={"/products/"+productName} style={{ textDecoration: 'none'}}>View</Link>      
+      <Link to={"/products/"+id} style={{ textDecoration: 'none'}}>View</Link>      
     </td>
   </tr>
  
