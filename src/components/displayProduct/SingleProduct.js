@@ -10,10 +10,12 @@ const SingleProduct=({id, productName,quantity,price})=>(
     <tr>
      
    
-    <td> <Link to={"/products/"+productName} style={{ textDecoration: 'none' }}>{productName}</Link></td>
-    <td> <Link to={"/products/"+productName} style={{ textDecoration: 'none' }}>{quantity}</Link></td>
-    <td> <Link to={"/products/"+productName} style={{ textDecoration: 'none' }}>{price}</Link></td>   
-   
+    <td> {productName}</td>
+    <td> {quantity}</td>
+    <td> {price}</td>   
+    <td>
+      <Link to={"/products/"+productName} style={{ textDecoration: 'none'}}>View</Link>      
+    </td>
   </tr>
  
   
