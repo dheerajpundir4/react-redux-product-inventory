@@ -22,6 +22,10 @@ export const addProductSuccess=(product)=> {
     return { type: types.ADD_PRODUCT_SUCCESS, product: product};
   }
 
+  export const editProductSuccess=(product)=> {
+    return { type: types.EDIT_PRODUCT_SUCCESS, product: product};
+  }
+
   export const deleteProductSuccess=(id)=> {
     return { type: types.DELETE_PRODUCT_SUCCESS, product: id};
   }
@@ -58,10 +62,25 @@ export const addProductSuccess=(product)=> {
          window.history.back()    
      }) 
 
-    }  
-     
+    }   
+} 
+
+export function editProduct(product){  
   
+  return dispatch=>{    
    
+    axios.put(URL+"/"+product.id,{    
+     
+    productName: product.productName,
+    quantity: product.quantity,
+   price:product.price
+     
+    }).then(response=> {   
+       dispatch(editProductSuccess(product))  
+       window.history.back()    
+   }) 
+
+  }   
 } 
 
 export function deleteProduct(id){

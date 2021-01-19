@@ -23,6 +23,16 @@ export default function productReducer(state = initialState.products, action) {
           let newState = state.filter(product => product.id != action.id); // ES6 arrow fns
           window.history.back();
           return newState;
+
+        case types.EDIT_PRODUCT_SUCCESS:
+    
+            let newState2 = state.map(product => {
+                if(product.id!=action.id)
+                return product
+                return action.product
+            });  // ES6 arrow fns
+            window.history.back();
+            return newState2;
      
   
       default:

@@ -6,8 +6,6 @@ import toastr from 'toastr';
 import { Link } from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 import AddProductForm from './AddProductForm';
-//import ProductActions from '../actions/ProductActions';
-
 import * as actionCreator from '../../actions/productActions'
 
 
@@ -36,7 +34,7 @@ function mapStateToProps(state) {
   function mapDispatchToProps(dispatch) {
     console.log("Dispatch method");
     return {
-     // saveProduct:(product)=>dispatch({type:'ADD_PRODUCT_SUCCESS',product})
+    
         saveProduct:(product)=>dispatch(actionCreator.addProduct(product))
     }
   }

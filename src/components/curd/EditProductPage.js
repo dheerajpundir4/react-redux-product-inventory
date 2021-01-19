@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import EditProductForm from './EditProductForm';
+import * as actionCreator from '../../actions/productActions'
+
 
 class EditProductPage extends React.Component {
 
@@ -31,7 +34,7 @@ class EditProductPage extends React.Component {
             <td>{p[0].price}</td>
           </tr>
         </table>
-
+        <EditProductForm onEdit={this.props.editProduct} product={p[0]}/>
         <a href="javascript:history.go(-1)"> Back </a>
       </div>
     );
@@ -46,7 +49,7 @@ const mapStatetoProps = (state) => {
 
 const mapDispatchtoProps = (dispatch) => {
   return {
-
+    editProduct:(product)=>dispatch(actionCreator.editProduct(product))
   }
 }
 
