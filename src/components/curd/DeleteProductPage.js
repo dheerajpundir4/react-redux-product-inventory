@@ -7,9 +7,7 @@ import { act } from 'react-dom/cjs/react-dom-test-utils.production.min';
 class DeleteProductPage extends React.Component {
 
   render() {
-    let p = this.props.products.filter((product) => {
-      console.log(product.id)
-      console.log(this.props.match.params.id)
+    let p = this.props.products.filter((product) => {     
       return product.id == this.props.match.params.id
     }) 
     this.props.deleteProduct(p[0].id) 
