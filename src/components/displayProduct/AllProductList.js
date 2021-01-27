@@ -9,7 +9,7 @@ import ProductSingleRow from './ProductSingleRow.js';
 import Table from 'react-bootstrap/Table';
 
 
-class ProductTable extends React.Component {
+class AllProductList extends React.Component {
     render() {
 
         let productNodes = this.props.products.map(product =>
@@ -57,4 +57,4 @@ const mapDispatchtoProps = (dispatch) => {
     }
 }
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(ProductTable);
+export default connect(mapStatetoProps, mapDispatchtoProps)(AllProductList);
