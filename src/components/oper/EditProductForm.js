@@ -1,6 +1,10 @@
 import React from 'react';
 import { Formik, useFormik } from 'formik';
 
+// Using bootstrap
+import Form from 'react-bootstrap/Form';
+
+
 export default function EditProductForm(props) {
     
     const { handleSubmit, handleChange, values, errors } = useFormik(
@@ -11,6 +15,7 @@ export default function EditProductForm(props) {
                 productName: props.product.productName,
                 quantity:props.product.quantity,
                 price: props.product.price
+              //price:1000
             },
             validate,
             onSubmit(values) {
@@ -24,6 +29,7 @@ export default function EditProductForm(props) {
 
 
 function validate(values) {
+   
     const errors = {};
     if (!values.productName) {
         errors.productName = "ProductSingleRow Name is required";
@@ -44,27 +50,27 @@ function validate(values) {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
            
-            <div>
-                <input type="text" placeholder="Enter ProductSingleRow Name" name="productName" onChange={handleChange} values={values.productName} />
-                {errors.productName?errors.productName:null}               
-            </div>
-            <br/>
-            <div>
-                <input type="number" placeholder="Enter Quantity" name="quantity" onChange={handleChange} values={values.quantity}/>
+           <Form.Group>
+           <input type="text" placeholder={props.product.productName} name="productName" onChange={handleChange} values={values.productName} />
+                {errors.productName?errors.productName:null}  
+           </Form.Group>
+
+           <Form.Group>
+           <input type="number" placeholder={props.product.quantity} name="quantity" onChange={handleChange} values={values.quantity}/>
                 {errors.quantity?errors.quantity:null}
-            </div>
-            <br/>
-            <div>
-                <input type="number" placeholder="Enter Price" name="price" onChange={handleChange} values={values.price} />
+           </Form.Group>
+           <Form.Group>
+           <input type="number" placeholder={props.product.price} name="price" onChange={handleChange} values={values.price} />
                 {errors.price?errors.price:null}
-            </div>
-            <br/>
-            <div>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+           </Form.Group>
+
+           <Form.Group>
+           <button type="submit">Submit</button>
+           </Form.Group>
+            
+        </Form>
     )
 
 }
