@@ -7,6 +7,8 @@ export default function AddProductForm(props) {
         {
             initialValues: {
                 productName: "",
+                productDesctiption:"",
+                manufacturer:"",
                 quantity: "",
                 price: ""
             },
@@ -25,6 +27,12 @@ function validate(values) {
     const errors = {};
     if (!values.productName) {
         errors.productName = "ProductSingleRow Name is required";
+    }
+    if (!values.productDesctiption) {
+        errors.productName = "productDesctiption Name is required";
+    }
+    if (!values.manufacturer) {
+        errors.productName = "manufacturer Name is required";
     }
     if (!values.quantity) {
         errors.quantity = "Quantity is required";
@@ -46,6 +54,16 @@ function validate(values) {
             <h1>Add ProductSingleRow</h1>
             <div>
                 <input type="text" placeholder="Enter ProductSingleRow Name" name="productName" onChange={handleChange} values={values.productName} />
+                {errors.productName?errors.productName:null}               
+            </div>
+            <br/>
+            <div>
+                <input type="text" placeholder="Enter productDesctiption Name" name="productDesctiption" onChange={handleChange} values={values.productDesctiption} />
+                {errors.productName?errors.productName:null}               
+            </div>
+            <br/>
+            <div>
+                <input type="text" placeholder="Enter manufacturer Name" name="manufacturer" onChange={handleChange} values={values.manufacturer} />
                 {errors.productName?errors.productName:null}               
             </div>
             <br/>
