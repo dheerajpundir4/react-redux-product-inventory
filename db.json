@@ -1,12 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "productName": "Moto G5",
-      "quantity": "2",
-      "price": "Rs 13000"
-    },
-    {
       "productName": "123213123",
       "quantity": 324324,
       "price": "Rs. 324234",
