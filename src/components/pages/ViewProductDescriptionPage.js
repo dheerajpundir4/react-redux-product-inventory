@@ -24,14 +24,18 @@ class ViewProductDescriptionPage extends React.Component {
           <tr>
             <th>ID#</th>
             <th>Product Name</th>
-            <th>Quantity</th>
+            <th>Product Description</th>
+            <th>Manufacturer</th>
             <th>Price</th>
+            <th>Quantity</th>           
           </tr>
           <tr>
             <td>{p[0].id}</td>
             <td>{p[0].productName}</td>
-            <td>{p[0].quantity}</td>
+            <td>{p[0].productDesctiption}</td>
+            <td>{p[0].manufacturer}</td>
             <td>{p[0].price}</td>
+            <td>{p[0].quantity}</td>          
           </tr>
         </Table>
 

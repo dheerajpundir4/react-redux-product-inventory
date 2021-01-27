@@ -1,22 +1,29 @@
 {
   "products": [
     {
+      "id": 2,
       "productName": "123213123",
-      "quantity": 324324,
-      "price": "Rs. 324234",
-      "id": 2
+      "productDesctiption": "This is the simple product",
+      "manufacturer":"India",
+      "price": "Rs. 324234",      
+      "quantity": 324324     
+      
     },
     {
       "id": 3,
-      "productName": "Dell Inspiron",
-      "quantity": "4",
-      "price": "Rs. 50000 "
+      "productName": "Alpha Beta Gamma",
+      "productDesctiption": "This is the simple product",
+      "manufacturer":"India",
+      "price": "Rs. 324234",      
+      "quantity": 324324     
     },
     {
       "id": 101,
       "productName": "Epison Printer",
-      "quantity": 1,
-      "price": "Rs. 9700"
+      "productDesctiption": "This is the simple product",
+      "manufacturer":"India",
+      "price": "Rs. 324234",      
+      "quantity": 324324     
     }
   ],
   "login": [

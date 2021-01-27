@@ -13,9 +13,11 @@ export default function EditProductForm(props) {
             initialValues: {
                 id: props.product.id,
                 productName: props.product.productName,
+                productDesctiption:props.product.productDesctiption,
+                manufacturer:props.product.manufacturer,
                 quantity: props.product.quantity,
                 price: props.product.price
-                //price:1000
+               
             },
             validate,
             onSubmit(values) {
@@ -58,9 +60,21 @@ export default function EditProductForm(props) {
             </Form.Group>
 
             <Form.Group>
+                <input type="text" placeholder={props.product.productDesctiption} name="productName" onChange={handleChange} values={values.productName} />
+                {errors.productName ? errors.productName : null}
+            </Form.Group>
+
+            <Form.Group>
+                <input type="text" placeholder={props.product.manufacturer} name="productName" onChange={handleChange} values={values.productName} />
+                {errors.productName ? errors.productName : null}
+            </Form.Group>
+
+            <Form.Group>
                 <input type="number" placeholder={props.product.quantity} name="quantity" onChange={handleChange} values={values.quantity} />
                 {errors.quantity ? errors.quantity : null}
             </Form.Group>
+
+
             <Form.Group>
                 <input type="number" placeholder={props.product.price} name="price" onChange={handleChange} values={values.price} />
                 {errors.price ? errors.price : null}
