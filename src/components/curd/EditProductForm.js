@@ -45,7 +45,7 @@ function validate(values) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h1>Add ProductSingleRow</h1>
+           
             <div>
                 <input type="text" placeholder="Enter ProductSingleRow Name" name="productName" onChange={handleChange} values={values.productName} />
                 {errors.productName?errors.productName:null}               
