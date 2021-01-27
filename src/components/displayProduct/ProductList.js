@@ -23,6 +23,7 @@ export default class ProductList extends React.Component {
               <th>Product Name</th>
               <th>Quantity</th>
               <th>Price</th>
+              <th>Action(s)</th>
             </tr>
           </thead>
           <tbody>
