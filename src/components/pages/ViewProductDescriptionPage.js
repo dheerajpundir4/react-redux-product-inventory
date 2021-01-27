@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class DisplayProductDetail extends React.Component {
+class ViewProductDescriptionPage extends React.Component {
 
   render() {
     let p = this.props.products.filter((product) => {
@@ -50,4 +50,4 @@ const mapDispatchtoProps = (dispatch) => {
   }
 }
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(DisplayProductDetail);
+export default connect(mapStatetoProps, mapDispatchtoProps)(ViewProductDescriptionPage);

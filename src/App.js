@@ -4,12 +4,12 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 // Using component
 import AllProductPage from './components/displayProduct/AllProductList';
 import AboutPage from './components/AboutPage';
-import AddProductPage from './components/curd/AddProductPage';
-import DisplayProductDetail from './components/curd/DisplayProductDetail';
+import AddProductPage from './components/pages/AddProductPage';
+import DisplayProductDetail from './components/pages/ViewProductDescriptionPage';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import DeleteProductPage from './components/curd/DeleteProductPage';
-import EditProductPage from './components/curd/EditProductPage';
+import DeleteProductPage from './components/forms/DeleteProductForm';
+import EditProductPage from './components/pages/EditProductPage';
 
 
 // Using bootstrap

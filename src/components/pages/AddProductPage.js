@@ -5,7 +5,7 @@ import toastr from 'toastr';
 
 import { Link } from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
-import AddProductForm from './AddProductForm';
+import AddProductForm from '../forms/AddProductForm';
 import * as actionCreator from '../../actions/productActions'
 
 

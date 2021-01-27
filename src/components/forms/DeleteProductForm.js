@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as actioncreator from '../../actions/productActions';
 import { act } from 'react-dom/cjs/react-dom-test-utils.production.min';
 
-class DeleteProductPage extends React.Component {
+class DeleteProductForm extends React.Component {
 
   render() {
     let p = this.props.products.filter((product) => {     
@@ -35,4 +35,4 @@ const mapDispatchtoProps = (dispatch) => {
   }
 }
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(DeleteProductPage);
+export default connect(mapStatetoProps, mapDispatchtoProps)(DeleteProductForm);
