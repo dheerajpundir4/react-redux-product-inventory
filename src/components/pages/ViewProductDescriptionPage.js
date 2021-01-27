@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+
+// Using bootstrap
+import Table from 'react-bootstrap/Table';
+
+
 class ViewProductDescriptionPage extends React.Component {
 
   render() {
-    let p = this.props.products.filter((product) => {
-      console.log(product.id)
-      console.log(this.props.match.params.id)
+    let p = this.props.products.filter((product) => {     
       return product.id == this.props.match.params.id
     }) 
 
@@ -17,12 +20,12 @@ class ViewProductDescriptionPage extends React.Component {
     return (
       <div>
         <h2>Product Description</h2>
-        <table>
+        <Table striped bordered hover>
           <tr>
-            <th>id</th>
-            <th>Name</th>
-            <th>price</th>
-            <th>quantity</th>
+            <th>ID#</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
           </tr>
           <tr>
             <td>{p[0].id}</td>
@@ -30,7 +33,7 @@ class ViewProductDescriptionPage extends React.Component {
             <td>{p[0].quantity}</td>
             <td>{p[0].price}</td>
           </tr>
-        </table>
+        </Table>
 
         <a href="javascript:history.go(-1)"> Back </a>
       </div>
