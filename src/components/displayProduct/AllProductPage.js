@@ -7,7 +7,7 @@ class AllProductPage extends React.Component {
     render() {
         return (
             <>
-                <h1>Product List Using Redux</h1>
+               
                 <ProductList products={this.props.products} />
                 <br />
                 <Link to="/addProduct">Add Product</Link>

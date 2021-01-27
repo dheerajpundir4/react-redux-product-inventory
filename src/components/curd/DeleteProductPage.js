@@ -13,6 +13,7 @@ class DeleteProductPage extends React.Component {
       return product.id == this.props.match.params.id
     }) 
     this.props.deleteProduct(p[0].id) 
+    
     return{
 
     }
