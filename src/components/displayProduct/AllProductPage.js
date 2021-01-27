@@ -1,18 +1,45 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ProductList from './ProductList';
 import { connect } from 'react-redux';
+
+//using component
+import SingleProduct from './SingleProduct.js';
+
+// Using bootstrap
+import Table from 'react-bootstrap/Table';
+
 
 class AllProductPage extends React.Component {
     render() {
-        return (
-            <>
-               
-                <ProductList products={this.props.products} />
-                <br />
-                <Link to="/addProduct">Add Product</Link>
 
-            </>
+        let productNodes = this.props.products.map(product =>
+            (
+              <SingleProduct id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
+            ));
+
+            
+        return (
+
+            <>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Product Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Action(s)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {productNodes}
+              </tbody>
+            </Table>
+
+            <br />
+                <Link to="/addProduct">Add Product</Link>
+          </>
+
+         
         );
     }
 }
