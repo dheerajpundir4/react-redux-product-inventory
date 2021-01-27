@@ -4,13 +4,17 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+// get all the product
+import {loadProduct} from './actions/productActions';
+
+//part of redux
 import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
 
-import {loadProduct} from './actions/productActions';
-
 const store = configureStore();
 
+// fist it go to action and then call reducer
 store.dispatch(loadProduct());
 
 ReactDOM.render(
