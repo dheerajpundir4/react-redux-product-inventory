@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // Using component
-import AllProductPage from './components/displayProduct/AllProductPage';
+import AllProductPage from './components/displayProduct/ProductTable';
 import AboutPage from './components/AboutPage';
 import AddProductPage from './components/curd/AddProductPage';
 import DisplayProductDetail from './components/curd/DisplayProductDetail';

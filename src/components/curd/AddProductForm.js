@@ -24,7 +24,7 @@ export default function AddProductForm(props) {
 function validate(values) {
     const errors = {};
     if (!values.productName) {
-        errors.productName = "SingleProduct Name is required";
+        errors.productName = "ProductSingleRow Name is required";
     }
     if (!values.quantity) {
         errors.quantity = "Quantity is required";
@@ -43,9 +43,9 @@ function validate(values) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h1>Add SingleProduct</h1>
+            <h1>Add ProductSingleRow</h1>
             <div>
-                <input type="text" placeholder="Enter SingleProduct Name" name="productName" onChange={handleChange} values={values.productName} />
+                <input type="text" placeholder="Enter ProductSingleRow Name" name="productName" onChange={handleChange} values={values.productName} />
                 {errors.productName?errors.productName:null}               
             </div>
             <br/>

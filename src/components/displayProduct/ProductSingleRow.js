@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button'
 
 
 
-const SingleProduct = ({ id, productName, quantity, price }) => (
+const ProductSingleRow = ({ id, productName, quantity, price }) => (
 
 
   <tr>
@@ -31,4 +31,4 @@ const SingleProduct = ({ id, productName, quantity, price }) => (
   </tr>
 );
 
-export default SingleProduct;
+export default ProductSingleRow;

@@ -26,7 +26,7 @@ export default class ProductApi{
     static saveProduct(product){
         console.log("clone lenght"+_clone.item)
           //  currentID=_clone.leng+2;
-           console.log("SingleProduct Saved");
+           console.log("ProductSingleRow Saved");
            console.log(product.productName); 
            currentID=currentID+1;
           // product.id=currentID;

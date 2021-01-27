@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
 //using component
-import SingleProduct from './SingleProduct.js';
+import ProductSingleRow from './ProductSingleRow.js';
 
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
 
 
-class AllProductPage extends React.Component {
+class ProductTable extends React.Component {
     render() {
 
         let productNodes = this.props.products.map(product =>
             (
-              <SingleProduct id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
+              <ProductSingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
             ));
 
             
@@ -57,4 +57,4 @@ const mapDispatchtoProps = (dispatch) => {
     }
 }
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(AllProductPage);
+export default connect(mapStatetoProps, mapDispatchtoProps)(ProductTable);
