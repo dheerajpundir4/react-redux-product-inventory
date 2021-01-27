@@ -4,66 +4,79 @@ import { connect } from 'react-redux';
 
 
 // get all the product
-import {loadProduct} from '../../actions/productActions';
+import { loadProduct } from '../../actions/productActions';
+import { loadFilterProduct } from '../../actions/productActions';
 
 //using component
 import ProductSingleRow from '../oper/ProductSingleRow.js';
 
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import FormControl from 'react-bootstrap/FormControl';
+
+
 
 
 class AllProductListPage extends React.Component {
 
-  componentDidMount() { 
-    
-    this.props.loadProduct();  
-  } 
-    render() {
+  componentDidMount() {
 
-        let productNodes = this.props.products.map(product =>
-            (
-              <ProductSingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
-            ));
+    this.props.loadProduct();
+  }
+  render() {
 
-            
-        return (
+    let productNodes = this.props.products.map(product =>
+      (
+        <ProductSingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
+      ));
 
-            <>
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>Product Name</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                  <th>Action(s)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {productNodes}
-              </tbody>
-            </Table>
 
-            <br />
-                <Link to="/addProduct">Add Product</Link>
-          </>
+    return (
 
-         
-        );
-    }
+      <>
+
+        <Form inline>
+          <FormControl type="text" placeholder="Filter Product" className="mr-sm-2" />
+          <Button variant="outline-info">Filter</Button>
+        </Form>
+
+
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Action(s)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {productNodes}
+          </tbody>
+        </Table>
+
+        <br />
+        <Link to="/addProduct">Add Product</Link>
+      </>
+
+
+    );
+  }
 }
 
 
 const mapStatetoProps = (state) => {
-    return {
-        products: state.products
-    }
+  return {
+    products: state.products
+  }
 }
 
 const mapDispatchtoProps = (dispatch) => {
-    return {
+  return {
 
-    }
+  }
 }
 
-export default connect(mapStatetoProps, {loadProduct})(AllProductListPage);
+export default connect(mapStatetoProps, { loadProduct })(AllProductListPage);

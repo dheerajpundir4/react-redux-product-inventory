@@ -33,7 +33,6 @@ export const addProductSuccess=(product)=> {
 
 
   export function loadProduct() {
-    console.log("calling load product");
     return function(dispatch) {
 
         axios.get(URL)
@@ -46,6 +45,21 @@ export const addProductSuccess=(product)=> {
          });  
    };
   }
+
+  export function loadFilterProduct(productName) {
+    return function(dispatch) {
+
+        axios.get(URL)
+        .then(response => {
+          dispatch(loadProductsSuccess(response.data));
+          return response.data;
+        }
+        )
+        .catch(error => { throw error     
+         });  
+   };
+  }
+
 
   export function addProduct(product){  
     
