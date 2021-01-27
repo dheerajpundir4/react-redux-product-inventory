@@ -2,13 +2,13 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // Using component
-import AllProductPage from './components/displayProduct/AllProductList';
-import AboutPage from './components/AboutPage';
+import AllProductPage from './components/pages/AllProductListPage';
+import AboutPage from './components/pages/AboutPage';
 import AddProductPage from './components/pages/AddProductPage';
 import DisplayProductDetail from './components/pages/ViewProductDescriptionPage';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import DeleteProductPage from './components/forms/DeleteProductForm';
+import DeleteProductPage from './components/oper/DeleteProductForm';
 import EditProductPage from './components/pages/EditProductPage';
 
 

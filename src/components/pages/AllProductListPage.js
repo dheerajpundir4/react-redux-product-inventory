@@ -7,13 +7,13 @@ import { connect } from 'react-redux';
 import {loadProduct} from '../../actions/productActions';
 
 //using component
-import ProductSingleRow from './ProductSingleRow.js';
+import ProductSingleRow from '../oper/ProductSingleRow.js';
 
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
 
 
-class AllProductList extends React.Component {
+class AllProductListPage extends React.Component {
 
   componentDidMount() { 
     
@@ -66,4 +66,4 @@ const mapDispatchtoProps = (dispatch) => {
     }
 }
 
-export default connect(mapStatetoProps, {loadProduct})(AllProductList);
+export default connect(mapStatetoProps, {loadProduct})(AllProductListPage);
