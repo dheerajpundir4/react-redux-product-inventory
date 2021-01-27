@@ -7,10 +7,10 @@
       "price": "Rs 13000"
     },
     {
-      "id": 2,
-      "productName": "Racold Geyser",
-      "quantity": "3",
-      "price": "Rs. 6000"
+      "productName": "123213123",
+      "quantity": 324324,
+      "price": "Rs. 324234",
+      "id": 2
     },
     {
       "id": 3,
@@ -25,10 +25,10 @@
       "price": "Rs. 9700"
     }
   ],
-  "login":[
+  "login": [
     {
-     "userName":"asdf",
-     "password":"asdf"
+      "userName": "asdf",
+      "password": "asdf"
     }
   ]
 }
