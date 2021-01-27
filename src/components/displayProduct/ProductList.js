@@ -1,20 +1,25 @@
 import React from 'react';
+
+//using component
 import SingleProduct from './SingleProduct.js';
 
-export default class ProductList extends React.Component{
-    render(){      
-     
-        let productNodes=this.props.products.map(product=>
-            (
-                <SingleProduct id={product.id} productName={product.productName} quantity={product.quantity} price={product.price}/>
-            ));
-             
-            console.log(productNodes);
-            return(
-                <>
-                     <table border="1px solid black">
+// Using bootstrap
+import Table from 'react-bootstrap/Table';
+
+export default class ProductList extends React.Component {
+
+  render() {
+
+    let productNodes = this.props.products.map(product =>
+      (
+        <SingleProduct id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
+      ));
+
+    return (
+      <>
+        <Table striped bordered hover>
           <thead>
-            <tr>           
+            <tr>
               <th>Product Name</th>
               <th>Quantity</th>
               <th>Price</th>
@@ -23,8 +28,8 @@ export default class ProductList extends React.Component{
           <tbody>
             {productNodes}
           </tbody>
-        </table>
-                </>
-            )
-    }
+        </Table>
+      </>
+    )
+  }
 }
