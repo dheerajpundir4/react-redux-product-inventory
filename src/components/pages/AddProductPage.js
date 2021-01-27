@@ -15,7 +15,7 @@ class AddProductPage extends React.Component{
     render(){
         return(
             <div>
-              <h3>Add Product Using Redux</h3>
+              <h1>Add ProductSingleRow</h1>
             <AddProductForm onSave={this.props.saveProduct}/>
           
             </div>
