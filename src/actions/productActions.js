@@ -88,6 +88,7 @@ export function deleteProduct(id){
     
     axios.delete(URL+"/"+id).then(response => {   
       dispatch(deleteProductSuccess(id))  
+      window.history.back()
     }) 
   
 }

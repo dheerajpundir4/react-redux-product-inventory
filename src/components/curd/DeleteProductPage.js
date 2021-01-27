@@ -14,9 +14,12 @@ class DeleteProductPage extends React.Component {
     }) 
     this.props.deleteProduct(p[0].id) 
     
-    return{
-
-    }
+    return(
+      <>
+      </>
+    );
+     
+    
   }
 }
 

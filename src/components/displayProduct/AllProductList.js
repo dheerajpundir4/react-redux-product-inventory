@@ -2,6 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
+
+// get all the product
+import {loadProduct} from '../../actions/productActions';
+
 //using component
 import ProductSingleRow from './ProductSingleRow.js';
 
@@ -10,6 +14,11 @@ import Table from 'react-bootstrap/Table';
 
 
 class AllProductList extends React.Component {
+
+  componentDidMount() { 
+    
+    this.props.loadProduct();  
+  } 
     render() {
 
         let productNodes = this.props.products.map(product =>
@@ -57,4 +66,4 @@ const mapDispatchtoProps = (dispatch) => {
     }
 }
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(AllProductList);
+export default connect(mapStatetoProps, {loadProduct})(AllProductList);
