@@ -18,7 +18,6 @@ export default function AddProductForm(props) {
             },
             validate,
             onSubmit(values) {
-                console.log("we are here")
                 console.log(props);
                 props.onSave(values);
 
