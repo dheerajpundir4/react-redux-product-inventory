@@ -10,16 +10,29 @@ function Signup() {
       <Form>
 
         <Form.Group>
-          <input type="email" placeholder="email" />
+          <input type="email" placeholder="Emil ID" />
         </Form.Group>
 
         <Form.Group>
-          <input type="password" placeholder="password" />
+          <input type="password" placeholder="Password" />
         </Form.Group>
 
         <Form.Group>
-          <input type="password" placeholder="password again" />
+          <input type="text" placeholder="First Name" />
         </Form.Group>
+
+        <Form.Group>
+          <input type="text" placeholder="Last Name" />
+        </Form.Group>
+      
+        <Form.Group>
+          <input type="text" placeholder="Location" />
+        </Form.Group>
+      
+        <Form.Group>
+          <input type="number" placeholder="Mobile Number" />
+        </Form.Group>
+      
 
         <Form.Group>
           <button>Sign Up</button>

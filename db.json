@@ -28,8 +28,12 @@
   ],
   "login": [
     {
-      "userName": "asdf",
-      "password": "asdf"
+      "emailId": "asdf",
+      "password": "asdf",
+      "fistName":"Dheeraj",
+      "lastName":"Pundir",
+      "location":"India",
+      "mobileNumber":"7395965034"
     }
   ]
 }
