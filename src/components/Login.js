@@ -20,10 +20,12 @@ function Login() {
     axios.get('http://localhost:4000/login').then(result => {
       if (result.status === 200) {
         // setAuthTokens(result.data);
-        console.log("hello dheeraj pundir")
+        console.log("postLogin")
+        localStorage.setItem('userId','asdf')
         setLoggedIn(true);
       } else {
-        console.log("hello pundir dheeraj");
+        console.log("elsepostLogin");
+        localStorage.setItem('userId','asdf')
         setIsError(true);
       }
     }).catch(e => {
@@ -35,7 +37,7 @@ function Login() {
 
 
   if (isLoggedIn) {
-    return <Redirect to="/" />;
+    return <Redirect to="/products" />;
   }
 
   return (

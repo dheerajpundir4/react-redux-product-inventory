@@ -13,6 +13,11 @@ import * as productActions from '../../actions/productActions';
 
 class AddProductPage extends React.Component{
     render(){
+      if(!(localStorage.getItem('userId')==null))
+    {
+      window.prompt("First Login")
+      window.history.back()
+    }
         return(
             <div>
               <h1>Add ProductSingleRow</h1>

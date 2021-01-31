@@ -10,6 +10,9 @@ import Table from 'react-bootstrap/Table';
 class ViewProductDescriptionPage extends React.Component {
 
   render() {
+    console.log("asdf");
+    window.prompt(localStorage.getItem("userID"));
+
     let p = this.props.products.filter((product) => {     
       return product.id == this.props.match.params.id
     }) 

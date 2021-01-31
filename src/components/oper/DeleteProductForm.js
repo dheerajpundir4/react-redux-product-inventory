@@ -7,6 +7,11 @@ import { act } from 'react-dom/cjs/react-dom-test-utils.production.min';
 class DeleteProductForm extends React.Component {
 
   render() {
+    if(!(localStorage.getItem('userId')==null))
+    {
+      window.prompt("First Login")
+      window.history.back()
+    }
     let p = this.props.products.filter((product) => {     
       return product.id == this.props.match.params.id
     }) 
