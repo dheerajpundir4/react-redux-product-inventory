@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import Table from 'react-bootstrap/Table';
 
 
-class ViewProductDescriptionPage extends React.Component {
+class ViewProductPage extends React.Component {
 
   render() {
     console.log("asdf");
@@ -60,4 +60,4 @@ const mapDispatchtoProps = (dispatch) => {
   }
 }
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(ViewProductDescriptionPage);
+export default connect(mapStatetoProps, mapDispatchtoProps)(ViewProductPage);
