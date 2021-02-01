@@ -6,6 +6,7 @@ import AllProductPage from './components/pages/AllProductListPage';
 import AboutPage from './components/pages/AboutPage';
 import AddProductPage from './components/pages/AddProductPage';
 import DisplayProductDetail from './components/pages/ViewProductDescriptionPage';
+import TopViewProduct from './components/pages/ViewProductDescriptionPage';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Logout from './components/Logout';
@@ -66,6 +67,7 @@ export default class App extends React.Component {
             </Route>
             <Route path="/addProduct" component={AddProductPage} />
             <Route path="/view/:id" component={DisplayProductDetail} />
+            <Route path="/view/:id" component={TopViewProduct} />
             <Route path="/delete/:id" component={DeleteProductPage} />
             <Route path="/edit/:id" component={EditProductPage} />
             <Route exact path="/">

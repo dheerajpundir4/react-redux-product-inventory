@@ -59,6 +59,9 @@ class AllProductListPage extends React.Component {
 
         <br />
         <Link to="/addProduct">Add Product</Link>
+        <br />
+
+        <Link to="/topViewProduct">Top View Product</Link>
       </>
 
 
