@@ -8,7 +8,7 @@ import { loadProduct } from '../../actions/productActions';
 import { loadFilterProduct } from '../../actions/productActions';
 
 //using component
-import ProductSingleRow from './ProductSingleRow.js';
+import SingleRow from './SingleRow.js';
 
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
@@ -29,7 +29,7 @@ class AllProductListPage extends React.Component {
 
     let productNodes = this.props.products.map(product =>
       (
-        <ProductSingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
+        <SingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
       ));
 
 

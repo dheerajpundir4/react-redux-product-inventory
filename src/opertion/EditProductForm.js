@@ -34,7 +34,7 @@ export default function EditProductForm(props) {
 
         const errors = {};
         if (!values.productName) {
-            errors.productName = "ProductSingleRow Name is required";
+            errors.productName = "Product Name is required";
         }
         if (!values.quantity) {
             errors.quantity = "Quantity is required";
