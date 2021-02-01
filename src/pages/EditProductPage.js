@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import EditProductForm from '../oper/EditProductForm';
-import * as actionCreator from '../../actions/productActions'
+import * as actionCreator from '../actions/productActions'
 
 
 class EditProductPage extends React.Component {

@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 
 // get all the product
-import { loadProduct } from '../../actions/productActions';
-import { loadFilterProduct } from '../../actions/productActions';
+import { loadProduct } from '../actions/productActions';
+import { loadFilterProduct } from '../actions/productActions';
 
 //using component
 import ProductSingleRow from '../oper/ProductSingleRow.js';

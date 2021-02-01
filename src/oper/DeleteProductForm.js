@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actioncreator from '../../actions/productActions';
+import * as actioncreator from '../actions/productActions';
 import { act } from 'react-dom/cjs/react-dom-test-utils.production.min';
 
 class DeleteProductForm extends React.Component {
