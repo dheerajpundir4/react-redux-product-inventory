@@ -11,7 +11,7 @@ class ViewProductDescriptionPage extends React.Component {
 
   render() {
     console.log("asdf");
-    window.prompt(localStorage.getItem("userID"));
+    //window.prompt(localStorage.getItem("userID"));
 
     let p = this.props.products.filter((product) => {     
       return product.id == this.props.match.params.id

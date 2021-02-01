@@ -12,7 +12,7 @@ class TopViewProduct extends React.Component {
   render() {
 
     console.log("dheeraj singh pudir");
-    window.prompt(localStorage.getItem("userID"));
+   
 
     let p = this.props.products.filter((product) => {    
         console.log("hey dheeraj") 
@@ -51,7 +51,6 @@ class TopViewProduct extends React.Component {
 }
 
 const mapStatetoProps = (state) => {
-    console.log("map state to props");
   return {
     products: state.products
   }
