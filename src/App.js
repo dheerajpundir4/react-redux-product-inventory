@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import AllProductPage from './pages/AllProductListPage';
 import AboutPage from './pages/AboutPage';
 import AddProductPage from './pages/AddProductPage';
-import DisplayProductDetail from './pages/ViewProductPage';
-import TopViewProduct from './pages/ViewProductPage';
+import ViewProductPage from './pages/ViewProductPage';
+import TopViewProduct from './pages/TopViewProduct'
 import Login from './user/Login';
 import Signup from './user/Signup';
 import Logout from './user/Logout';
@@ -68,7 +68,7 @@ export default class App extends React.Component {
 
             <Route path="/topViewProduct" component={TopViewProduct} />
             <Route path="/addProduct" component={AddProductPage} />
-            <Route path="/view/:id" component={DisplayProductDetail} />
+            <Route path="/view/:id" component={ViewProductPage} />
             <Route path="/delete/:id" component={DeleteProductPage} />
             <Route path="/edit/:id" component={EditProductPage} />
             <Route exact path="/">
