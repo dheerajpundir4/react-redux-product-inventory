@@ -8,7 +8,7 @@ import { loadProduct } from '../actions/productActions';
 import { loadFilterProduct } from '../actions/productActions';
 
 //using component
-import ProductSingleRow from '../oper/ProductSingleRow.js';
+import ProductSingleRow from '../opertion/ProductSingleRow.js';
 
 // Using bootstrap
 import Table from 'react-bootstrap/Table';

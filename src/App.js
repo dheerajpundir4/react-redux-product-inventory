@@ -7,10 +7,10 @@ import AboutPage from './pages/AboutPage';
 import AddProductPage from './pages/AddProductPage';
 import DisplayProductDetail from './pages/ViewProductDescriptionPage';
 import TopViewProduct from './pages/ViewProductDescriptionPage';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import Logout from './components/Logout';
-import DeleteProductPage from './oper/DeleteProductForm';
+import Login from './user/Login';
+import Signup from './user/Signup';
+import Logout from './user/Logout';
+import DeleteProductPage from './opertion/DeleteProductForm';
 import EditProductPage from './pages/EditProductPage';
 
 
