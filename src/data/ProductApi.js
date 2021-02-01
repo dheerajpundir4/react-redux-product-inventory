@@ -26,9 +26,7 @@ export default class ProductApi{
     static saveProduct(product){
         console.log("clone lenght"+_clone.item)
           //  currentID=_clone.leng+2;
-           console.log("SingleRow Saved");
-           console.log(product.productName); 
-           currentID=currentID+1;
+            currentID=currentID+1;
           // product.id=currentID;
            axios.post('http://localhost:4000/products',{
             id: currentID,
