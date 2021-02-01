@@ -7,8 +7,9 @@ import { connect } from 'react-redux';
 import { loadProduct } from '../../actions/productActions';
 import { loadFilterProduct } from '../../actions/productActions';
 
-//using component
+//Classes of same folder
 import SingleRow from './SingleRow.js';
+import CustomizationField from './CustomizationField';
 
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
@@ -31,18 +32,18 @@ class AllProductListPage extends React.Component {
       (
         <SingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
       ));
-
-
+      
+       
     return (
 
       <>
-
+        {<CustomizationField/>}
         <Form inline>
           <FormControl type="text" placeholder="Filter Product" className="mr-sm-2" />
           <Button variant="outline-info">Filter</Button>
         </Form>
 
-
+       
         <Table striped bordered hover>
           <thead>
             <tr>
