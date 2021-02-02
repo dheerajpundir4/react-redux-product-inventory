@@ -16,7 +16,7 @@ class TopViewProduct extends React.Component {
 
     let p = this.props.products.filter((product) => {    
         console.log("hey dheeraj") 
-      return product.id =="2"
+      return product.id ==="2"
     }) 
 
     
@@ -44,7 +44,8 @@ class TopViewProduct extends React.Component {
           </tr>
         </Table>
 
-        <a href="javascript:history.go(-1)"> Back </a>
+       
+        <Link to="/products">Back</Link>
       </div>
     );
   }
