@@ -24,7 +24,32 @@
       "manufacturer":"India",
       "price": "Rs. 324234",      
       "quantity": 324324     
-    }
+    },
+    {
+      "id": 8,
+      "productName": "123213123",
+      "productDesctiption": "This is the simple product",
+      "manufacturer":"India",
+      "price": "Rs. 324234",      
+      "quantity": 324324     
+      
+    },
+    {
+      "id": 7,
+      "productName": "Alpha Beta Gamma",
+      "productDesctiption": "This is the simple product",
+      "manufacturer":"India",
+      "price": "Rs. 324234",      
+      "quantity": 324324     
+    },
+    {
+      "id": 6,
+      "productName": "Epison Printer",
+      "productDesctiption": "This is the simple product",
+      "manufacturer":"India",
+      "price": "Rs. 324234",      
+      "quantity": 324324     
+    } 
   ],
   "login": [
     {
