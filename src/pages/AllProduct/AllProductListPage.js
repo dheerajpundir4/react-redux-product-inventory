@@ -20,7 +20,17 @@ import FormControl from 'react-bootstrap/FormControl';
 
 
 
-class AllProductListPage extends React.Component {
+class AllProductListPage extends React.Component {  
+
+  hereValue;
+
+   display(value){
+    console.log("Hello")
+    console.log(value)
+    console.log(value.includes("productName"));
+  
+    console.log(this.hereValue)
+  }
 
   componentDidMount() {
 
@@ -33,11 +43,11 @@ class AllProductListPage extends React.Component {
         <SingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
       ));
       
-       
+    let select;   
     return (
 
       <>
-        {<CustomizationField/>}
+        {<CustomizationField cusValue={this.display}/>}
         <Form inline>
           <FormControl type="text" placeholder="Filter Product" className="mr-sm-2" />
           <Button variant="outline-info">Filter</Button>
@@ -47,7 +57,7 @@ class AllProductListPage extends React.Component {
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>Product Name</th>
+           { (false)?( <th>Product Name</th> ):<></>}
               <th>Quantity</th>
               <th>Price</th>
               <th>Action(s)</th>
