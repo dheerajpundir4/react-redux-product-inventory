@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 // get all the product
 import { loadProduct } from '../../actions/productActions';
-import { loadFilterProduct } from '../../actions/productActions';
 
 //Classes of same folder
 import SingleRow from './SingleRow.js';
@@ -43,6 +42,8 @@ class AllProductListPage extends React.Component {
 
     this.props.loadProduct();
   }
+
+  
   render() {
       console.log(this.state.assignvalue)
     let productNodes = this.props.products.map(product =>
@@ -50,7 +51,7 @@ class AllProductListPage extends React.Component {
         <SingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
       ));
 
-    let select;
+  
     return (
 
       <>
@@ -91,12 +92,6 @@ class AllProductListPage extends React.Component {
 const mapStatetoProps = (state) => {
   return {
     products: state.products
-  }
-}
-
-const mapDispatchtoProps = (dispatch) => {
-  return {
-
   }
 }
 

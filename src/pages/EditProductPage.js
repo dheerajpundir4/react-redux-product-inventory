@@ -15,7 +15,7 @@ class EditProductPage extends React.Component {
     }
 
     let p = this.props.products.filter((product) => {
-      return product.id == this.props.match.params.id
+      return product.id === this.props.match.params.id
     })
 
     return (
