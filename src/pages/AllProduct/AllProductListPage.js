@@ -20,16 +20,23 @@ import FormControl from 'react-bootstrap/FormControl';
 
 
 
-class AllProductListPage extends React.Component {  
+class AllProductListPage extends React.Component {
 
-  hereValue;
 
-   display(value){
+  constructor() {
+    super()
+    this.state = {
+      assignvalue:"naveen sing"
+    };
+  }
+
+
+
+  display(value) {
     console.log("Hello")
     console.log(value)
     console.log(value.includes("productName"));
-  
-    console.log(this.hereValue)
+   
   }
 
   componentDidMount() {
@@ -37,27 +44,27 @@ class AllProductListPage extends React.Component {
     this.props.loadProduct();
   }
   render() {
-
+      console.log(this.state.assignvalue)
     let productNodes = this.props.products.map(product =>
       (
         <SingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
       ));
-      
-    let select;   
+
+    let select;
     return (
 
       <>
-        {<CustomizationField cusValue={this.display}/>}
+        {<CustomizationField cusValue={this.display} />}
         <Form inline>
           <FormControl type="text" placeholder="Filter Product" className="mr-sm-2" />
           <Button variant="outline-info">Filter</Button>
         </Form>
 
-       
+
         <Table striped bordered hover>
           <thead>
             <tr>
-           { (false)?( <th>Product Name</th> ):<></>}
+              {(false) ? (<th>Product Name</th>) : <></>}
               <th>Quantity</th>
               <th>Price</th>
               <th>Action(s)</th>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, useFormik } from 'formik';
+import { useFormik } from 'formik';
 
 // Using bootstrap
 import Form from 'react-bootstrap/Form';

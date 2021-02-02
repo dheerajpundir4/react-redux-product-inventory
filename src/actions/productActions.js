@@ -1,18 +1,10 @@
 import * as types from './actionTypes';
-import ProductApi from '../data/ProductApi';
 import axios from 'axios';
 
 
 let currentID=100;
 
 const URL ="http://localhost:4000/products";
-
-
-const _clone=function(item){
-  return JSON.parse(JSON.stringify(item));
-}
-
-
 
 export const loadProductsSuccess=(products)=>{
   return { type: types.LOAD_PRODUCTS_SUCCESS, products };

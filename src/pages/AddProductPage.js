@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import toastr from 'toastr';
 
-import { Link } from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 import AddProductForm from '../opertion/AddProductForm';
 import * as actionCreator from '../actions/productActions'

@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actioncreator from '../actions/productActions';
-import { act } from 'react-dom/cjs/react-dom-test-utils.production.min';
 
 class DeleteProductForm extends React.Component {
 
@@ -13,7 +11,7 @@ class DeleteProductForm extends React.Component {
       window.history.back()
     }
     let p = this.props.products.filter((product) => {     
-      return product.id == this.props.match.params.id
+      return product.id === this.props.match.params.id
     }) 
     this.props.deleteProduct(p[0].id) 
     
