@@ -13,7 +13,7 @@ import configureStore from './store/configureStore';
 const store = configureStore();
 
 // fist it go to action and then call reducer
-store.dispatch(loadProduct());
+//store.dispatch(loadProduct());
 
 ReactDOM.render(
   <Provider store={store}>
