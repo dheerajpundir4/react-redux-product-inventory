@@ -12,56 +12,18 @@ import Signup from './user/Signup';
 import Logout from './user/Logout';
 import DeleteProductPage from './opertion/DeleteProductForm';
 import EditProductPage from './pages/EditProductPage';
+import NavComponent from './components/NavComponent'
 
-
-// Using bootstrap
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-
-
-
-class Links extends React.Component {
-  render() {
-   
-      return (
-        <>
-           <Navbar bg="light">
-           
-              <Nav.Link href="/">About</Nav.Link>
-              <Nav.Link href="/products">Products</Nav.Link>            
-              
-              { (localStorage.getItem('userId')==null)?
-                (
-                   <>
-                  <Nav.Link href="/Login">Login</Nav.Link>
-                  <Nav.Link href="/Signup">SignUp</Nav.Link>
-                  </>
-                ):(
-                  <>
-                    <Nav.Link href="/Logout">Logout</Nav.Link>
-                  </>
-
-                )
-                
-              }
-          
-          </Navbar>
-        </>
-      );
-    
-    
-
-  
-  }
-}
 
 export default class App extends React.Component {
   render() {
     return (
-      <Router>
-        <div>
-          <Links />
+      <div>
+    
+      <Router> 
+      <NavComponent />
           <Switch>
+         
             <Route exact path="/products">
               <AllProductPage />
             </Route>
@@ -78,8 +40,9 @@ export default class App extends React.Component {
             <Route path="/Signup" component={Signup} />
             <Route path="/Logout" component={Logout} />
           </Switch>
-        </div>
+       
       </Router>
+      </div>
     );
   }
 }
