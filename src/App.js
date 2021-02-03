@@ -16,9 +16,9 @@ export default class App extends React.Component {
 
         <Container>
 
-          <Card>
-            <RouterComponent />
-          </Card>
+
+          <RouterComponent />
+
         </Container>
       </Container>
     );

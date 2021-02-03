@@ -12,9 +12,7 @@ export default class NavComponent extends React.Component {
                         <Nav>
                             <Nav.Link href="/products">Products</Nav.Link>
                             <Nav.Link href="/about">About</Nav.Link>
-                        </Nav>
                        
-                        <Nav>
                             {(localStorage.getItem('userId') == null) ?
                                 (
                                     <>
