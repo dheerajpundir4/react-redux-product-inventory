@@ -7,12 +7,14 @@ import Nav from 'react-bootstrap/Nav';
 export default class NavComponent extends React.Component {
     render() {
         return (
-              <Navbar>
+              <Navbar bg="light" variant="blue">
                    
                         <Nav>
                             <Nav.Link href="/products">Products</Nav.Link>
                             <Nav.Link href="/about">About</Nav.Link>
-                       
+                        </Nav>
+                       <Navbar.Collapse className="justify-content-end">
+                           <Nav>
                             {(localStorage.getItem('userId') == null) ?
                                 (
                                     <>
@@ -25,7 +27,9 @@ export default class NavComponent extends React.Component {
                                     </>
                                 )
                             }
-                        </Nav>
+                              </Nav>
+                        </Navbar.Collapse>
+                      
                         
             </Navbar>
         );
