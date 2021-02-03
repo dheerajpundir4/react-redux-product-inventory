@@ -10,9 +10,9 @@ export default class NavComponent extends React.Component {
         return (
             <>
                 <Navbar bg="light">
-                    <Nav.Link href="/">About</Nav.Link>
+                  
                     <Nav.Link href="/products">Products</Nav.Link>
-
+                    <Nav.Link href="/about">About</Nav.Link> 
                     {(localStorage.getItem('userId') == null) ?
                         (
                             <>
