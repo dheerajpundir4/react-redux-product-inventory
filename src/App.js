@@ -25,17 +25,17 @@ class Links extends React.Component {
    
       return (
         <>
-           <Navbar bg="light" expand="lg">
+           <Navbar bg="light">
            
               <Nav.Link href="/">About</Nav.Link>
               <Nav.Link href="/products">Products</Nav.Link>            
               
               { (localStorage.getItem('userId')==null)?
                 (
-                   <Navbar.Collapse className="justify-content-end">
+                   <>
                   <Nav.Link href="/Login">Login</Nav.Link>
                   <Nav.Link href="/Signup">SignUp</Nav.Link>
-                  </Navbar.Collapse>
+                  </>
                 ):(
                   <>
                     <Nav.Link href="/Logout">Logout</Nav.Link>
