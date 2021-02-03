@@ -9,10 +9,17 @@ export default class App extends React.Component {
   render() {
     return (
       <Container fluid="xl">
-        <Card>
-      <NavComponent />
-      <RouterComponent />
-       </Card>
+        <Container>
+
+          <NavComponent />
+        </Container>
+
+        <Container>
+
+          <Card>
+            <RouterComponent />
+          </Card>
+        </Container>
       </Container>
     );
   }
