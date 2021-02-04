@@ -72,8 +72,8 @@ function Login() {
 
        
         <Form.Group as={Row}>
-        <Col sm="3" size="sm">
-          <Form.Label size="sm">Email Address</Form.Label>
+        <Col sm="3">
+          <Form.Label>Email</Form.Label>
         </Col>
           <Col>
           <Form.Control size="sm"

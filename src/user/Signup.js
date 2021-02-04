@@ -11,12 +11,17 @@ import axios from 'axios';
 
 // Using bootstrap
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+
 
 function Signup() {
 
   const [isSignUp, setSignUp] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [isUserExist,setIsUserExist]=useState(false);
+  const [isUserExist, setIsUserExist] = useState(false);
 
   const { handleSubmit, handleChange, values, errors } = useFormik(
     {
@@ -33,18 +38,18 @@ function Signup() {
       onSubmit(values) {
         console.log("success");
         console.log(values)
-        axios.post('http://localhost:4000/users',values).then(
+        axios.post('http://localhost:4000/users', values).then(
 
-        res=>{
-           console.log(res)
-           console.log(res.status)
-           if(res.status==201)
-           setSignUp(true)
-           
-        }
+          res => {
+            console.log(res)
+            console.log(res.status)
+            if (res.status == 201)
+              setSignUp(true)
+
+          }
 
         ).catch(
-          err=>{
+          err => {
             console.log(err)
           }
         )
@@ -68,19 +73,19 @@ function Signup() {
     }
     if (!values.lastName) {
       errors.lastName = "lastName is required";
-    }    
+    }
     if (!values.mobileNumber) {
       errors.mobileNumber = "mobileNumber is required";
-    }   
+    }
     if (!values.location) {
       errors.location = "location is required";
     }
-  
+
 
     return errors
   }
 
-  if(isSignUp){
+  if (isSignUp) {
     console.log("Signup success")
     return <Redirect to="/success/signUp" />;
 
@@ -90,56 +95,115 @@ function Signup() {
     <div>
       <Form onSubmit={handleSubmit}>
 
-
-        <Form.Group>
-          <input type="email" placeholder="Enter emailId"
-            name="email" onChange={handleChange}
-            values={values.email} />
-          {errors.email ? errors.email : null}
+        <Form.Group as={Row}>
+          <Col sm="3">
+            <Form.Label>Email</Form.Label>
+          </Col>
+          <Col>
+            <Form.Control type="email"
+              name="email" onChange={handleChange}
+              values={values.email} />
+          </Col>
+          <Col>
+            <Form.Text className="text-muted">
+              {errors.email ? errors.email : null}
+            </Form.Text>
+          </Col>
         </Form.Group>
 
-        <Form.Group>
-          <input type="password" placeholder="Enter password Name"
-            name="password" onChange={handleChange}
-            values={values.password} />
-          {errors.password ? errors.password : null}
+
+
+
+        <Form.Group as={Row}>
+          <Col sm="3">
+            <Form.Label>Password</Form.Label>
+          </Col>
+          <Col>
+            <Form.Control type="password"
+              name="password" onChange={handleChange}
+              values={values.password} />
+          </Col>
+          <Col>
+            <Form.Text className="text-muted">
+              {errors.password ? errors.password : null}
+            </Form.Text>
+          </Col>
         </Form.Group>
 
-        <Form.Group>
-          <input type="text" placeholder="Enter fistName"
-            name="fistName" onChange={handleChange}
-            values={values.fistName} />
-          {errors.fistName ? errors.fistName : null}
+        <Form.Group as={Row}>
+          <Col sm="3">
+            <Form.Label>First Name</Form.Label>
+          </Col>
+          <Col>
+            <Form.Control type="text"
+              name="fistName" onChange={handleChange}
+              values={values.fistName} />
+
+          </Col>
+          <Col>
+            <Form.Text className="text-muted">
+              {errors.fistName ? errors.fistName : null}
+            </Form.Text>
+          </Col>
         </Form.Group>
 
-        <Form.Group>
-          <input type="text" placeholder="Enter lastName"
+        <Form.Group as={Row}>
+          <Col sm="3">
+            <Form.Label>Last Name</Form.Label>
+          </Col>
+         
+          <Col>
+          <Form.Control type="text" 
             name="lastName" onChange={handleChange}
             values={values.lastName} />
-          {errors.lastName ? errors.lastName : null}
-        </Form.Group>     
 
+          </Col>
+          <Col>
+            <Form.Text className="text-muted">
+              {errors.lastName ? errors.lastName : null}
+            </Form.Text>
+          </Col>
+        </Form.Group>
 
-
-        <Form.Group>
-          <input type="text" placeholder="Enter location"
+        <Form.Group as={Row}>
+          <Col sm="3">
+            <Form.Label>Location</Form.Label>
+          </Col>        
+          <Col>
+          <Form.Control type="text" 
             name="location" onChange={handleChange}
             values={values.location} />
-          {errors.location ? errors.location : null}
+          </Col>
+          <Col>
+            <Form.Text className="text-muted">
+              {errors.location ? errors.location : null}
+            </Form.Text>
+          </Col>
         </Form.Group>
 
-        <Form.Group>
-          <input type="text" placeholder="Enter mobileNumber"
+        <Form.Group as={Row}>
+          <Col sm="3">
+            <Form.Label>Mobile</Form.Label>
+          </Col>       
+
+          <Col>
+          <Form.Control type="text"
             name="mobileNumber" onChange={handleChange}
             values={values.mobileNumber} />
-          {errors.mobileNumber ? errors.mobileNumber : null}
+
+          </Col>
+          <Col>
+            <Form.Text className="text-muted">
+              {errors.mobileNumber ? errors.mobileNumber : null}
+            </Form.Text>
+          </Col>
         </Form.Group>
 
-
-
-
-        <Form.Group>
-          <button type="submit">Submit</button>
+        <Form.Group as={Row}>
+        <Col sm="3"/>      
+        <Col>
+          <Button variant="primary" type="submit">Submit</Button>
+          </Col>
         </Form.Group>
 
 
