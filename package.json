@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
-    "json-server": "^0.16.3"
+    "json-server": "^0.16.3",
+    "json-server-auth": "^2.0.2"
   }
 }
