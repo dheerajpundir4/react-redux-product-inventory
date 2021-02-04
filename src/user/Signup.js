@@ -22,7 +22,7 @@ function Signup() {
   const { handleSubmit, handleChange, values, errors } = useFormik(
     {
       initialValues: {
-        emailId: "",
+        email: "",
         password: "",
         fistName: "",
         lastName: "",
@@ -34,7 +34,7 @@ function Signup() {
       onSubmit(values) {
         console.log("success");
         console.log(values)
-        axios.post('http://localhost:4000/login',values).then(
+        axios.post('http://localhost:4000/users',values).then(
 
         res=>{
            console.log(res)
@@ -58,8 +58,8 @@ function Signup() {
 
   function validate(values) {
     const errors = {};
-    if (!values.emailId) {
-      errors.emailId = "Email Id is required";
+    if (!values.email) {
+      errors.email = "Email Id is required";
     }
     if (!values.password) {
       errors.password = "Password is required";
@@ -94,9 +94,9 @@ function Signup() {
 
         <Form.Group>
           <input type="email" placeholder="Enter emailId"
-            name="emailId" onChange={handleChange}
-            values={values.emailId} />
-          {errors.emailId ? errors.emailId : null}
+            name="email" onChange={handleChange}
+            values={values.email} />
+          {errors.email ? errors.email : null}
         </Form.Group>
 
         <Form.Group>

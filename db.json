@@ -113,5 +113,25 @@
       "location": "dsf",
       "id": 7
     }
+  ],
+  "users": [
+    {
+      "email": "asdf@gmail",
+      "password": "$2a$10$8w2uRcJmTtmuR4pF3lfgKO.w5IjqvG8Mv8fPfrylQd3F.s9aGMxKm",
+      "fistName": "sadf",
+      "lastName": "sadf",
+      "mobileNumber": "sadf",
+      "location": "sdf",
+      "id": 1
+    },
+    {
+      "email": "asdf@gmail1",
+      "password": "$2a$10$zf0CFjUA/8NNnA7G.83MS.pR18ML5LJRXGYnB4VoV2bYNSdgrRtnC",
+      "fistName": "asdf",
+      "lastName": "asdf",
+      "mobileNumber": "asdf",
+      "location": "sadf",
+      "id": 2
+    }
   ]
 }
