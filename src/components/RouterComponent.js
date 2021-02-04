@@ -14,6 +14,8 @@ import Logout from '../user/Logout';
 import DeleteProductPage from '../opertion/DeleteProductForm';
 import EditProductPage from '../pages/EditProductPage';
 
+import SuccessComponent from './SuccessComponent'
+
 export default class RouterComponent extends React.Component {
 
     render() {
@@ -34,6 +36,7 @@ export default class RouterComponent extends React.Component {
                         <Route path="/Login" component={Login} />
                         <Route path="/Signup" component={Signup} />
                         <Route path="/Logout" component={Logout} />
+                        <Route path="/success/:id" component={SuccessComponent} />
                     </Switch>
                 </Router>
             </>

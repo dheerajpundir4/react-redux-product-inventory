@@ -1,8 +1,9 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Redirect } from 'react-router-dom';
 
 import { Formik, useFormik } from 'formik';
 
+//const URL ="http://localhost:4000/products";
 
 
 //It is used to call server directly
@@ -13,6 +14,9 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 
 function Signup() {
+
+  const [isSignUp, setSignUp] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const { handleSubmit, handleChange, values, errors } = useFormik(
     {
@@ -28,6 +32,23 @@ function Signup() {
       validate,
       onSubmit(values) {
         console.log("success");
+        console.log(values)
+        axios.post('http://localhost:4000/login',values).then(
+
+        res=>{
+           console.log(res)
+           console.log(res.status)
+           if(res.status==201)
+           setSignUp(true)
+           
+        }
+
+        ).catch(
+          err=>{
+            console.log(err)
+          }
+        )
+        console.log("success2");
         //  props.onSave(values);
 
       }
@@ -59,8 +80,14 @@ function Signup() {
     return errors
   }
 
+  if(isSignUp){
+    console.log("Signup success")
+    return <Redirect to="/success/signUp" />;
+
+  }
+
   return (
-    <>
+    <div>
       <Form onSubmit={handleSubmit}>
 
 
@@ -117,7 +144,7 @@ function Signup() {
 
 
       </Form>
-    </>
+    </div>
   )
 }
 
