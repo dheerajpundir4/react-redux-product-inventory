@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Link, Redirect } from 'react-router-dom';
-import axios from 'axios';
+import { Redirect } from 'react-router-dom';
+import { Formik, useFormik } from 'formik';
 
+//It is used to call server directly
+import axios from 'axios';  
 
 // Using bootstrap
 import Form from 'react-bootstrap/Form';
@@ -11,11 +13,54 @@ function Login() {
 
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
 
 
- 
+  const { handleSubmit, handleChange, values, errors } = useFormik(
+    {
+      initialValues: {
+        email: "",
+        password: ""  
+      },
+      validate,
+      onSubmit(values) {
+        console.log("success");
+        console.log(values)
+        axios.post('http://localhost:4000/login',values).then(
+
+        res=>{
+           console.log(res)
+           console.log(res.status)
+           
+           
+           
+        }
+
+        ).catch(
+          err=>{
+            console.log(err)
+          }
+        )
+        console.log("success2");
+        //  props.onSave(values);
+
+      }
+    }
+  );
+
+  function validate(values) {
+    const errors = {};
+    if (!values.email) {
+      errors.email = "Email Id is required";
+    }
+    if (!values.password) {
+      errors.password = "Password is required";
+    }
+  
+
+    return errors
+  }
+
+ /*
   function postLogin() {  
     axios.get('http://localhost:4000/login').then(result => {
       if (result.status === 200) {
@@ -35,42 +80,37 @@ function Login() {
 
   }
 
-
+*/
   if (isLoggedIn) {
     return <Redirect to="/products" />;
   }
 
   return (
-    <>
-      { isError && <p>username and passwork is incorrect</p>}
-
-
-      <Form>
-
-        <Form.Group>
-
-          <input
-            type="userName"
-            value={userName}
-            onChange={e => {
-              setUserName(e.target.value);
-            }}
-            placeholder="email" />
-        </Form.Group>
-        <Form.Group>
-          <input
-            type="password"
-            value="password"
-            onChange={e => {
-              setPassword(e.target.value);
-            }}
-            placeholder="password" />
-        </Form.Group>
-      </Form>
-      <button onClick={postLogin}>Sign In</button>
-      <Link to="/Signup">Don't have an account?</Link>
-    </>
-  )
+      <div>
+        <Form onSubmit={handleSubmit}>
+  
+  
+          <Form.Group>
+            <input type="email" placeholder="Enter emailId"
+              name="email" onChange={handleChange}
+              values={values.email} />
+            {errors.email ? errors.email : null}
+          </Form.Group>
+  
+          <Form.Group>
+            <input type="password" placeholder="Enter password Name"
+              name="password" onChange={handleChange}
+              values={values.password} />
+            {errors.password ? errors.password : null}
+          </Form.Group>
+          <Form.Group>
+            <button type="submit">Sign In</button>
+          </Form.Group>
+  
+  
+        </Form>
+      </div>
+    )
 }
 
 export default Login;

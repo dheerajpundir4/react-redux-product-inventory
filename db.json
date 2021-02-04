@@ -132,6 +132,15 @@
       "mobileNumber": "asdf",
       "location": "sadf",
       "id": 2
+    },
+    {
+      "email": "dhee@gmail.com",
+      "password": "$2a$10$fTQwZSSlyTiwfrDupmnvVexOlRrmC2MF6d7WbTEv7EO61Syb.nss6",
+      "fistName": "1",
+      "lastName": "1",
+      "mobileNumber": "1",
+      "location": "1",
+      "id": 3
     }
   ]
 }
