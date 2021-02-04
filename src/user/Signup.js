@@ -17,6 +17,7 @@ function Signup() {
 
   const [isSignUp, setSignUp] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isUserExist,setIsUserExist]=useState(false);
 
   const { handleSubmit, handleChange, values, errors } = useFormik(
     {
