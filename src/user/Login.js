@@ -71,27 +71,28 @@ function Login() {
       <Form onSubmit={handleSubmit}>
 
        
-        <Form.Group as={Row}>
-        <Col sm="3">
+        <Form.Group>
+       
           <Form.Label>Email</Form.Label>
-        </Col>
-          <Col>
-          <Form.Control size="sm"
+      
+         
+          <Form.Control 
+          as="input"
            type="email"
             name="email" onChange={handleChange}
             values={values.email} />
-              </Col>
-          <Col>
+           
+        
           <Form.Text className="text-muted">
             {errors.email ? errors.email : null}
           </Form.Text>
-          </Col>
+         
         </Form.Group>
 
         <Form.Group>
           <Form.Label>Password</Form.Label>
 
-          <Form.Control size="sm"
+          <Form.Control 
           type="password"
             name="password" onChange={handleChange}
             values={values.password} />
