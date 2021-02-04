@@ -8,6 +8,9 @@ import axios from 'axios';
 // Using bootstrap
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 
 function Login() {
@@ -67,26 +70,33 @@ function Login() {
     <div>
       <Form onSubmit={handleSubmit}>
 
-        <Form.Group>
-        <Form.Label>Email address</Form.Label>
-          
-          <Form.Control type="email" 
+       
+        <Form.Group as={Row}>
+        <Col sm="3" size="sm">
+          <Form.Label size="sm">Email Address</Form.Label>
+        </Col>
+          <Col>
+          <Form.Control size="sm"
+           type="email"
             name="email" onChange={handleChange}
             values={values.email} />
-              <Form.Text className="text-muted">
-              {errors.email ? errors.email : null}
-    </Form.Text>
-         
+              </Col>
+          <Col>
+          <Form.Text className="text-muted">
+            {errors.email ? errors.email : null}
+          </Form.Text>
+          </Col>
         </Form.Group>
 
         <Form.Group>
-        <Form.Label>Password</Form.Label>
-        
-          <Form.Control type="password" 
+          <Form.Label>Password</Form.Label>
+
+          <Form.Control size="sm"
+          type="password"
             name="password" onChange={handleChange}
             values={values.password} />
-            <Form.Text className="text-muted">
-          {errors.password ? errors.password : null}
+          <Form.Text className="text-muted">
+            {errors.password ? errors.password : null}
           </Form.Text>
         </Form.Group>
 
