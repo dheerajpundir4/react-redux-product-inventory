@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Redirect } from 'react-router-dom';
-import { Formik, useFormik } from 'formik';
+import { useFormik } from 'formik';
 
 //It is used to call server directly
-import axios from 'axios';  
+import axios from 'axios';
 
 // Using bootstrap
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 
 function Login() {
@@ -19,24 +20,21 @@ function Login() {
     {
       initialValues: {
         email: "",
-        password: ""  
+        password: ""
       },
       validate,
       onSubmit(values) {
         console.log("success");
         console.log(values)
-        axios.post('http://localhost:4000/login',values).then(
+        axios.post('http://localhost:4000/login', values).then(
 
-        res=>{
-           console.log(res)
-           console.log(res.status)
-           
-           
-           
-        }
+          res => {
+            console.log(res)
+            console.log(res.status)
+          }
 
         ).catch(
-          err=>{
+          err => {
             console.log(err)
           }
         )
@@ -55,62 +53,49 @@ function Login() {
     if (!values.password) {
       errors.password = "Password is required";
     }
-  
+
 
     return errors
   }
 
- /*
-  function postLogin() {  
-    axios.get('http://localhost:4000/login').then(result => {
-      if (result.status === 200) {
-        // setAuthTokens(result.data);
-        console.log("postLogin")
-        localStorage.setItem('userId','asdf')
-        setLoggedIn(true);
-      } else {
-        console.log("elsepostLogin");
-        localStorage.setItem('userId','asdf')
-        setIsError(true);
-      }
-    }).catch(e => {
-      console.log("where is dheeraj");
-      setIsError(true);
-    });
 
-  }
-
-*/
   if (isLoggedIn) {
     return <Redirect to="/products" />;
   }
 
   return (
-      <div>
-        <Form onSubmit={handleSubmit}>
-  
-  
-          <Form.Group>
-            <input type="email" placeholder="Enter emailId"
-              name="email" onChange={handleChange}
-              values={values.email} />
-            {errors.email ? errors.email : null}
-          </Form.Group>
-  
-          <Form.Group>
-            <input type="password" placeholder="Enter password Name"
-              name="password" onChange={handleChange}
-              values={values.password} />
-            {errors.password ? errors.password : null}
-          </Form.Group>
-          <Form.Group>
-            <button type="submit">Sign In</button>
-          </Form.Group>
-  
-  
-        </Form>
-      </div>
-    )
+    <div>
+      <Form onSubmit={handleSubmit}>
+
+        <Form.Group>
+        <Form.Label>Email address</Form.Label>
+          
+          <Form.Control type="email" 
+            name="email" onChange={handleChange}
+            values={values.email} />
+              <Form.Text className="text-muted">
+              {errors.email ? errors.email : null}
+    </Form.Text>
+         
+        </Form.Group>
+
+        <Form.Group>
+        <Form.Label>Password</Form.Label>
+        
+          <Form.Control type="password" 
+            name="password" onChange={handleChange}
+            values={values.password} />
+            <Form.Text className="text-muted">
+          {errors.password ? errors.password : null}
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group>
+          <Button variant="primary" type="submit">Sign In</Button>
+        </Form.Group>
+      </Form>
+    </div>
+  )
 }
 
 export default Login;
