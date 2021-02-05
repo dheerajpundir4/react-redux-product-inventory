@@ -47,6 +47,12 @@
       "manufacturer": "India",
       "price": "Rs. 324234",
       "quantity": 324324
+    },
+    {
+      "id": 102,
+      "productName": "1",
+      "quantity": 1,
+      "price": 1
     }
   ],
   "users": [

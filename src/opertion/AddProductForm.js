@@ -85,7 +85,9 @@ export default function AddProductForm(props) {
                 </Col>
                 <Col>
                     <Form.Control type="text" 
-                     name="productDesctiption" onChange={handleChange} values={values.productDesctiption} />
+                     name="productDescription"
+                      onChange={handleChange} 
+                      values={values.productDescription} />
 
                 </Col>
                 <Col>
