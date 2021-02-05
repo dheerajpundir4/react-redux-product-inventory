@@ -11,7 +11,7 @@ export default class App extends React.Component {
       <Container fluid="xl">
         <Container>
 
-          <NavComponent />
+          <NavComponent user={null} />
         </Container>
 
         <Container>

@@ -6,31 +6,41 @@ import Nav from 'react-bootstrap/Nav';
 
 export default class NavComponent extends React.Component {
     render() {
+
+        if(true)
+        {
+            console.log("hello")
+        }
+
+        let buttons
+
+        if(this.props.user) {
+            buttons = (
+                <>
+                    <Nav.Link href="/" onClick={() => localStorage.clear()}>Logout</Nav.Link>
+                </>
+            )
+        }
+        else {
+            buttons = (
+                <>
+                    <Nav.Link href="/Login">Login</Nav.Link>
+                    <Nav.Link href="/Signup">SignUp</Nav.Link>
+                </>
+            )
+        }
         return (
-              <Navbar bg="light" variant="blue">
-                   
-                        <Nav>
-                            <Nav.Link href="/products">Products</Nav.Link>
-                            <Nav.Link href="/about">About</Nav.Link>
-                        </Nav>
-                       <Navbar.Collapse className="justify-content-end">
-                           <Nav>
-                            {(localStorage.getItem('userId') == null) ?
-                                (
-                                    <>
-                                        <Nav.Link href="/Login">Login</Nav.Link>
-                                        <Nav.Link href="/Signup">SignUp</Nav.Link>
-                                    </>
-                                ) : (
-                                    <>
-                                        <Nav.Link href="/Logout">Logout</Nav.Link>
-                                    </>
-                                )
-                            }
-                              </Nav>
-                        </Navbar.Collapse>
-                      
-                        
+            <Navbar bg="light" variant="blue">
+
+                <Nav>
+                    <Nav.Link href="/products">Products</Nav.Link>
+                    <Nav.Link href="/about">About</Nav.Link>
+                </Nav>
+                <Navbar.Collapse className="justify-content-end">
+                    <Nav>
+                        {buttons}
+                    </Nav>
+                </Navbar.Collapse>
             </Navbar>
         );
     }

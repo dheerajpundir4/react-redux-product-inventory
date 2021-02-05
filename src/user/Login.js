@@ -34,6 +34,13 @@ function Login() {
           res => {
             console.log(res)
             console.log(res.status)
+            if(res.status==200){
+              {
+                console.log(res.data.accessToken)
+                localStorage.setItem('token',res.data.accessToken)
+                this.setLoggedIn(true);
+              }
+            }
           }
 
         ).catch(
