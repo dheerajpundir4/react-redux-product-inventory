@@ -4,6 +4,10 @@ import { useFormik } from 'formik';
 
 // Using bootstrap
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 export default function AddProductForm(props) {
 
@@ -11,7 +15,7 @@ export default function AddProductForm(props) {
         {
             initialValues: {
                 productName: "",
-                productDesctiption: "",
+                productDescription: "",
                 manufacturer: "",
                 quantity: "",
                 price: ""
@@ -31,11 +35,11 @@ export default function AddProductForm(props) {
         if (!values.productName) {
             errors.productName = "Product Name is required";
         }
-        if (!values.productDesctiption) {
-            errors.productName = "productDesctiption Name is required";
+        if (!values.productDescription) {
+            errors.productDescription = "Product Description is required";
         }
         if (!values.manufacturer) {
-            errors.productName = "manufacturer Name is required";
+            errors.manufacturer = "Manufacturer is required";
         }
         if (!values.quantity) {
             errors.quantity = "Quantity is required";
@@ -43,9 +47,7 @@ export default function AddProductForm(props) {
         if (!values.price) {
             errors.price = "Price is required";
         }
-        if (values.price) {
-            values.price = "Rs. " + values.price
-        }
+
         return errors
     }
 
@@ -55,37 +57,116 @@ export default function AddProductForm(props) {
     return (
         <Form onSubmit={handleSubmit}>
 
+            <Form.Group as={Row}>
+                <Col sm="3">
+                    <Form.Label>Product Name</Form.Label>
+                </Col>
+                <Col>
+                    <Form.Control type="text"
+                        name="productName" onChange={handleChange} values={values.productName} />
 
-            <Form.Group>
-            <input type="text" placeholder="Enter SingleRow Name" name="productName" onChange={handleChange} values={values.productName} />
-                {errors.productName ? errors.productName : null}
+                </Col>
+                <Col>
+                    <Form.Text className="text-muted">
+                        {errors.productName ? errors.productName : null}
+                    </Form.Text>
+                </Col>
             </Form.Group>
 
-            <Form.Group>
-            <input type="text" placeholder="Enter productDesctiption Name" name="productDesctiption" onChange={handleChange} values={values.productDesctiption} />
-                {errors.productName ? errors.productName : null}
+
+
+
+
+
+
+            <Form.Group as={Row}>
+                <Col sm="3">
+                    <Form.Label>Product Description</Form.Label>
+                </Col>
+                <Col>
+                    <Form.Control type="text" 
+                     name="productDesctiption" onChange={handleChange} values={values.productDesctiption} />
+
+                </Col>
+                <Col>
+                    <Form.Text className="text-muted">
+                        {errors.productDescription ? errors.productDescription : null}
+                    </Form.Text>
+                </Col>
             </Form.Group>
 
-            <Form.Group>
-            <input type="text" placeholder="Enter manufacturer Name" name="manufacturer" onChange={handleChange} values={values.manufacturer} />
-                {errors.productName ? errors.productName : null}
+
+
+            <Form.Group as={Row}>
+                <Col sm="3">
+                    <Form.Label>Manufacturer</Form.Label>
+                </Col>
+                <Col>
+                    <Form.Control type="text" 
+                     name="manufacturer" onChange={handleChange} values={values.manufacturer} />
+
+                </Col>
+                <Col>
+                    <Form.Text className="text-muted">
+                        {errors.manufacturer ? errors.manufacturer : null}
+                    </Form.Text>
+                </Col>
             </Form.Group>
 
-            <Form.Group>
-            <input type="number" placeholder="Enter Quantity" name="quantity" onChange={handleChange} values={values.quantity} />
-                {errors.quantity ? errors.quantity : null}
+
+
+            <Form.Group as={Row}>
+                <Col sm="3">
+                    <Form.Label>Quantity</Form.Label>
+                </Col>
+                <Col>
+                    <Form.Control type="number" 
+                     name="quantity" onChange={handleChange} values={values.quantity} />
+
+                </Col>
+                <Col>
+                    <Form.Text className="text-muted">
+                        {errors.quantity ? errors.quantity : null}
+                    </Form.Text>
+                </Col>
             </Form.Group>
 
-            <Form.Group>
-            <input type="number" placeholder="Enter Price" name="price" onChange={handleChange} values={values.price} />
-                {errors.price ? errors.price : null}
+
+
+
+            <Form.Group as={Row}>
+                <Col sm="3">
+                    <Form.Label>Price</Form.Label>
+                </Col>
+                <Col>
+                    <Form.Control type="number" 
+                    name="price" onChange={handleChange} values={values.price} />
+
+                </Col>
+                <Col>
+                    <Form.Text className="text-muted">
+                        {errors.price ? errors.price : null}
+                    </Form.Text>
+                </Col>
             </Form.Group>
 
-            <Form.Group>
-            <button type="submit">Submit</button>
+
+
+
+            <Form.Group as={Row}>
+                <Col sm="3">
+
+                </Col>
+                <Col>
+                    <Button type="submit">Submit</Button>
+                </Col>
+                <Col>
+
+                </Col>
             </Form.Group>
-           
-          
+
+
+
         </Form>
     )
 
