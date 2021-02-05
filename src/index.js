@@ -16,7 +16,7 @@ const store = configureStore();
 
 
 
-//axios.defaults.baseURL('http://localhost:4000/')
+axios.defaults.baseURL='http://localhost:4000/';
 
 
 // fist it go to action and then call reducer

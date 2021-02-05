@@ -23,7 +23,7 @@ export default class RouterComponent extends React.Component {
             <>
                 <Router>
                     <Switch>
-                        <Route path="/products" component={AllProductPage} />
+                        <Route path="/products" component={()=>{<AllProductPage/>}} />
                         <Route path="/about" component={AboutPage} />
                         <Route path="/topViewProduct" component={TopViewProduct} />
                         <Route path="/addProduct" component={AddProductPage} />

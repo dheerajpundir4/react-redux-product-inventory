@@ -13,7 +13,7 @@ import Col from 'react-bootstrap/Col';
 
 
 
-function Login() {
+function Login(props) {
 
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -29,16 +29,33 @@ function Login() {
       onSubmit(values) {
         console.log("success");
         console.log(values)
-        axios.post('http://localhost:4000/login', values).then(
+        axios.post('login', values).then(
 
           res => {
             console.log(res)
             console.log(res.status)
             if(res.status==200){
               {
+               
+               
                 console.log(res.data.accessToken)
                 localStorage.setItem('token',res.data.accessToken)
-                this.setLoggedIn(true);
+                console.log("calling another")
+               axios.get('users/?email=dhee@gmail.com').then(
+                 res=>{
+                   console.log(res)
+                   if(res.status==200){
+                      console.log("+++++============")
+                      console.log(res.data[0].id);
+                      localStorage.setItem('id',res.data[0].id)
+                      setLoggedIn(true);
+                      props.setUser(res.data[0].email)
+                
+                      //<Redirect to="/products" />
+                 }
+                }
+               )
+               
               }
             }
           }
@@ -70,7 +87,7 @@ function Login() {
 
 
   if (isLoggedIn) {
-    return <Redirect to="/products" />;
+    return <Redirect to="/" />;
   }
 
   return (

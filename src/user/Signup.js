@@ -38,7 +38,7 @@ function Signup() {
       onSubmit(values) {
         console.log("success");
         console.log(values)
-        axios.post('http://localhost:4000/users', values).then(
+        axios.post('users', values).then(
 
           res => {
             console.log(res)

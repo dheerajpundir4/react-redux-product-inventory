@@ -6,14 +6,9 @@ import Nav from 'react-bootstrap/Nav';
 
 export default class NavComponent extends React.Component {
     render() {
-
-        if(true)
-        {
-            console.log("hello")
-        }
-
         let buttons
-
+        console.log("Nav Component")
+        console.log(this.props.user)
         if(this.props.user) {
             buttons = (
                 <>

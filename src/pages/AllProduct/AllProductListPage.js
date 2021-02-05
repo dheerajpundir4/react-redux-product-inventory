@@ -15,6 +15,7 @@ import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
+import axios from 'axios';
 
 
 
@@ -28,7 +29,9 @@ class AllProductListPage extends React.Component {
       assignvalue:"naveen sing"
     };
   }
-
+    componentDidMount(){
+      this.props.loadProduct();
+    } 
 
 
   display(value) {
@@ -38,11 +41,7 @@ class AllProductListPage extends React.Component {
    
   }
 
-  componentDidMount() {
-
-    this.props.loadProduct();
-  }
-
+ 
   
   render() {
       console.log(this.state.assignvalue)

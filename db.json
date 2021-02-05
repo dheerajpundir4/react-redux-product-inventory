@@ -48,7 +48,7 @@
       "price": "Rs. 324234",
       "quantity": 324324
     }
-  ],  
+  ],
   "users": [
     {
       "email": "asdf@gmail",
@@ -76,6 +76,15 @@
       "mobileNumber": "1",
       "location": "1",
       "id": 3
+    },
+    {
+      "email": "san@gmail.com",
+      "password": "$2a$10$mZq2Zjvl6OOMmUZ/Pqe13.Y/Yzx8VD2cr9bGQ3ssdYsdNk4RWTes6",
+      "fistName": "1234",
+      "lastName": "1",
+      "mobileNumber": "1",
+      "location": "1",
+      "id": 4
     }
   ]
 }
