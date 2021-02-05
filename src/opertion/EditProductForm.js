@@ -3,6 +3,11 @@ import { useFormik } from 'formik';
 
 // Using bootstrap
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+
 
 
 export default function EditProductForm(props) {
@@ -13,11 +18,11 @@ export default function EditProductForm(props) {
             initialValues: {
                 id: props.product.id,
                 productName: props.product.productName,
-                productDesctiption:props.product.productDesctiption,
-                manufacturer:props.product.manufacturer,
+                productDesctiption: props.product.productDesctiption,
+                manufacturer: props.product.manufacturer,
                 quantity: props.product.quantity,
                 price: props.product.price
-               
+
             },
             validate,
             onSubmit(values) {
@@ -43,7 +48,7 @@ export default function EditProductForm(props) {
             errors.price = "Price is required";
         }
         if (values.price) {
-            values.price = "Rs. " + values.price
+            values.price = values.price
         }
         return errors
     }
@@ -54,36 +59,105 @@ export default function EditProductForm(props) {
     return (
         <Form onSubmit={handleSubmit}>
 
-            <Form.Group>
-                <input type="text" placeholder={props.product.productName} name="productName" onChange={handleChange} values={values.productName} />
-                {errors.productName ? errors.productName : null}
+            <Form.Group as={Row}>
+                <Col sm="3">
+                    <Form.Label>Product Name</Form.Label>
+                </Col>
+                <Col>
+                <Form.Control type="text" placeholder={props.product.productName} name="productName" onChange={handleChange} values={values.productName} />
+              
+                </Col>
+                <Col>
+                    <Form.Text className="text-muted">
+                    {errors.productName ? errors.productName : null}
+                    </Form.Text>
+                </Col>
             </Form.Group>
 
-            <Form.Group>
+
+           
+
+            <Form.Group as={Row}>
+                <Col sm="3">
+                    <Form.Label>Product Description</Form.Label>
+                </Col>
+                <Col>
                 <input type="text" placeholder={props.product.productDesctiption} name="productName" onChange={handleChange} values={values.productName} />
-                {errors.productName ? errors.productName : null}
+              
+                </Col>
+                <Col>
+                    <Form.Text className="text-muted">
+                    {errors.productName ? errors.productName : null}
+                    </Form.Text>
+                </Col>
             </Form.Group>
 
-            <Form.Group>
+          
+
+            <Form.Group as={Row}>
+                <Col sm="3">
+                    <Form.Label>Manufacturer</Form.Label>
+                </Col>
+                <Col>
                 <input type="text" placeholder={props.product.manufacturer} name="productName" onChange={handleChange} values={values.productName} />
-                {errors.productName ? errors.productName : null}
+               
+                </Col>
+                <Col>
+                    <Form.Text className="text-muted">
+                    {errors.productName ? errors.productName : null}
+                    </Form.Text>
+                </Col>
             </Form.Group>
 
-            <Form.Group>
+          
+
+            <Form.Group as={Row}>
+                <Col sm="3">
+                    <Form.Label>Quantity</Form.Label>
+                </Col>
+                <Col>
                 <input type="number" placeholder={props.product.quantity} name="quantity" onChange={handleChange} values={values.quantity} />
-                {errors.quantity ? errors.quantity : null}
+              
+                </Col>
+                <Col>
+                    <Form.Text className="text-muted">
+                    {errors.quantity ? errors.quantity : null}
+                    </Form.Text>
+                </Col>
             </Form.Group>
 
+         
 
-            <Form.Group>
+            <Form.Group as={Row}>
+                <Col sm="3">
+                    <Form.Label>Price</Form.Label>
+                </Col>
+                <Col>
                 <input type="number" placeholder={props.product.price} name="price" onChange={handleChange} values={values.price} />
-                {errors.price ? errors.price : null}
+              
+                </Col>
+                <Col>
+                    <Form.Text className="text-muted">
+                    {errors.price ? errors.price : null}
+                    </Form.Text>
+                </Col>
             </Form.Group>
 
-            <Form.Group>
-                <button type="submit">Submit</button>
+
+          
+
+            <Form.Group as={Row}>
+                <Col sm="3">
+                 
+                </Col>
+                <Col>
+                <Button variant="primary" type="submit">Submit</Button>
+                </Col>
+                <Col>                   
+                </Col>
             </Form.Group>
 
+           
         </Form>
     )
 
