@@ -22,6 +22,7 @@ export default function AddProductForm(props) {
             },
             validate,
             onSubmit(values) {
+                console.log("XXX on Submit Add Product Form XXX")
                 console.log(props);
                 props.onSave(values);
 
@@ -56,6 +57,7 @@ export default function AddProductForm(props) {
 
     return (
         <Form onSubmit={handleSubmit}>
+             <h1>Add New Product</h1>
 
             <Form.Group as={Row}>
                 <Col sm="3">
@@ -84,10 +86,10 @@ export default function AddProductForm(props) {
                     <Form.Label>Product Description</Form.Label>
                 </Col>
                 <Col>
-                    <Form.Control type="text" 
-                     name="productDescription"
-                      onChange={handleChange} 
-                      values={values.productDescription} />
+                    <Form.Control type="text"
+                        name="productDescription"
+                        onChange={handleChange}
+                        values={values.productDescription} />
 
                 </Col>
                 <Col>
@@ -104,8 +106,8 @@ export default function AddProductForm(props) {
                     <Form.Label>Manufacturer</Form.Label>
                 </Col>
                 <Col>
-                    <Form.Control type="text" 
-                     name="manufacturer" onChange={handleChange} values={values.manufacturer} />
+                    <Form.Control type="text"
+                        name="manufacturer" onChange={handleChange} values={values.manufacturer} />
 
                 </Col>
                 <Col>
@@ -122,8 +124,8 @@ export default function AddProductForm(props) {
                     <Form.Label>Quantity</Form.Label>
                 </Col>
                 <Col>
-                    <Form.Control type="number" 
-                     name="quantity" onChange={handleChange} values={values.quantity} />
+                    <Form.Control type="number"
+                        name="quantity" onChange={handleChange} values={values.quantity} />
 
                 </Col>
                 <Col>
@@ -141,8 +143,8 @@ export default function AddProductForm(props) {
                     <Form.Label>Price</Form.Label>
                 </Col>
                 <Col>
-                    <Form.Control type="number" 
-                    name="price" onChange={handleChange} values={values.price} />
+                    <Form.Control type="number"
+                        name="price" onChange={handleChange} values={values.price} />
 
                 </Col>
                 <Col>

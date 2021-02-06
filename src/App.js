@@ -100,7 +100,7 @@ export default class App extends React.Component {
               <Route path="/products" component={AllProductPage} />
               <Route path="/about" component={AboutPage} />
               <Route path="/topViewProduct" component={TopViewProduct} />
-              <Route path="/addProduct" component={AddProductPage} />
+              <Route path="/addProduct" component={()=><AddProductPage user={this.state.user}/>} />
               <Route path="/view/:id" component={ViewProductPage} />
               <Route path="/delete/:id" component={DeleteProductPage} />
               <Route path="/edit/:id" component={EditProductPage} />
