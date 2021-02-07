@@ -16,6 +16,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
 import axios from 'axios';
+import { Col, Row, Container } from 'react-bootstrap';
 
 
 
@@ -24,77 +25,78 @@ class AllProductListPage extends React.Component {
 
 
   constructor() {
+    console.log("Constructor Called All ProductListPage")
     super()
-    this.state = {     
-      value:'',
-      pro:'',
-      isFilter:false
+    this.state = {
+      value: '',
+      pro: '',
+      isFilter: false,
+      isCustom:''      
     };
 
-    this.handleChange=this.handleChange.bind(this)
-  }
-    componentDidMount(){
-      this.props.loadProduct();
-    } 
-
-
-  display(value) {
-    console.log("Hello")
-    console.log(value)
-   
-    console.log(value.includes("productName"));
-   
-  }
-
-  handleChange(event){
-    console.log("filer handlechange Product")   
-    console.log(event.target.value)
-    this.setState({value:event.target.value})
-    if(event.target.value==""){
-      this.setState({isfilter:false})
-      
-    }
-    else{
-     
-      console.log(event.target.value!="")
-     let product=this.props.products.filter(product=>{
-       console.log("checkig the value")
-       console.log(product.productName)
-       console.log(event.target.value)
-       console.log(product.productName==event.target.value)      
-       if(product.productName.includes(event.target.value))
-       return product
-     })
-     console.log("===product===")
-     console.log(product)
-     console.log(this.state.isfilter)
-     this.setState({pro:product,isfilter:true})
-    
-    }
-  }
-
- 
+    this.handleFilter = this.handleFilter.bind(this)
+    this.handleCustom=this.handleCustom.bind(this)
   
+  }
+  componentDidMount() {
+    this.props.loadProduct();
+  } 
+
+  handleCustom(selected){
+    console.log("+++++++++Custom Selected++++++++")
+    console.log(selected)
+    this.setState({isCustom:selected})
+    
+  }
+
+  handleFilter(event) {
+    console.log("filer handlechange Product")
+    console.log(event.target.value)
+    this.setState({ value: event.target.value })
+    if (event.target.value == "") {
+      this.setState({ isfilter: false })
+
+    }
+    else {
+
+      console.log(event.target.value != "")
+      let product = this.props.products.filter(product => {
+        console.log("checkig the value")
+        console.log(product.productName)
+        console.log(event.target.value)
+        console.log(product.productName == event.target.value)
+        if (product.productName.includes(event.target.value))
+          return product
+      })
+      console.log("===product===")
+      console.log(product)
+      console.log(this.state.isfilter)
+      this.setState({ pro: product, isfilter: true })
+
+    }
+  } 
+
+
   render() {
-      
-    console.log("rendter")
-    console.log(this.state.pro)
+
+    console.log("Render Called All ProductListPage")   
+
+   /* console.log(this.state.pro)
     console.log(this.props.products)
     console.log(this.state.pro.length)
-    console.log(this.state.pro!=null)
+    console.log(this.state.pro != null)
+    console.log(this.state.isfilter)*/
 
-    console.log(this.state.isfilter)
+    let productNodes = ""
 
-    let productNodes=""
-
-    if(this.state.isfilter){
+    if (this.state.isfilter) {
 
       productNodes = this.state.pro.map(product =>
         (
           <SingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
         ));
     }
-    else{
+    else {
       productNodes = this.props.products.map(product =>
         (
           <SingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
@@ -102,22 +104,37 @@ class AllProductListPage extends React.Component {
 
     }
 
-   
 
-  
+
+
     return (
 
       <>
-        {<CustomizationField cusValue={this.display} />}
-        <Form inline>
-          <Form.Control type="text"
-          onChange={this.handleChange}
-           placeholder="Filter" 
-           value={this.state.value}
-           className="mr-sm-2" />
-          
-        </Form>
 
+     
+      <Row>
+    
+      <Col>
+      <Form inline>
+          <Form.Control type="text"
+            onChange={this.handleFilter}
+            placeholder="Filter"
+            value={this.state.value}
+            className="mr-sm-2" />
+
+        </Form>
+      </Col>
+     
+      <Col  >
+       
+        {<CustomizationField cusValue={this.handleCustom} />}
+
+        </Col>
+
+     
+      </Row>
+       
+     
 
         <Table striped bordered hover>
           <thead>
@@ -146,7 +163,7 @@ class AllProductListPage extends React.Component {
 }
 
 
-const mapStatetoProps = (state) => {  
+const mapStatetoProps = (state) => {
   return {
     products: state.products
   }

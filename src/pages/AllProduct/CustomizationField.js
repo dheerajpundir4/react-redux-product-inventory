@@ -4,7 +4,7 @@ import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 
 const CustomizationField=(props)=>(
     <>
-  <h1>Filed Customization</h1>
+ 
     <DropdownMultiselect
     options={["productName", "productDesctiption", "manufacturer", "price", "quantity"]}
     name="customizationField"
