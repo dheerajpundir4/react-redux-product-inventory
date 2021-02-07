@@ -10,10 +10,7 @@ import axios from 'axios';
 
 
 // Using bootstrap
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Form, Button, Col, Row, Container, Card } from 'react-bootstrap';
 
 
 
@@ -92,7 +89,13 @@ function Signup() {
   }
 
   return (
-    <div>
+    <Container>
+     
+      <Card style={{ width: '50rem' }}>
+
+     
+      <Card.Body>
+      <h3>SignUp</h3>
       <Form onSubmit={handleSubmit}>
 
         <Form.Group as={Row}>
@@ -208,7 +211,9 @@ function Signup() {
 
 
       </Form>
-    </div>
+      </Card.Body>
+      </Card>
+    </Container>
   )
 }
 

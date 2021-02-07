@@ -3,6 +3,7 @@ import React from 'react'
 // Using bootstrap
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import { Container } from 'react-bootstrap';
 
 export default class NavComponent extends React.Component {
     render() {
@@ -25,6 +26,7 @@ export default class NavComponent extends React.Component {
             )
         }
         return (
+            <Container>
             <Navbar bg="light" variant="blue">
 
                 <Nav>
@@ -37,6 +39,7 @@ export default class NavComponent extends React.Component {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
+            </Container>
         );
     }
 }

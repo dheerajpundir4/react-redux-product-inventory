@@ -31,22 +31,22 @@ class AllProductListPage extends React.Component {
       value: '',
       pro: '',
       isFilter: false,
-      isCustom:''      
+      isCustom: ''
     };
 
     this.handleFilter = this.handleFilter.bind(this)
-    this.handleCustom=this.handleCustom.bind(this)
-  
+    this.handleCustom = this.handleCustom.bind(this)
+
   }
   componentDidMount() {
     this.props.loadProduct();
-  } 
+  }
 
-  handleCustom(selected){
+  handleCustom(selected) {
     console.log("+++++++++Custom Selected++++++++")
     console.log(selected)
-    this.setState({isCustom:selected})
-    
+    this.setState({ isCustom: selected })
+
   }
 
   handleFilter(event) {
@@ -74,18 +74,18 @@ class AllProductListPage extends React.Component {
       this.setState({ pro: product, isfilter: true })
 
     }
-  } 
+  }
 
 
   render() {
 
-    console.log("Render Called All ProductListPage")   
+    console.log("Render Called All ProductListPage")
 
-   /* console.log(this.state.pro)
-    console.log(this.props.products)
-    console.log(this.state.pro.length)
-    console.log(this.state.pro != null)
-    console.log(this.state.isfilter)*/
+    /* console.log(this.state.pro)
+     console.log(this.props.products)
+     console.log(this.state.pro.length)
+     console.log(this.state.pro != null)
+     console.log(this.state.isfilter)*/
 
     let productNodes = ""
 
@@ -109,32 +109,32 @@ class AllProductListPage extends React.Component {
 
     return (
 
-      <>
+      <Container>
 
-     
-      <Row>
-    
-      <Col>
-      <Form inline>
-          <Form.Control type="text"
-            onChange={this.handleFilter}
-            placeholder="Filter"
-            value={this.state.value}
-            className="mr-sm-2" />
 
-        </Form>
-      </Col>
-     
-      <Col  >
-       
-        {<CustomizationField cusValue={this.handleCustom} />}
+        <Row>
 
-        </Col>
+          <Col sm="3">
+            <Form>
+              <Form.Control type="text"
+                onChange={this.handleFilter}
+                placeholder="Filter"
+                value={this.state.value}
+                className="mr-sm-2" />
 
-     
-      </Row>
-       
-     
+            </Form>
+          </Col>
+
+          <Col  >
+
+            {<CustomizationField cusValue={this.handleCustom} />}
+
+          </Col>
+
+
+        </Row>
+
+
 
         <Table striped bordered hover>
           <thead>
@@ -155,7 +155,7 @@ class AllProductListPage extends React.Component {
         <br />
 
         <Link to="/topViewProduct">Top View Product</Link>
-      </>
+      </Container>
 
 
     );

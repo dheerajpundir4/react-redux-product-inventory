@@ -6,10 +6,7 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 
 // Using bootstrap
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Form, Button, Col, Row, Container, Card } from 'react-bootstrap';
 
 
 
@@ -91,7 +88,14 @@ function Login(props) {
   }
 
   return (
-    <div>
+    <Container>
+
+     
+      <Card style={{ width: '50rem' }}>
+    
+     
+<Card.Body>
+<h3> Login </h3>
       <Form onSubmit={handleSubmit}>
 
        
@@ -129,7 +133,9 @@ function Login(props) {
           <Button variant="primary" type="submit">Sign In</Button>
         </Form.Group>
       </Form>
-    </div>
+      </Card.Body>
+      </Card>
+    </Container>
   )
 }
 
