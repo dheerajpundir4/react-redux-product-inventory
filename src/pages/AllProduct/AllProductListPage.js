@@ -50,7 +50,7 @@ class AllProductListPage extends React.Component {
   }
 
   handleFilter(event) {
-    console.log("filer handlechange Product")
+    console.log("filer handlechange")
     console.log(event.target.value)
     this.setState({ value: event.target.value })
     if (event.target.value == "") {
@@ -61,16 +61,16 @@ class AllProductListPage extends React.Component {
 
       console.log(event.target.value != "")
       let product = this.props.products.filter(product => {
-        console.log("checkig the value")
-        console.log(product.productName)
-        console.log(event.target.value)
-        console.log(product.productName == event.target.value)
+        //   console.log("checkig the value")
+        //  console.log(product.productName)
+        //  console.log(event.target.value)
+        //  console.log(product.productName == event.target.value)
         if (product.productName.includes(event.target.value))
           return product
       })
-      console.log("===product===")
-      console.log(product)
-      console.log(this.state.isfilter)
+      //  console.log("===product===")
+      //  console.log(product)
+      //   console.log(this.state.isfilter)
       this.setState({ pro: product, isfilter: true })
 
     }
@@ -84,22 +84,28 @@ class AllProductListPage extends React.Component {
     /* console.log(this.state.pro)
      console.log(this.props.products)
      console.log(this.state.pro.length)
-     console.log(this.state.pro != null)
-     console.log(this.state.isfilter)*/
+     console.log(this.state.pro != null)*/
+    console.log(this.state.isfilter)
+
+    console.log(this.state.isCustom)
 
     let productNodes = ""
 
+
+
+
     if (this.state.isfilter) {
+
 
       productNodes = this.state.pro.map(product =>
         (
-          <SingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
+          <SingleRow abc={this.state.isCustom} product={product} />
         ));
     }
     else {
       productNodes = this.props.products.map(product =>
         (
-          <SingleRow id={product.id} productName={product.productName} quantity={product.quantity} price={product.price} />
+          <SingleRow abc={this.state.isCustom} product={product} />
         ));
 
     }
@@ -139,9 +145,21 @@ class AllProductListPage extends React.Component {
         <Table striped bordered hover>
           <thead>
             <tr>
-              {(false) ? (<th>Product Name</th>) : <></>}
-              <th>Quantity</th>
+              <th>Product Name</th>
+
+              {this.state.isCustom.includes('productDescription') ?
+                <th>Product Desctiption</th> : <></>}
+
+              {this.state.isCustom.includes('manufacturer') ?
+                <th>manufacturer</th> :
+                <></>}
+
               <th>Price</th>
+
+              {this.state.isCustom.includes('quantity') ?
+                <th>Quantity</th> :
+                <></>}
+
               <th>Action(s)</th>
             </tr>
           </thead>

@@ -6,10 +6,9 @@ const CustomizationField=(props)=>(
     <>
  
     <DropdownMultiselect
-    options={["productName", "productDesctiption", "manufacturer", "price", "quantity"]}
+    options={["productDescription", "manufacturer", "quantity"]}
     name="customizationField"
-    placeholder="Filter"
-    selected={["productName", "productDesctiption", "manufacturer", "price", "quantity"]}
+    placeholder="Customizable field"
     handleOnChange={(selected)=>{
 
       props.cusValue(selected);
