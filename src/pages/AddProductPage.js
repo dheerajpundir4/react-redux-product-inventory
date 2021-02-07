@@ -6,16 +6,15 @@ import AddProductForm from '../opertion/AddProductForm';
 import * as actionCreator from '../actions/productActions'
 
 class AddProductPage extends React.Component {
- 
+
   render() {
 
     console.log("AddProductPage => render() run first then componentdidmount()")
 
+    if (this.props.user == undefined)
+      return (<Redirect to="/login" />);
 
-    if (this.props.user == undefined) 
-      return ( <Redirect to="/login" />);    
-   
-      return (<AddProductForm onSave={this.props.saveProduct} /> );
+    return (<AddProductForm onSave={this.props.saveProduct} />);
   }
 }
 
