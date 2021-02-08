@@ -34,10 +34,12 @@ const SingleRow = ({ abc, product }) => {
           <Button variant="secondary" size="sm">View</Button>
         </Link>
       &nbsp;&nbsp;
+
       <Link to={"/delete/" + id} style={{ textDecoration: 'none' }}>
           <Button variant="secondary" size="sm"> Delete</Button>
         </Link>
       &nbsp;&nbsp;
+      
       <Link to={"/edit/" + id} style={{ textDecoration: 'none' }}>
           <Button variant="secondary" size="sm">Edit</Button>
         </Link>
