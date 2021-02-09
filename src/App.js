@@ -1,6 +1,6 @@
 import React from 'react'
 
-////////////////////////////
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Using component
@@ -20,30 +20,34 @@ import SuccessComponent from './components/SuccessComponent'
 
 
 
-
-///////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
 import NavComponent from './components/NavComponent'
-import { Card, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import axios from 'axios';
 
 export default class App extends React.Component {
 
-  state = {}
+  constructor() {
 
-  componentDidMount() {
+    console.log("App Constructor")
+    super()
+    this.state = {}
+    this.checkUserValidation = this.checkUserValidation.bind(this)
+    this.setUser = this.setUser.bind(this)
+
+  }
+
+
+  setUser = (user) => {
+
+    console.log("App setUser")
+    this.setState({
+      user: user
+    })
+  }
+
+  checkUserValidation() {
+    console.log("App checkUserValidation")
 
     const config = {
       headers: {
@@ -55,36 +59,37 @@ export default class App extends React.Component {
 
     axios.get('users/' + id, config).then(
       res => {
-        console.log("=======success===========")
+        console.log("--SUCCESS--")
         console.log(config)
         console.log(res)
         if (res.status = 200) {
-          console.log("not sure what to do")
-
           this.setUser(res.data)
-
-
-          console.log("this.state.user")
-          console.log(this.state.user)
         }
-
       },
       err => {
-        console.log("=======error===========")
+        console.log("--ERROR--")
         console.log(err)
       }
     )
-    console.log("++++++++++++++++++++++++")
   }
 
 
-  setUser = (us) => {
-    this.setState({
-      user: us
-    })
+
+  componentDidMount() {
+
+    console.log("App componentDidMount")
+
+    this.checkUserValidation()
+
+
   }
+
+
+
 
   render() {
+
+    console.log("App render")
     return (
       <Container fluid="xl">
         <Container>
@@ -100,7 +105,7 @@ export default class App extends React.Component {
               <Route path="/products" component={AllProductPage} />
               <Route path="/about" component={AboutPage} />
               <Route path="/topViewProduct" component={TopViewProduct} />
-              <Route path="/addProduct" component={()=><AddProductPage user={this.state.user}/>} />
+              <Route path="/addProduct" component={() => <AddProductPage user={this.state.user} />} />
               <Route path="/view/:id" component={ViewProductPage} />
               <Route path="/delete/:id" component={DeleteProductPage} />
               <Route path="/edit/:id" component={EditProductPage} />
