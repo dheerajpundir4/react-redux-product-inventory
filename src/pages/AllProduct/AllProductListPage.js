@@ -13,9 +13,6 @@ import CustomizationField from './CustomizationField';
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import FormControl from 'react-bootstrap/FormControl';
-import axios from 'axios';
 import { Col, Row, Container } from 'react-bootstrap';
 
 
