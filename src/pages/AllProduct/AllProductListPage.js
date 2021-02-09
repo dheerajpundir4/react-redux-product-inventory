@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { loadProduct } from '../../actions/productActions';
 
 //Classes of same folder
-import {TableBody, TableHead} from './TableData.js';
+import { TableBody, TableHead } from './TableData.js';
 import CustomizationField from './CustomizationField';
 
 // Using bootstrap
@@ -47,22 +47,28 @@ class AllProductListPage extends React.Component {
 
   handleFilter(event) {
     console.log("filer handlechange")
-    console.log(event.target.value)
-    this.setState({ VALUE_OF_FILTER_FORM: event.target.value })
+
     if (event.target.value == "") {
-      this.setState({ IS_FILTER: false })
+
+      this.setState({
+        IS_FILTER: false,
+        VALUE_OF_FILTER_FORM: event.target.value
+      })
 
     }
     else {
 
-      console.log(event.target.value != "")
       let product = this.props.products.filter(product => {
-       
+
         if (product.productName.includes(event.target.value))
           return product
       })
-     
-      this.setState({ ARRAY_FILTER_PRODUCTS: product, IS_FILTER: true })
+
+      this.setState({
+        ARRAY_FILTER_PRODUCTS: product,
+        IS_FILTER: true,
+        VALUE_OF_FILTER_FORM: event.target.value
+      })
 
     }
   }
@@ -72,9 +78,9 @@ class AllProductListPage extends React.Component {
 
     console.log("Render Called All ProductListPage")
 
-  
-   
-    let tableHead=(<TableHead customizationCol={this.state.ARRAY_CUSTOM_COLUMN}/>)
+
+
+    let tableHead = (<TableHead customizationCol={this.state.ARRAY_CUSTOM_COLUMN} />)
     let tableBody = ""
 
 
@@ -130,7 +136,7 @@ class AllProductListPage extends React.Component {
 
         <Table striped bordered hover>
           <thead>
-         { tableHead}
+            {tableHead}
           </thead>
           <tbody>
             {tableBody}
