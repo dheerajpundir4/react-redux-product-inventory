@@ -99,13 +99,13 @@ class AllProductListPage extends React.Component {
 
       productNodes = this.state.pro.map(product =>
         (
-          <Columns abc={this.state.isCustom} product={product} />
+          <Columns customizationCol={this.state.isCustom} product={product} />
         ));
     }
     else {
       productNodes = this.props.products.map(product =>
         (
-          <Columns abc={this.state.isCustom} product={product} />
+          <Columns customizationCol={this.state.isCustom} product={product} />
         ));
 
     }

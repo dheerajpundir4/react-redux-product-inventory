@@ -6,27 +6,17 @@ import Button from 'react-bootstrap/Button'
 
 
 
-const Columns = ({ abc, product }) => {
+const Columns = ({ customizationCol, product }) => {
 
   let id = product.id
-
-  console.log("singleRow")
-
-
-
-
   return (
-
-
-
-
     <tr>
 
       <td>  {product.productName}</td>
-      { abc.includes('productDescription') ? <td>  {product.productDesctiption}</td> : <></>}
-      {abc.includes('manufacturer') ? <td>  {product.manufacturer}</td> : <></>}
+      { customizationCol.includes('productDescription') ? <td>  {product.productDesctiption}</td> : <></>}
+      {customizationCol.includes('manufacturer') ? <td>  {product.manufacturer}</td> : <></>}
       <td>  {product.price}</td>
-      {abc.includes('quantity') ? <td>  {product.quantity}</td> : <></>}
+      {customizationCol.includes('quantity') ? <td>  {product.quantity}</td> : <></>}
 
       <td>
 
