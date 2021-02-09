@@ -1,23 +1,23 @@
 import React from 'react'
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
- 
 
-const CustomizationField=(props)=>(
-    <>
- 
-    <DropdownMultiselect
-    options={["productDescription", "manufacturer", "quantity"]}
-    name="customizationField"
-    placeholder="Customizable field"
-    handleOnChange={(selected)=>{
 
-      props.cusValue(selected);
-     
+class CustomizationField extends React.Component {
+    render() {
+        return (
+            <>
+                <DropdownMultiselect
+                    options={["Product Description", "Manufacturer", "Quantity"]}
+                    name="customizationField"
+                    placeholder="Customizable field"
+                    handleOnChange={(selected) => {
+                        this.props.cusValue(selected);
+                    }
+                    }
+                />
+            </>
+        );
     }
-
-    }
-  />
-   </>
-)
+}
 
 export default CustomizationField

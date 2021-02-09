@@ -11,9 +11,9 @@ class Columns extends React.Component {
 
         let ID = product.id
 
-        let IS_PRO_DESC = customizationCol.includes('productDescription')
-        let IS_MANFACTURER = customizationCol.includes('manufacturer')
-        let IS_QUANTITY = customizationCol.includes('quantity')
+        let IS_PRO_DESC = customizationCol.includes('Product Description')
+        let IS_MANFACTURER = customizationCol.includes('Manufacturer')
+        let IS_QUANTITY = customizationCol.includes('Quantity')
 
         return (
             <tr>
