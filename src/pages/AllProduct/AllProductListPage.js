@@ -1,19 +1,33 @@
-import React from 'react'
+import React,{Suspense} from 'react'
+
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
 // get all the product
-import { loadProduct } from '../../actions/productActions';
+
 
 //Classes of same folder
 import { TableBody, TableHead } from './TableData.js';
-import CustomizationField from './CustomizationField';
-
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import { Col, Row, Container } from 'react-bootstrap';
+import { loadProduct } from '../../actions/productActions';
 
+
+
+
+
+const CustomizationField=React.lazy(() => {
+
+  return new Promise(resolve => setTimeout(resolve, 5 * 1000)).then(
+    () =>
+      Math.floor(Math.random() * 10) >= 1
+        ? import('./CustomizationField')
+        : Promise.reject(new Error())
+  );
+  
+});
 
 
 
@@ -78,18 +92,12 @@ class AllProductListPage extends React.Component {
   }
 
 
-  render() {
-   
+  render() {   
 
     console.log("ProductListPage render")
 
-
-
     let tableHead = (<TableHead customizationCol={this.state.ARRAY_CUSTOM_COLUMN} />)
     let tableBody = ""
-
-
-
 
     if (this.state.IS_FILTER) {
 
@@ -111,10 +119,11 @@ class AllProductListPage extends React.Component {
 
 
     return (
+      <React.Suspense fallback={<h1>LazyLoading</h1>}>
 
       <Container>
 
-
+      <React.Suspense fallback={<h1>LazyLoading</h1>}>
         <Row>
 
           <Col sm="3">
@@ -129,15 +138,15 @@ class AllProductListPage extends React.Component {
           </Col>
 
           <Col  >
-
+        
             {<CustomizationField handleCustomizationField={this.handleCustom} />}
-
+           
           </Col>
 
 
         </Row>
 
-
+        </React.Suspense>
 
         <Table striped bordered hover>
           <thead>
@@ -155,9 +164,10 @@ class AllProductListPage extends React.Component {
         <Link to="/topViewProduct">Top View Product</Link>
       </Container>
 
-
+      </React.Suspense>
     );
   }
+
 }
 
 
