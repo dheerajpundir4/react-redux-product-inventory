@@ -1,36 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 //using bootstrap
 import Button from 'react-bootstrap/Button'
 
-
-
 const Columns = ({ customizationCol, product }) => {
 
-  let id = product.id
+  let ID = product.id
+
+  let IS_PRO_DESC = customizationCol.includes('productDescription')
+  let IS_MANFACTURER = customizationCol.includes('manufacturer')
+  let IS_QUANTITY = customizationCol.includes('quantity')
+
   return (
     <tr>
 
       <td>  {product.productName}</td>
-      { customizationCol.includes('productDescription') ? <td>  {product.productDesctiption}</td> : <></>}
-      {customizationCol.includes('manufacturer') ? <td>  {product.manufacturer}</td> : <></>}
+      { IS_PRO_DESC ? <td>  {product.productDesctiption}</td> : <></>}
+      { IS_MANFACTURER ? <td>  {product.manufacturer}</td> : <></>}
       <td>  {product.price}</td>
-      {customizationCol.includes('quantity') ? <td>  {product.quantity}</td> : <></>}
+      { IS_QUANTITY ? <td>  {product.quantity}</td> : <></>}
 
       <td>
 
-        <Link to={"/view/" + id} style={{ textDecoration: 'none' }}>
+        <Link to={"/view/" + ID} style={{ textDecoration: 'none' }}>
           <Button variant="secondary" size="sm">View</Button>
         </Link>
       &nbsp;&nbsp;
 
-      <Link to={"/delete/" + id} style={{ textDecoration: 'none' }}>
+      <Link to={"/delete/" + ID} style={{ textDecoration: 'none' }}>
           <Button variant="secondary" size="sm"> Delete</Button>
         </Link>
       &nbsp;&nbsp;
-      
-      <Link to={"/edit/" + id} style={{ textDecoration: 'none' }}>
+
+      <Link to={"/edit/" + ID} style={{ textDecoration: 'none' }}>
           <Button variant="secondary" size="sm">Edit</Button>
         </Link>
 
