@@ -21,7 +21,8 @@ class AllProductListPage extends React.Component {
 
 
   constructor() {
-    console.log("Constructor Called All ProductListPage")
+    console.log("Inside All ProductListPage Constructor")
+   
     super()
     this.state = {
       VALUE_OF_FILTER_FORM: '',
@@ -29,18 +30,19 @@ class AllProductListPage extends React.Component {
       IS_FILTER: false,
       ARRAY_CUSTOM_COLUMN: ''
     };
-
+   
+  
     this.handleFilter = this.handleFilter.bind(this)
     this.handleCustom = this.handleCustom.bind(this)
 
   }
   componentDidMount() {
+    console.log("ProductListPage CompnentDidMount")
     this.props.loadProduct();
   }
 
   handleCustom(arrayOfSelectedColumn) {
-    console.log("Inside Handle Custome")
-    
+   
     this.setState({ 
       ARRAY_CUSTOM_COLUMN: arrayOfSelectedColumn 
     })
@@ -48,7 +50,7 @@ class AllProductListPage extends React.Component {
   }
 
   handleFilter(event) {
-    console.log("Inside HandleFilter")
+   
 
     if (event.target.value == "") {
 
@@ -77,8 +79,9 @@ class AllProductListPage extends React.Component {
 
 
   render() {
+   
 
-    console.log("Render Called All ProductListPage")
+    console.log("ProductListPage render")
 
 
 
