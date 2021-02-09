@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { loadProduct } from '../../actions/productActions';
 
 //Classes of same folder
-import SingleRow from './SingleRow.js';
+import Columns from './Columns.js';
 import CustomizationField from './CustomizationField';
 
 // Using bootstrap
@@ -99,13 +99,13 @@ class AllProductListPage extends React.Component {
 
       productNodes = this.state.pro.map(product =>
         (
-          <SingleRow abc={this.state.isCustom} product={product} />
+          <Columns abc={this.state.isCustom} product={product} />
         ));
     }
     else {
       productNodes = this.props.products.map(product =>
         (
-          <SingleRow abc={this.state.isCustom} product={product} />
+          <Columns abc={this.state.isCustom} product={product} />
         ));
 
     }
