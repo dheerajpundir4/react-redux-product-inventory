@@ -58,16 +58,11 @@ class AllProductListPage extends React.Component {
 
       console.log(event.target.value != "")
       let product = this.props.products.filter(product => {
-        //   console.log("checkig the value")
-        //  console.log(product.productName)
-        //  console.log(event.target.value)
-        //  console.log(product.productName == event.target.value)
+       
         if (product.productName.includes(event.target.value))
           return product
       })
-      //  console.log("===product===")
-      //  console.log(product)
-      //   console.log(this.state.isfilter)
+     
       this.setState({ pro: product, isfilter: true })
 
     }
@@ -78,10 +73,7 @@ class AllProductListPage extends React.Component {
 
     console.log("Render Called All ProductListPage")
 
-    /* console.log(this.state.pro)
-     console.log(this.props.products)
-     console.log(this.state.pro.length)
-     console.log(this.state.pro != null)*/
+  
     console.log(this.state.isfilter)
 
     console.log(this.state.isCustom)
