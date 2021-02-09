@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
-
 // get all the product
 import { loadProduct } from '../../actions/productActions';
 
@@ -25,10 +24,10 @@ class AllProductListPage extends React.Component {
     console.log("Constructor Called All ProductListPage")
     super()
     this.state = {
-      value: '',
-      pro: '',
-      isFilter: false,
-      isCustom: ''
+      VALUE_OF_FILTER_FORM: '',
+      ARRAY_FILTER_PRODUCTS: '',
+      IS_FILTER: false,
+      ARRAY_CUSTOM_COLUMN: ''
     };
 
     this.handleFilter = this.handleFilter.bind(this)
@@ -42,16 +41,16 @@ class AllProductListPage extends React.Component {
   handleCustom(selected) {
     console.log("+++++++++Custom Selected++++++++")
     console.log(selected)
-    this.setState({ isCustom: selected })
+    this.setState({ ARRAY_CUSTOM_COLUMN: selected })
 
   }
 
   handleFilter(event) {
     console.log("filer handlechange")
     console.log(event.target.value)
-    this.setState({ value: event.target.value })
+    this.setState({ VALUE_OF_FILTER_FORM: event.target.value })
     if (event.target.value == "") {
-      this.setState({ isfilter: false })
+      this.setState({ IS_FILTER: false })
 
     }
     else {
@@ -63,7 +62,7 @@ class AllProductListPage extends React.Component {
           return product
       })
      
-      this.setState({ pro: product, isfilter: true })
+      this.setState({ ARRAY_FILTER_PRODUCTS: product, IS_FILTER: true })
 
     }
   }
@@ -75,24 +74,24 @@ class AllProductListPage extends React.Component {
 
   
    
-    let tableHead=(<TableHead customizationCol={this.state.isCustom}/>)
+    let tableHead=(<TableHead customizationCol={this.state.ARRAY_CUSTOM_COLUMN}/>)
     let tableBody = ""
 
 
 
 
-    if (this.state.isfilter) {
+    if (this.state.IS_FILTER) {
 
 
-      tableBody = this.state.pro.map(product =>
+      tableBody = this.state.ARRAY_FILTER_PRODUCTS.map(product =>
         (
-          <TableBody customizationCol={this.state.isCustom} product={product} />
+          <TableBody customizationCol={this.state.ARRAY_CUSTOM_COLUMN} product={product} />
         ));
     }
     else {
       tableBody = this.props.products.map(product =>
         (
-          <TableBody customizationCol={this.state.isCustom} product={product} />
+          <TableBody customizationCol={this.state.ARRAY_CUSTOM_COLUMN} product={product} />
         ));
 
     }
@@ -112,7 +111,7 @@ class AllProductListPage extends React.Component {
               <Form.Control type="text"
                 onChange={this.handleFilter}
                 placeholder="Filter"
-                value={this.state.value}
+                value={this.state.VALUE_OF_FILTER_FORM}
                 className="mr-sm-2" />
 
             </Form>
