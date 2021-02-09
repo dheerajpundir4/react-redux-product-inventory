@@ -38,15 +38,17 @@ class AllProductListPage extends React.Component {
     this.props.loadProduct();
   }
 
-  handleCustom(selected) {
-    console.log("+++++++++Custom Selected++++++++")
-    console.log(selected)
-    this.setState({ ARRAY_CUSTOM_COLUMN: selected })
+  handleCustom(arrayOfSelectedColumn) {
+    console.log("Inside Handle Custome")
+    
+    this.setState({ 
+      ARRAY_CUSTOM_COLUMN: arrayOfSelectedColumn 
+    })
 
   }
 
   handleFilter(event) {
-    console.log("filer handlechange")
+    console.log("Inside HandleFilter")
 
     if (event.target.value == "") {
 
