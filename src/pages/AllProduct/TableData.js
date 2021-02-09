@@ -5,9 +5,37 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
 import * as PropTypes from "prop-types";
 
-class Columns extends React.Component {
+export class TableHead extends React.Component {
     render() {
-        let {customizationCol, product} = this.props;
+
+        let { customizationCol } = this.props;
+        let IS_PRO_DESC = customizationCol.includes('Product Description')
+        let IS_MANFACTURER = customizationCol.includes('Manufacturer')
+        let IS_QUANTITY = customizationCol.includes('Quantity')
+        return (
+
+            <tr>
+                <th>Product Name</th>
+
+                {IS_PRO_DESC ? <th>Product Desctiption</th> : <></>}
+
+                {IS_MANFACTURER ? <th>manufacturer</th> : <></>}
+
+                <th>Price</th>
+
+                {IS_QUANTITY ? <th>Quantity</th> : <></>}
+
+                <th>Action(s)</th>
+            </tr>
+
+        )
+
+    }
+}
+
+export class TableBody extends React.Component {
+    render() {
+        let { customizationCol, product } = this.props;
 
         let ID = product.id
 
@@ -26,17 +54,17 @@ class Columns extends React.Component {
 
                 <td>
 
-                    <Link to={"/view/" + ID} style={{textDecoration: 'none'}}>
+                    <Link to={"/view/" + ID} style={{ textDecoration: 'none' }}>
                         <Button variant="secondary" size="sm">View</Button>
                     </Link>
                     &nbsp;&nbsp;
 
-                    <Link to={"/delete/" + ID} style={{textDecoration: 'none'}}>
+                    <Link to={"/delete/" + ID} style={{ textDecoration: 'none' }}>
                         <Button variant="secondary" size="sm"> Delete</Button>
                     </Link>
                     &nbsp;&nbsp;
 
-                    <Link to={"/edit/" + ID} style={{textDecoration: 'none'}}>
+                    <Link to={"/edit/" + ID} style={{ textDecoration: 'none' }}>
                         <Button variant="secondary" size="sm">Edit</Button>
                     </Link>
 
@@ -46,9 +74,14 @@ class Columns extends React.Component {
     }
 }
 
-Columns.propTypes = {
+TableBody.propTypes = {
     customizationCol: PropTypes.any,
     product: PropTypes.any
 }
 
-export default Columns;
+TableHead.propTypes = {
+    customizationCol: PropTypes.any   
+}
+
+
+

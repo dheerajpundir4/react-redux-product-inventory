@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { loadProduct } from '../../actions/productActions';
 
 //Classes of same folder
-import Columns from './Columns.js';
+import {TableBody, TableHead} from './TableData.js';
 import CustomizationField from './CustomizationField';
 
 // Using bootstrap
@@ -74,11 +74,9 @@ class AllProductListPage extends React.Component {
     console.log("Render Called All ProductListPage")
 
   
-    console.log(this.state.isfilter)
-
-    console.log(this.state.isCustom)
-
-    let productNodes = ""
+   
+    let tableHead=(<TableHead customizationCol={this.state.isCustom}/>)
+    let tableBody = ""
 
 
 
@@ -86,15 +84,15 @@ class AllProductListPage extends React.Component {
     if (this.state.isfilter) {
 
 
-      productNodes = this.state.pro.map(product =>
+      tableBody = this.state.pro.map(product =>
         (
-          <Columns customizationCol={this.state.isCustom} product={product} />
+          <TableBody customizationCol={this.state.isCustom} product={product} />
         ));
     }
     else {
-      productNodes = this.props.products.map(product =>
+      tableBody = this.props.products.map(product =>
         (
-          <Columns customizationCol={this.state.isCustom} product={product} />
+          <TableBody customizationCol={this.state.isCustom} product={product} />
         ));
 
     }
@@ -133,27 +131,10 @@ class AllProductListPage extends React.Component {
 
         <Table striped bordered hover>
           <thead>
-            <tr>
-              <th>Product Name</th>
-
-              {this.state.isCustom.includes('productDescription') ?
-                <th>Product Desctiption</th> : <></>}
-
-              {this.state.isCustom.includes('manufacturer') ?
-                <th>manufacturer</th> :
-                <></>}
-
-              <th>Price</th>
-
-              {this.state.isCustom.includes('quantity') ?
-                <th>Quantity</th> :
-                <></>}
-
-              <th>Action(s)</th>
-            </tr>
+         { tableHead}
           </thead>
           <tbody>
-            {productNodes}
+            {tableBody}
           </tbody>
         </Table>
 
