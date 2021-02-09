@@ -130,7 +130,7 @@ class AllProductListPage extends React.Component {
 
           <Col  >
 
-            {<CustomizationField cusValue={this.handleCustom} />}
+            {<CustomizationField handleCustomizationField={this.handleCustom} />}
 
           </Col>
 

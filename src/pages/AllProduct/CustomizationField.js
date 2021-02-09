@@ -4,6 +4,8 @@ import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 
 class CustomizationField extends React.Component {
     render() {
+
+        let { handleCustomizationField } = this.props
         return (
             <>
                 <DropdownMultiselect
@@ -11,7 +13,7 @@ class CustomizationField extends React.Component {
                     name="customizationField"
                     placeholder="Customizable field"
                     handleOnChange={(selected) => {
-                        this.props.cusValue(selected);
+                        handleCustomizationField(selected);
                     }
                     }
                 />
