@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import {Bar} from 'react-chartjs-2';
+
 
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
@@ -17,18 +19,56 @@ class TopViewProduct extends React.Component {
   render() {
 
     console.log("TopViewProduct render");
-   
+ 
 
-    let p = this.props.products.filter((product) => {    
-        console.log("hey dheeraj") 
-      return product.id ==="2"
-    }) 
+    let p = this.props.products.map((product) => { 
+      
+      console.log(product.id)
+    
+    return product.id
+  }) 
 
+  let q = this.props.products.map((product) => { 
+      
+    console.log(product.productName)
+  
+  return product.productName
+}) 
+
+console.log("pppppppppppppppppppppp")
+console.log(p)
+
+    const data = {
+     // labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+     labels: q,
+      datasets: [
+        {
+          label: 'Top View Component',
+          backgroundColor: 'rgba(255,99,132,0.2)',
+          borderColor: 'rgba(255,99,132,1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+          hoverBorderColor: 'rgba(255,99,132,1)',
+          data: p
+        }
+      ]
+    };
+    
+
+  
     
    
 
     return (
     <>
+       <Bar
+          data={data}
+          width={100}
+          height={500}
+          options={{
+            maintainAspectRatio: false
+          }}
+        />
     </>
     );
   }
