@@ -8,10 +8,15 @@ import Table from 'react-bootstrap/Table';
 
 
 class TopViewProduct extends React.Component {
+  
+    constructor(){
+      console.log("TopViewProduct Constructor")      
+      super()
+    }
 
   render() {
 
-    console.log("dheeraj singh pudir");
+    console.log("TopViewProduct render");
    
 
     let p = this.props.products.filter((product) => {    
@@ -23,30 +28,8 @@ class TopViewProduct extends React.Component {
    
 
     return (
-      <div>
-        <h2>Product Description</h2>
-        <Table striped bordered hover>
-          <tr>
-            <th>ID#</th>
-            <th>Product Name</th>
-            <th>Product Description</th>
-            <th>Manufacturer</th>
-            <th>Price</th>
-            <th>Quantity</th>           
-          </tr>
-          <tr>
-            <td>{p[0].id}</td>
-            <td>{p[0].productName}</td>
-            <td>{p[0].productDesctiption}</td>
-            <td>{p[0].manufacturer}</td>
-            <td>{p[0].price}</td>
-            <td>{p[0].quantity}</td>          
-          </tr>
-        </Table>
-
-       
-        <Link to="/products">Back</Link>
-      </div>
+    <>
+    </>
     );
   }
 }
