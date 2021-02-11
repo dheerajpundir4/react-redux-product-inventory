@@ -72,13 +72,7 @@ export function editProduct(product){
   
   return dispatch=>{    
    
-    axios.put(URL+"/"+product.id,{    
-     
-    productName: product.productName,
-    quantity: product.quantity,
-   price:product.price
-     
-    }).then(response=> {   
+    axios.put(URL+"/"+product.id,product).then(response=> {   
        dispatch(editProductSuccess(product))  
        window.history.back()    
    }) 
