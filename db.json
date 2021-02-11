@@ -2,11 +2,11 @@
   "products": [
     {
       "id": 2,
-      "productName": "123213123",
+      "productName": "333",
       "productDesctiption": "This is the simple product",
       "manufacturer": "India",
-      "price": "Rs. 324234",
-      "quantity": 324324
+      "quantity": 324324,
+      "price": "Rs. 324234"
     },
     {
       "id": 3,

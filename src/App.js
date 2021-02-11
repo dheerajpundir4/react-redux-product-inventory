@@ -11,14 +11,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AllProductPage from './pages/ViewProduct/AllProductListPage';
 import AboutPage from './pages/AboutPage';
 
-import AddProductPage from './pages/AddProductPage';
+import AddProductPage from './pages/AddProduct/AddProductPage';
 import ViewProductPage from './pages/ViewProductPage';
 import TopViewProduct from './pages/TopViewProduct'
 import Login from './user/Login';
 import Signup from './user/Signup';
 import Logout from './user/Logout';
 import DeleteProductPage from './opertion/DeleteProductForm';
-import EditProductPage from './pages/EditProductPage';
+import EditProductPage from './pages/EditProduct/EditProductPage';
 
 import SuccessComponent from './components/SuccessComponent'
 

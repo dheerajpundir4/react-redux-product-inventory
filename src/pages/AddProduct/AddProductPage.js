@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import AddProductForm from '../opertion/AddProductForm';
-import * as actionCreator from '../actions/productActions'
+import AddProductForm from './AddProductForm';
+import * as actionCreator from '../../actions/productActions'
 
 class AddProductPage extends React.Component {
 
