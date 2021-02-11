@@ -3,6 +3,7 @@ import React from 'react';
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
 import { useParams } from 'react-router-dom';
+import axios from 'axios'
 
 
 function ViewProductPage(props) {
@@ -13,7 +14,16 @@ function ViewProductPage(props) {
   
 
   let product = props.products.filter((p) => {
-    return p.id == id
+    if(p.id == id){
+
+      const URL ="http://localhost:4000/products";
+      
+      axios.get(URL+"/"+id).then(response=>{
+        console.log(response.data)
+      })
+
+      return true
+    }
   })
 
 
@@ -32,7 +42,7 @@ function ViewProductPage(props) {
           <tr>
             <td>{product[0].id}</td>
             <td>{product[0].productName}</td>
-            <td>{product[0].productDesctiption}</td>
+            <td>{product[0].productDescription}</td>
             <td>{product[0].manufacturer}</td>
             <td>{product[0].price}</td>
             <td>{product[0].quantity}</td>

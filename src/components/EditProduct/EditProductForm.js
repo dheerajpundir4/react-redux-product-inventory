@@ -21,7 +21,8 @@ export default function EditProductForm(props) {
                 productDescription: props.product.productDescription,
                 manufacturer: props.product.manufacturer,
                 quantity: props.product.quantity,
-                price: props.product.price
+                price: props.product.price,
+                views:props.product.views
 
             },
             validate,
