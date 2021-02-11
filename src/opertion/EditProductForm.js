@@ -82,7 +82,8 @@ export default function EditProductForm(props) {
                     <Form.Label>Product Description</Form.Label>
                 </Col>
                 <Col>
-                <input type="text" placeholder={props.product.productDesctiption} name="productName" onChange={handleChange} values={values.productName} />
+                <input type="text"
+                 placeholder={props.product.productDescription} name="productName" onChange={handleChange} values={values.productName} />
               
                 </Col>
                 <Col>
@@ -99,7 +100,9 @@ export default function EditProductForm(props) {
                     <Form.Label>Manufacturer</Form.Label>
                 </Col>
                 <Col>
-                <input type="text" placeholder={props.product.manufacturer} name="productName" onChange={handleChange} values={values.productName} />
+                <input type="text" 
+                placeholder={props.product.manufacturer} 
+                name="productName" onChange={handleChange} values={values.productName} />
                
                 </Col>
                 <Col>

@@ -113,12 +113,13 @@ import axios from 'axios';
               </Route>             
               <Route path="/about" component={AboutPage} />
               <Route path="/topViewProduct" component={TopViewProduct} />
-              <Route path="/addProduct" component={() => <AddProductPage user={this.state.user} />} />
+            
               <Route path="/view/:id"  >
                   <ViewProductPage products={this.props.products}/>
               </Route>
               <Route path="/delete/:id" component={DeleteProductPage} />
               <Route path="/edit/:id" component={EditProductPage} />
+              <Route path="/addProduct" component={AddProductPage} />
              
               <Route path="/Login" component={() => <Login setUser={this.setUser} />} />
               <Route path="/Signup" component={Signup} />

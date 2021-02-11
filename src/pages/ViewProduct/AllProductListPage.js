@@ -1,5 +1,10 @@
 import React,{Suspense} from 'react'
 
+import { loadProduct } from '../../actions/productActions';
+
+import { connect } from 'react-redux';
+
+
 import { Link } from 'react-router-dom'
 
 // get all the product
@@ -11,8 +16,6 @@ import { TableBody, TableHead } from './TableData.js';
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import { Col, Row, Container } from 'react-bootstrap';
-import { loadProduct } from '../../actions/productActions';
-
 
 
 
@@ -30,7 +33,7 @@ const CustomizationField=React.lazy(() => {
 
 
 
-export default class AllProductListPage extends React.Component {
+class AllProductListPage extends React.Component {
 
 
   constructor() {
@@ -51,6 +54,7 @@ export default class AllProductListPage extends React.Component {
   }
   componentDidMount() {
     console.log("ProductListPage CompnentDidMount")
+    this.props.loadProduct()
   
   }
 
@@ -168,4 +172,15 @@ export default class AllProductListPage extends React.Component {
   }
 
 }
+
+
+
+const mapStatetoProps = (state) => {
+  return {
+    products: state.products
+  }
+}
+
+export default connect(mapStatetoProps, { loadProduct })(AllProductListPage);
+
 
