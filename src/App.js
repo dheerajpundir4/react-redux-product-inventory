@@ -12,12 +12,12 @@ import AllProductPage from './pages/ViewProduct/AllProductListPage';
 import AboutPage from './pages/AboutPage';
 
 import AddProductPage from './pages/AddProduct/AddProductPage';
-import ViewProductPage from './pages/ViewProductPage';
+import ViewProductPage from './pages/ViewProduct/ViewProductPage';
 import TopViewProduct from './pages/TopViewProduct'
 import Login from './user/Login';
 import Signup from './user/Signup';
 import Logout from './user/Logout';
-import DeleteProductPage from './opertion/DeleteProductForm';
+import DeleteProductPage from './pages/DeleteProduct/DeleteProductForm';
 import EditProductPage from './pages/EditProduct/EditProductPage';
 
 import SuccessComponent from './components/SuccessComponent'
