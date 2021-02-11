@@ -1,7 +1,6 @@
 import React,{Suspense} from 'react'
 
 import { Link } from 'react-router-dom'
-import { connect } from 'react-redux';
 
 // get all the product
 
@@ -22,7 +21,7 @@ const CustomizationField=React.lazy(() => {
 
   return new Promise(resolve => setTimeout(resolve, 5 * 1000)).then(
     () =>
-      Math.floor(Math.random() * 10) >= 1
+      Math.floor(Math.random() * 10) >= 0
         ? import('./CustomizationField')
         : Promise.reject(new Error())
   );
@@ -31,7 +30,7 @@ const CustomizationField=React.lazy(() => {
 
 
 
-class AllProductListPage extends React.Component {
+export default class AllProductListPage extends React.Component {
 
 
   constructor() {
@@ -52,7 +51,7 @@ class AllProductListPage extends React.Component {
   }
   componentDidMount() {
     console.log("ProductListPage CompnentDidMount")
-    this.props.loadProduct();
+  
   }
 
   handleCustom(arrayOfSelectedColumn) {
@@ -170,11 +169,3 @@ class AllProductListPage extends React.Component {
 
 }
 
-
-const mapStatetoProps = (state) => {
-  return {
-    products: state.products
-  }
-}
-
-export default connect(mapStatetoProps, { loadProduct })(AllProductListPage);

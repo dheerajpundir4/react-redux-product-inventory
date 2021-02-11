@@ -107,7 +107,10 @@ import axios from 'axios';
 
           <Router>
             <Switch>
-              <Route path="/products" component={AllProductPage} />
+           
+              <Route path="/products" >
+                <AllProductPage products={this.props.products}/>
+              </Route>             
               <Route path="/about" component={AboutPage} />
               <Route path="/topViewProduct" component={TopViewProduct} />
               <Route path="/addProduct" component={() => <AddProductPage user={this.state.user} />} />
@@ -116,13 +119,14 @@ import axios from 'axios';
               </Route>
               <Route path="/delete/:id" component={DeleteProductPage} />
               <Route path="/edit/:id" component={EditProductPage} />
-              <Route exact path="/">
-                <AllProductPage />
-              </Route>
+             
               <Route path="/Login" component={() => <Login setUser={this.setUser} />} />
               <Route path="/Signup" component={Signup} />
               <Route path="/Logout" component={Logout} />
               <Route path="/success/:id" component={SuccessComponent} />
+              <Route path="/" >
+                <AllProductPage products={this.props.products}/>
+              </Route>
             </Switch>
           </Router>
         </Container>
