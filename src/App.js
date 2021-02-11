@@ -8,17 +8,17 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Using component
-import AllProductPage from './pages/ViewProduct/AllProductListPage';
+import AllProductPage from './components/ViewProduct/AllProductListPage';
 import AboutPage from './pages/AboutPage';
 
-import AddProductPage from './pages/AddProduct/AddProductPage';
-import ViewProductPage from './pages/ViewProduct/ViewProductPage';
+import AddProductPage from './components/AddProduct/AddProductPage';
+import ViewProductPage from './components/ViewProduct/ViewProductPage';
 import TopViewProduct from './pages/TopViewProduct'
 import Login from './user/Login';
 import Signup from './user/Signup';
 import Logout from './user/Logout';
-import DeleteProductPage from './pages/DeleteProduct/DeleteProductForm';
-import EditProductPage from './pages/EditProduct/EditProductPage';
+import DeleteProductPage from './components/DeleteProduct/DeleteProductForm';
+import EditProductPage from './components/EditProduct/EditProductPage';
 
 import SuccessComponent from './components/SuccessComponent'
 
