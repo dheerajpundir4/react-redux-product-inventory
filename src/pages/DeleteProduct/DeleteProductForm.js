@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actioncreator from '../actions/productActions';
+import * as actioncreator from '../../actions/productActions';
 
 class DeleteProductForm extends React.Component {
 
