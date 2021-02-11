@@ -18,7 +18,8 @@ export default function AddProductForm(props) {
                 productDescription: "",
                 manufacturer: "",
                 quantity: "",
-                price: ""
+                price: "",
+                views:0
             },
             validate,
             onSubmit(values) {

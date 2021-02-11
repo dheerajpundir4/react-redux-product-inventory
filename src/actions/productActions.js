@@ -56,16 +56,13 @@ export const addProductSuccess=(product)=> {
   export function addProduct(product){  
     
     return dispatch=>{     
-      currentID=currentID+1;  
+     // currentID=currentID+1;  
       axios.post(URL,{
-       id: currentID,
-       productName: product.productName,
-       quantity: product.quantity,
-       price:product.price
+      product
        
       }).then(response=> {   
          dispatch(addProductSuccess(product))  
-         window.history.back()    
+        // window.history.back()    
      }) 
 
     }   
