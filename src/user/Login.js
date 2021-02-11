@@ -33,7 +33,7 @@ function Login(props) {
             console.log(res.status)
             if(res.status==200){
               {
-               
+               localStorage.setItem("isLogin","true")
                
                 console.log(res.data.accessToken)
                 localStorage.setItem('token',res.data.accessToken)

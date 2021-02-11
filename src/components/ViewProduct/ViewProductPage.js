@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Redirect } from 'react-router-dom';
+
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
 import { useParams } from 'react-router-dom';
@@ -11,6 +13,10 @@ function ViewProductPage(props) {
   console.log("ViewProductPage render Page")
   let {id} =useParams()
 
+  console.log(localStorage.getItem("isLogin")=="false")
+
+  if(localStorage.getItem("isLogin")=="false")
+  return <Redirect to="/login" />;
   
 
   let product = props.products.filter((p) => {

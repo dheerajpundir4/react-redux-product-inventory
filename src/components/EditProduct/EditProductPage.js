@@ -2,11 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import EditProductForm from './EditProductForm';
 import * as actionCreator from '../../actions/productActions'
+import { Redirect } from 'react-router-dom';
+
 
 
 class EditProductPage extends React.Component {
 
   render() {
+    if(localStorage.getItem("isLogin")=="false")
+  return <Redirect to="/login" />;
+  
    
     if(!(localStorage.getItem('userId')==null))
     {

@@ -67,11 +67,14 @@ import axios from 'axios';
         console.log(config)
         console.log(res)
         if (res.status = 200) {
-          this.setUser(res.data)
+        // this.setUser(res.data)
+            localStorage.setItem("isLogin","true")
         }
       },
       err => {
+       
         console.log("--ERROR--")
+        localStorage.setItem("isLogin","false")
         console.log(err)
       }
     )
