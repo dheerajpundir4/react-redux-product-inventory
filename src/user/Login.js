@@ -14,6 +14,8 @@ function Login(props) {
 
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isErrorMessage, setIsErrorMessage] = useState("");
+
 
 
   const { handleSubmit, handleChange, values, errors } = useFormik(
@@ -58,8 +60,10 @@ function Login(props) {
           }
 
         ).catch(
-          err => {
+          err => {           
             console.log(err)
+           
+            setIsErrorMessage("Invalid Email Id and password")
           }
         )
         console.log("success2");
@@ -70,6 +74,7 @@ function Login(props) {
   );
 
   function validate(values) {
+    setIsErrorMessage("")
     const errors = {};
     if (!values.email) {
       errors.email = "Email Id is required";
@@ -97,8 +102,7 @@ function Login(props) {
 <Card.Body>
 <h3> Login </h3>
       <Form onSubmit={handleSubmit}>
-
-       
+      
         <Form.Group>
        
           <Form.Label>Email</Form.Label>
@@ -132,6 +136,10 @@ function Login(props) {
         <Form.Group>
           <Button variant="primary" type="submit">Sign In</Button>
         </Form.Group>
+
+        <Form.Group>
+       {isErrorMessage}
+       </Form.Group>
       </Form>
       </Card.Body>
       </Card>
