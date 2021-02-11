@@ -1,32 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-
 
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
+import { useParams } from 'react-router-dom';
 
 
-class ViewProductPage extends React.Component {
+function ViewProductPage(props) {
 
-  constructor(){
-    console.log("ViewProductPage Constructor")
-    super()
-  }
+  console.log("ViewProductPage render Page")
+  let {id} =useParams()
 
-  render() {
-
-    console.log("ViewProductPage render Page")
   
 
-    let p = this.props.products.filter((product) => {     
-      return product.id == this.props.match.params.id
-    }) 
+  let product = props.products.filter((p) => {
+    return p.id == id
+  })
 
-    
-   
 
-    return (
+  return (
       <div>
         <h2>Product Description</h2>
         <Table striped bordered hover>
@@ -36,34 +27,21 @@ class ViewProductPage extends React.Component {
             <th>Product Description</th>
             <th>Manufacturer</th>
             <th>Price</th>
-            <th>Quantity</th>           
+            <th>Quantity</th>
           </tr>
           <tr>
-            <td>{p[0].id}</td>
-            <td>{p[0].productName}</td>
-            <td>{p[0].productDesctiption}</td>
-            <td>{p[0].manufacturer}</td>
-            <td>{p[0].price}</td>
-            <td>{p[0].quantity}</td>          
+            <td>{product[0].id}</td>
+            <td>{product[0].productName}</td>
+            <td>{product[0].productDesctiption}</td>
+            <td>{product[0].manufacturer}</td>
+            <td>{product[0].price}</td>
+            <td>{product[0].quantity}</td>
           </tr>
         </Table>
 
         <a href="javascript:history.go(-1)"> Back </a>
       </div>
-    );
-  }
+  );
 }
 
-const mapStatetoProps = (state) => {
-  return {
-    products: state.products
-  }
-}
-
-const mapDispatchtoProps = (dispatch) => {
-  return {
-
-  }
-}
-
-export default connect(mapStatetoProps, mapDispatchtoProps)(ViewProductPage);
+export default ViewProductPage

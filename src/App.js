@@ -1,5 +1,9 @@
 import React from 'react'
 
+import { loadProduct } from './actions/productActions';
+
+import { connect } from 'react-redux';
+
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -25,7 +29,7 @@ import { Container } from 'react-bootstrap';
 
 import axios from 'axios';
 
-export default class App extends React.Component {
+ class App extends React.Component {
 
   constructor() {
 
@@ -80,6 +84,7 @@ export default class App extends React.Component {
     console.log("App componentDidMount")
 
     this.checkUserValidation()
+    this.props.loadProduct()
 
 
   }
@@ -106,7 +111,9 @@ export default class App extends React.Component {
               <Route path="/about" component={AboutPage} />
               <Route path="/topViewProduct" component={TopViewProduct} />
               <Route path="/addProduct" component={() => <AddProductPage user={this.state.user} />} />
-              <Route path="/view/:id" component={ViewProductPage} />
+              <Route path="/view/:id"  >
+                  <ViewProductPage products={this.props.products}/>
+              </Route>
               <Route path="/delete/:id" component={DeleteProductPage} />
               <Route path="/edit/:id" component={EditProductPage} />
               <Route exact path="/">
@@ -123,3 +130,13 @@ export default class App extends React.Component {
     );
   }
 }
+
+
+const mapStatetoProps = (state) => {
+  return {
+    products: state.products
+  }
+}
+
+export default connect(mapStatetoProps, { loadProduct })(App);
+
