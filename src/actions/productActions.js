@@ -53,25 +53,18 @@ export const addProductSuccess=(product)=> {
   }
 
 
-  export function addProduct(product){  
-    
-    return dispatch=>{     
-     // currentID=currentID+1;  
-      axios.post(URL,
-      product
-       
-      ).then(response=> {   
+  export function addProduct(product){      
+    return dispatch=>{   
+      axios.post(URL,product).then(response=> {   
          dispatch(addProductSuccess(product))  
-        // window.history.back()    
+        window.history.back()    
      }) 
 
     }   
 } 
 
-export function editProduct(product){  
-  
-  return dispatch=>{    
-   
+export function editProduct(product){ 
+  return dispatch=>{   
     axios.put(URL+"/"+product.id,product).then(response=> {   
        dispatch(editProductSuccess(product))  
        window.history.back()    
