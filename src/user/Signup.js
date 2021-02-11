@@ -19,6 +19,7 @@ function Signup() {
   const [isSignUp, setSignUp] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isUserExist, setIsUserExist] = useState(false);
+  const [isErrorMessage, setIsErrorMessage] = useState("");
 
   const { handleSubmit, handleChange, values, errors } = useFormik(
     {
@@ -48,6 +49,8 @@ function Signup() {
         ).catch(
           err => {
             console.log(err)
+            setIsErrorMessage("Please Use another email ID")
+           
           }
         )
         console.log("success2");
@@ -58,6 +61,7 @@ function Signup() {
   );
 
   function validate(values) {
+    setIsErrorMessage("")   
     const errors = {};
     if (!values.email) {
       errors.email = "Email Id is required";
@@ -208,7 +212,9 @@ function Signup() {
           <Button variant="primary" type="submit">Submit</Button>
           </Col>
         </Form.Group>
-
+        <Form.Group>
+       {isErrorMessage}
+       </Form.Group>
 
       </Form>
       </Card.Body>
