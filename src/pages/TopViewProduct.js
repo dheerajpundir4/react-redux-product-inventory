@@ -23,9 +23,9 @@ class TopViewProduct extends React.Component {
 
     let p = this.props.products.map((product) => { 
       
-      console.log(product.id)
+      
     
-    return product.id
+    return product.views
   }) 
 
   let q = this.props.products.map((product) => { 
@@ -39,11 +39,10 @@ console.log("pppppppppppppppppppppp")
 console.log(p)
 
     const data = {
-     // labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
      labels: q,
       datasets: [
         {
-          label: 'Top View Component',
+          label: 'Total Views',
           backgroundColor: 'rgba(255,99,132,0.2)',
           borderColor: 'rgba(255,99,132,1)',
           borderWidth: 1,

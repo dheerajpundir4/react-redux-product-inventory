@@ -2,12 +2,30 @@
   "products": [
     {
       "id": 1,
-      "productName": "1111112222",
+      "productName": "Mobile Phone",
       "productDescription": "gggg",
       "manufacturer": "111",
       "quantity": 111,
       "price": 111,
-      "views": 5
+      "views": 10
+    },
+    {
+      "productName": "Speaker",
+      "productDescription": "made in India",
+      "manufacturer": "India",
+      "quantity": 3,
+      "price": 3000,
+      "views": 15,
+      "id": 2
+    },
+    {
+      "productName": "Charger",
+      "productDescription": "made in idia",
+      "manufacturer": "3",
+      "quantity": 3,
+      "price": 3,
+      "views": 20,
+      "id": 3
     }
   ],
   "users": [
