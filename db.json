@@ -7,7 +7,7 @@
       "manufacturer": "111",
       "quantity": 111,
       "price": 111,
-      "views": 10
+      "views": 11
     },
     {
       "productName": "Speaker",
@@ -15,7 +15,7 @@
       "manufacturer": "India",
       "quantity": 3,
       "price": 3000,
-      "views": 15,
+      "views": 16,
       "id": 2
     },
     {
@@ -24,7 +24,7 @@
       "manufacturer": "3",
       "quantity": 3,
       "price": 3,
-      "views": 20,
+      "views": 21,
       "id": 3
     }
   ],
