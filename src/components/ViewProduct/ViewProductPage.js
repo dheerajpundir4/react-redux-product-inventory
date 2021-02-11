@@ -19,7 +19,11 @@ function ViewProductPage(props) {
       const URL ="http://localhost:4000/products";
       
       axios.get(URL+"/"+id).then(response=>{
-        console.log(response.data)
+        response.data.views=response.data.views+1
+        axios.put(URL+"/"+id,response.data).then(response=>{
+          
+        })
+        
       })
 
       return true
