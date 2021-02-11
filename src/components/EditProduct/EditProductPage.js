@@ -13,11 +13,7 @@ class EditProductPage extends React.Component {
   return <Redirect to="/login" />;
   
    
-    if(!(localStorage.getItem('userId')==null))
-    {
-      window.prompt("First Login")
-      window.history.back()
-    }
+  
 
     let p = this.props.products.filter((product) => {
       return product.id == this.props.match.params.id

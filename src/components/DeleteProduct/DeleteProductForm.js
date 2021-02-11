@@ -2,18 +2,24 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actioncreator from '../../actions/productActions';
 
+import { Redirect } from 'react-router-dom';
+
 class DeleteProductForm extends React.Component {
 
   render() {
-    if(!(localStorage.getItem('userId')==null))
-    {
-      window.prompt("First Login")
-      window.history.back()
-    }
+    if(localStorage.getItem("isLogin")=="false")
+    return <Redirect to="/login" />;
+    
+   
     let p = this.props.products.filter((product) => {     
-      return product.id === this.props.match.params.id
+  
+      if(product.id == this.props.match.params.id)
+      {
+        this.props.deleteProduct(product.id) 
+        return true
+      }
     }) 
-    this.props.deleteProduct(p[0].id) 
+   
     
     return(
       <>

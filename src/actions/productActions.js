@@ -19,7 +19,7 @@ export const addProductSuccess=(product)=> {
   }
 
   export const deleteProductSuccess=(id)=> {
-    return { type: types.DELETE_PRODUCT_SUCCESS, product: id};
+    return { type: types.DELETE_PRODUCT_SUCCESS, id: id};
   }
 
 
