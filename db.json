@@ -1,99 +1,12 @@
 {
   "products": [
     {
-      "id": 2,
-      "productName": "333",
-      "productDesctiption": "This is the simple product",
-      "manufacturer": "India",
-      "quantity": 324324,
-      "price": "Rs. 324234"
-    },
-    {
-      "id": 3,
-      "productName": "Alpha Beta Gamma",
-      "productDesctiption": "This is the simple product",
-      "manufacturer": "India",
-      "price": "Rs. 324234",
-      "quantity": 324324
-    },
-    {
-      "id": 101,
-      "productName": "Epison Printer",
-      "productDesctiption": "This is the simple product",
-      "manufacturer": "India",
-      "price": "Rs. 324234",
-      "quantity": 324324
-    },
-    {
-      "id": 8,
-      "productName": "123213123",
-      "productDesctiption": "This is the simple product",
-      "manufacturer": "India",
-      "price": "Rs. 324234",
-      "quantity": 324324
-    },
-    {
-      "id": 7,
-      "productName": "Alpha Beta Gamma",
-      "productDesctiption": "This is the simple product",
-      "manufacturer": "India",
-      "price": "Rs. 324234",
-      "quantity": 324324
-    },
-    {
-      "id": 6,
-      "productName": "11",
-      "productDesctiption": "This is the simple product",
-      "manufacturer": "India",
-      "price": "Rs. 324234",
-      "quantity": 324324
-    },
-    {
-      "id": 102,
-      "productName": "1",
-      "quantity": 1,
-      "price": 1
-    },
-    {
-      "productName": "111",
-      "productDescription": "111",
+      "id": 1,
+      "productName": "1111112222",
+      "productDescription": "22222",
       "manufacturer": "111",
       "quantity": 111,
-      "price": 11,
-      "views": 0,
-      "id": 103
-    },
-    {
-      "productName": "mmm",
-      "productDescription": "mmm",
-      "manufacturer": "mmm",
-      "quantity": 555,
-      "price": 555,
-      "views": 0,
-      "id": 104
-    },
-    {
-      "productName": "nnn",
-      "productDescription": "nnn",
-      "manufacturer": "nnn",
-      "quantity": 444,
-      "price": 444,
-      "views": 0,
-      "id": 105
-    },
-    {
-      "id": 106,
-      "productName": "333",
-      "manufacturer": "33",
-      "quantity": 3,
-      "price": 3
-    },
-    {
-      "id": 107,
-      "productName": "dfg",
-      "manufacturer": "mmmmmmmmmmmmmm",
-      "quantity": 555,
-      "price": 555555555555
+      "price": 111
     }
   ],
   "users": [

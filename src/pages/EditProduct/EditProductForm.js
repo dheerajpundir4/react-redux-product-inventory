@@ -18,7 +18,7 @@ export default function EditProductForm(props) {
             initialValues: {
                 id: props.product.id,
                 productName: props.product.productName,
-                productDesctiption: props.product.productDesctiption,
+                productDescription: props.product.productDescription,
                 manufacturer: props.product.manufacturer,
                 quantity: props.product.quantity,
                 price: props.product.price
@@ -40,6 +40,9 @@ export default function EditProductForm(props) {
         const errors = {};
         if (!values.productName) {
             errors.productName = "Product Name is required";
+        }
+        if (!values.productDescription) {
+            errors.productDescription = "Product Description is required";
         }
         if (!values.quantity) {
             errors.quantity = "Quantity is required";
@@ -83,12 +86,15 @@ export default function EditProductForm(props) {
                 </Col>
                 <Col>
                 <input type="text"
-                 placeholder={props.product.productDescription} name="productName" onChange={handleChange} values={values.productName} />
+                 placeholder={props.product.productDescription} 
+                 name="productDescription" 
+                 onChange={handleChange}
+                  values={values.productDescription} />
               
                 </Col>
                 <Col>
                     <Form.Text className="text-muted">
-                    {errors.productName ? errors.productName : null}
+                    {errors.productDescription ? errors.productDescription : null}
                     </Form.Text>
                 </Col>
             </Form.Group>
@@ -102,7 +108,9 @@ export default function EditProductForm(props) {
                 <Col>
                 <input type="text" 
                 placeholder={props.product.manufacturer} 
-                name="productName" onChange={handleChange} values={values.productName} />
+                name="manufacturer" 
+                onChange={handleChange}
+                 values={values.manufacturer} />
                
                 </Col>
                 <Col>
