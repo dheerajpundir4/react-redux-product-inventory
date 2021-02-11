@@ -7,7 +7,7 @@
       "manufacturer": "111",
       "quantity": 111,
       "price": 111,
-      "views": 15
+      "views": 16
     },
     {
       "productName": "Speaker",
@@ -24,7 +24,7 @@
       "manufacturer": "3",
       "quantity": 3,
       "price": 3,
-      "views": 45,
+      "views": 48,
       "id": 3
     }
   ],

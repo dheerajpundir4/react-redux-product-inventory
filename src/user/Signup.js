@@ -16,6 +16,8 @@ import { Form, Button, Col, Row, Container, Card } from 'react-bootstrap';
 
 function Signup() {
 
+
+
   const [isSignUp, setSignUp] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isUserExist, setIsUserExist] = useState(false);
@@ -85,6 +87,10 @@ function Signup() {
 
     return errors
   }
+
+  if(localStorage.getItem("isLogin")=="true")
+  return <Redirect to="/" />;
+
 
   if (isSignUp) {
     console.log("Signup success")

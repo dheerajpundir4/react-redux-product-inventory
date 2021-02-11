@@ -58,7 +58,7 @@ import axios from 'axios';
         Authorization: "Bearer" + localStorage.getItem('token')
       }
     }
-
+   
     const id = localStorage.getItem('id')
 
     axios.get('users/' + id, config).then(
@@ -67,7 +67,7 @@ import axios from 'axios';
         console.log(config)
         console.log(res)
         if (res.status = 200) {
-        // this.setUser(res.data)
+         this.setUser(res.data)
             localStorage.setItem("isLogin","true")
         }
       },

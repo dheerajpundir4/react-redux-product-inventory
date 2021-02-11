@@ -11,7 +11,7 @@ import { Form, Button, Col, Row, Container, Card } from 'react-bootstrap';
 
 
 function Login(props) {
-
+  
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isErrorMessage, setIsErrorMessage] = useState("");
@@ -20,6 +20,7 @@ function Login(props) {
 
   const { handleSubmit, handleChange, values, errors } = useFormik(
     {
+    
       initialValues: {
         email: "",
         password: ""
@@ -86,6 +87,10 @@ function Login(props) {
 
     return errors
   }
+
+  if(localStorage.getItem("isLogin")=="true")
+  return <Redirect to="/" />;
+
 
 
   if (isLoggedIn) {
