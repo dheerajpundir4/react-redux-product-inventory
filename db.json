@@ -55,14 +55,12 @@
       "price": 1
     },
     {
-      "product": {
-        "productName": "3333",
-        "productDescription": "3333",
-        "manufacturer": "333",
-        "quantity": 3333,
-        "price": 3333,
-        "views": 0
-      },
+      "productName": "111",
+      "productDescription": "111",
+      "manufacturer": "111",
+      "quantity": 111,
+      "price": 11,
+      "views": 0,
       "id": 103
     }
   ],

@@ -57,10 +57,10 @@ export const addProductSuccess=(product)=> {
     
     return dispatch=>{     
      // currentID=currentID+1;  
-      axios.post(URL,{
+      axios.post(URL,
       product
        
-      }).then(response=> {   
+      ).then(response=> {   
          dispatch(addProductSuccess(product))  
         // window.history.back()    
      }) 

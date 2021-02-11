@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Using component
-import AllProductPage from './pages/AllProduct/AllProductListPage';
+import AllProductPage from './pages/ViewProduct/AllProductListPage';
 import AboutPage from './pages/AboutPage';
 
 import AddProductPage from './pages/AddProductPage';
