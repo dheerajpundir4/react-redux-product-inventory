@@ -9,30 +9,31 @@ import { Redirect } from 'react-router-dom';
 class EditProductPage extends React.Component {
 
   render() {
+
+    console.log("EditProductPage render")
     if(localStorage.getItem("isLogin")=="false")
   return <Redirect to="/login" />;
   
    
   
 
-    let p = this.props.products.filter((product) => {
-      return product.id == this.props.match.params.id
-    })
+    let product=this.props.product
 
     return (
       <div>
         <h2>Edit Product Page</h2>
 
-        <EditProductForm onEdit={this.props.editProduct} product={p[0]} />
+        <EditProductForm onEdit={this.props.editProduct} product={product} />
 
       </div>
     );
   }
 }
 
-const mapStatetoProps = (state) => {
+const mapStatetoProps = (state, ownProps) => {
+  let id = ownProps.match.params.id
   return {
-    products: state.products
+    product: state.products.find(product => product.id == id)
   }
 }
 
