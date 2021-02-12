@@ -117,9 +117,8 @@ import axios from 'axios';
               <Route path="/about" component={AboutPage} />
               <Route path="/topViewProduct" component={TopViewProduct} />
             
-              <Route path="/view/:id"  >
-                  <ViewProductPage products={this.props.products}/>
-              </Route>
+              <Route path="/view/:id" component={ViewProductPage} />
+                 
               <Route path="/delete/:id" component={DeleteProductPage} />
               <Route path="/edit/:id" component={EditProductPage} />
               <Route path="/addProduct" component={AddProductPage} />

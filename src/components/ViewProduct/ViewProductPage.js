@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 // Using bootstrap
@@ -8,36 +8,31 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios'
 
 
-function ViewProductPage(props) {
+class ViewProductPage extends React.Component {
+  render() {
 
-  console.log("ViewProductPage render Page")
-  let {id} =useParams()
+    console.log("ViewProductPage render")
 
-  console.log(localStorage.getItem("isLogin")=="false")
+    if (localStorage.getItem("isLogin") == "false")
+      return <Redirect to="/login" />;
 
-  if(localStorage.getItem("isLogin")=="false")
-  return <Redirect to="/login" />;
-  
 
-  let product = props.products.filter((p) => {
-    if(p.id == id){
+    let product = this.props.product
 
-      const URL ="http://localhost:4000/products";
-      
-      axios.get(URL+"/"+id).then(response=>{
-        response.data.views=response.data.views+1
-        axios.put(URL+"/"+id,response.data).then(response=>{
-          
-        })
-        
+
+
+
+    const URL = "http://localhost:4000/products";
+
+    axios.get(URL + "/" + product.id).then(response => {
+      response.data.views = response.data.views + 1
+      axios.put(URL + "/" + product.id, response.data).then(response => {
+
       })
 
-      return true
-    }
-  })
+    })
 
-
-  return (
+    return (
       <div>
         <h2>Product Description</h2>
         <Table striped bordered hover>
@@ -50,18 +45,29 @@ function ViewProductPage(props) {
             <th>Quantity</th>
           </tr>
           <tr>
-            <td>{product[0].id}</td>
-            <td>{product[0].productName}</td>
-            <td>{product[0].productDescription}</td>
-            <td>{product[0].manufacturer}</td>
-            <td>{product[0].price}</td>
-            <td>{product[0].quantity}</td>
+            <td>{product.id}</td>
+            <td>{product.productName}</td>
+            <td>{product.productDescription}</td>
+            <td>{product.manufacturer}</td>
+            <td>{product.price}</td>
+            <td>{product.quantity}</td>
           </tr>
         </Table>
 
         <a href="javascript:history.go(-1)"> Back </a>
       </div>
-  );
+    );
+  }
 }
 
-export default ViewProductPage
+const mapStatetoProps = (state, ownProps) => {
+  let id = ownProps.match.params.id
+  return {
+    product: state.products.find(product => product.id == id)
+  }
+}
+
+export default connect(mapStatetoProps)(ViewProductPage);
+
+
+
