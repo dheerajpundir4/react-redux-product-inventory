@@ -26,6 +26,24 @@
       "price": 3,
       "views": 49,
       "id": 3
+    },
+    {
+      "productName": "apple ",
+      "productDescription": "asdf",
+      "manufacturer": "asdf",
+      "quantity": 33,
+      "price": 33,
+      "views": 0,
+      "id": 4
+    },
+    {
+      "productName": "mango banana",
+      "productDescription": "3",
+      "manufacturer": "3",
+      "quantity": 3,
+      "price": 3,
+      "views": 0,
+      "id": 5
     }
   ],
   "users": [

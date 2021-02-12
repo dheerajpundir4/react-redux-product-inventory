@@ -46,7 +46,7 @@ class AllProductListPage extends React.Component {
       IS_FILTER: false,
       ARRAY_CUSTOM_COLUMN: ''
     };
-   
+  
   
     this.handleFilter = this.handleFilter.bind(this)
     this.handleCustom = this.handleCustom.bind(this)
@@ -54,7 +54,7 @@ class AllProductListPage extends React.Component {
   }
   componentDidMount() {
     console.log("ProductListPage CompnentDidMount")
-    this.props.loadProduct()
+   // this.props.loadProduct()
   
   }
 
@@ -98,6 +98,8 @@ class AllProductListPage extends React.Component {
   render() {   
 
     console.log("ProductListPage render")
+    console.log(this.props)
+   
 
     let tableHead = (<TableHead customizationCol={this.state.ARRAY_CUSTOM_COLUMN} />)
     let tableBody = ""
@@ -181,6 +183,7 @@ const mapStatetoProps = (state) => {
   }
 }
 
-export default connect(mapStatetoProps, { loadProduct })(AllProductListPage);
+
+export default connect(mapStatetoProps, null)(AllProductListPage);
 
 

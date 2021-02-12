@@ -22,11 +22,16 @@ export default function productReducer(state = initialState.products, action) {
 
     case types.EDIT_PRODUCT_SUCCESS:
 
-      let newStateEdit = state.map(product => {
-        if (product.id != action.id)
-          return product
+    console.log("we are in edit reducer funciton")
+
+      let newStateEdit = state.map(product => {   
+        if (product.id != action.product.id)
+          return product          
         return action.product
-      });  // ES6 arrow fns     
+      });  // ES6 arrow fns   
+      
+      console.log(newStateEdit)
+      console.log("we are in edit reducer end funciton")
       return newStateEdit;
 
 

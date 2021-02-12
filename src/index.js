@@ -20,7 +20,8 @@ axios.defaults.baseURL='http://localhost:4000/';
 
 
 // fist it go to action and then call reducer
-//store.dispatch(loadProduct());
+store.dispatch(loadProduct());
+
 
 
 

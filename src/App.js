@@ -1,12 +1,6 @@
 import React from 'react'
 import history from './history';
 
-
-import { loadProduct } from './actions/productActions';
-
-import { connect } from 'react-redux';
-
-
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Using component
@@ -89,9 +83,6 @@ import axios from 'axios';
     console.log("App componentDidMount")
 
     this.checkUserValidation()
-    this.props.loadProduct()
-
-
   }
 
 
@@ -140,12 +131,5 @@ import axios from 'axios';
   }
 }
 
-
-const mapStatetoProps = (state) => {
-  return {
-    products: state.products
-  }
-}
-
-export default connect(mapStatetoProps, { loadProduct })(App);
+export default (App);
 
