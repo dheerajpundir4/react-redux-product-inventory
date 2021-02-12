@@ -1,4 +1,6 @@
 import React from 'react'
+import history from './history';
+
 
 import { loadProduct } from './actions/productActions';
 
@@ -108,7 +110,7 @@ import axios from 'axios';
         <Container>
 
 
-          <Router>
+          <Router history={history}>
             <Switch>
            
               <Route path="/products" >
