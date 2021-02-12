@@ -53,8 +53,7 @@ class AllProductListPage extends React.Component {
 
   }
   componentDidMount() {
-    console.log("ProductListPage CompnentDidMount")
-   // this.props.loadProduct()
+    console.log("ProductListPage CompnentDidMount")   
   
   }
 
