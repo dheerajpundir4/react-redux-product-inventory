@@ -14,7 +14,7 @@ import configureStore from './store/configureStore';
 
 const store = configureStore();
 
-
+console.log("We are in index page")
 
 axios.defaults.baseURL='http://localhost:4000/';
 

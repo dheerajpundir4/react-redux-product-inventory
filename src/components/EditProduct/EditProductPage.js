@@ -11,6 +11,7 @@ class EditProductPage extends React.Component {
   render() {
 
     console.log("EditProductPage render")
+    
     if(localStorage.getItem("isLogin")=="false")
   return <Redirect to="/login" />;
   

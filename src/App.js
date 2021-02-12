@@ -121,7 +121,7 @@ import axios from 'axios';
               <Route path="/Logout" component={Logout} />
               <Route path="/success/:id" component={SuccessComponent} />
               <Route path="/" >
-                <AllProductPage products={this.props.products}/>
+                <AllProductPage/>
               </Route>
             </Switch>
           </Router>

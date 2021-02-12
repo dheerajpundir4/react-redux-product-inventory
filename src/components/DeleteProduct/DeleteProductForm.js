@@ -4,24 +4,36 @@ import * as actioncreator from '../../actions/productActions';
 import history from '../../history';
 import { Redirect } from 'react-router-dom';
 
-class DeleteProductForm extends React.Component {
+class DeleteProductPage extends React.Component {
+  constructor(props){
+    super(props)
+    console.log("We are in Delete Product Page Constructor")
+   // this.props.deleteProduct(this.props.product.id) 
+   console.log(props)
+  }
 
   render() {
+    history.push('/')
     console.log("DeleteProduct render")
     console.log(this.props)
     if(localStorage.getItem("isLogin")=="false")
     return <Redirect to="/login" />;
+
+   
     
     if(this.props.product!=null){
       console.log(this.props.product.id)
-      this.props.deleteProduct(this.props.product.id)  
+      this.props.deleteProduct(this.props.product.id) 
+     
+     
     }
+    
    
-    history.push('/')
+   
     
     return(
-      <>
-      </>
+    <>
+    </>
     );  
      
     
@@ -35,12 +47,10 @@ const mapStatetoProps = (state,ownProps) => {
   }
 }
 
-const mapDispatchtoProps = (dispatch) => {
-
- 
+const mapDispatchtoProps = (dispatch) => { 
   return {    
     deleteProduct:(id) => dispatch(actioncreator.deleteProduct(id))
   }
 }
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(DeleteProductForm);
+export default connect(mapStatetoProps, mapDispatchtoProps)(DeleteProductPage);
