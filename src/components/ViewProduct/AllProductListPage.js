@@ -127,6 +127,13 @@ class AllProductListPage extends React.Component {
       <Container>
 
       <React.Suspense fallback={<h1>LazyLoading</h1>}>
+
+      <div className="w-auto h-auto">
+        
+        {<CustomizationField handleCustomizationField={this.handleCustom} />}
+       
+        </div>
+
       
       <div className="w-auto h-auto d-inline-block">
        
@@ -141,12 +148,7 @@ class AllProductListPage extends React.Component {
         
             </div>
 
-            <div className="w-auto h-auto d-inline-block float-right">
-        
-            {<CustomizationField handleCustomizationField={this.handleCustom} />}
-           
-            </div>
-
+          
 
         </React.Suspense>
 
