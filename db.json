@@ -44,51 +44,6 @@
       "price": 3,
       "views": 0,
       "id": 5
-    },
-    {
-      "id": 6,
-      "productName": "Mobile Phone",
-      "productDescription": "gggg",
-      "manufacturer": "111",
-      "quantity": 111,
-      "price": 111,
-      "views": 117
-    },
-    {
-      "productName": "Speaker",
-      "productDescription": "made in India",
-      "manufacturer": "India",
-      "quantity": 3,
-      "price": 3000,
-      "views": 19,
-      "id": 7
-    },
-    {
-      "productName": "Charger",
-      "productDescription": "made in idia",
-      "manufacturer": "3",
-      "quantity": 3,
-      "price": 3,
-      "views": 49,
-      "id": 8
-    },
-    {
-      "productName": "apple ",
-      "productDescription": "asdf",
-      "manufacturer": "asdf",
-      "quantity": 33,
-      "price": 33,
-      "views": 0,
-      "id": 9
-    },
-    {
-      "id": 10,
-      "productName": "Dheeraj Pundir",
-      "productDescription": "3",
-      "manufacturer": "3",
-      "quantity": 3,
-      "price": 3,
-      "views": 1
     }
   ],
   "users": [

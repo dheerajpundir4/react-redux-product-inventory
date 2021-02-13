@@ -33,6 +33,7 @@ class DeleteProductPage extends React.Component {
     
     return(
     <>
+     <Redirect to="/" />
     </>
     );  
      
