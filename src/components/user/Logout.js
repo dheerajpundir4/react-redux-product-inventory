@@ -1,11 +1,26 @@
 
+import { render } from '@testing-library/react';
 import { Link, Redirect } from 'react-router-dom';
 
+import React from 'react'
 
 
 
-export default function Logout(){
-    localStorage.removeItem('userId')
+
+export default class Logout extends React.Component{
+
+    constructor(props){
+        super(props)
+
+        
+    }
+    
+    render(){
     localStorage.clear();
-    return <Redirect to="/products" />;
+    this.props.setUser("")
+    return (
+
+        <Redirect to="/" />
+    );
+    }
 }

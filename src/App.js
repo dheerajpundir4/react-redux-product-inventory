@@ -116,8 +116,8 @@ import axios from 'axios';
               <Route path="/addProduct" component={AddProductPage} />
              
               <Route path="/Login" component={() => <Login setUser={this.setUser} />} />
-              <Route path="/Signup" component={Signup} />
-              <Route path="/Logout" component={Logout} />
+              <Route path="/Signup" component={Signup} />              
+              <Route path="/Logout" component={() => <Logout setUser={this.setUser} />} />
               <Route path="/success/:id" component={SuccessComponent} />
               <Route exact path="/" >
                 <AllProductPage/>

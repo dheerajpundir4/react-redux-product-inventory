@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Container } from 'react-bootstrap';
 
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default class NavComponent extends React.Component {
     render() {
@@ -15,7 +15,8 @@ export default class NavComponent extends React.Component {
         if(this.props.user) {
             buttons = (
                 <>
-                    <Link to="/" onClick={() => localStorage.clear()}>Logout</Link>
+                    <Link to="/Logout">Logout</Link>        
+                   
                 </>
             )
         }
