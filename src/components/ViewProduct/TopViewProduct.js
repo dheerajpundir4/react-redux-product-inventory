@@ -12,21 +12,37 @@ class TopViewProduct extends React.Component {
   constructor() {
     console.log("TopViewProduct Constructor")
     super()
+   
   }
+
+  //Comparer Function    
+GetSortOrder(prop) {    
+  return function(a, b) {    
+      if (a[prop] > b[prop]) {    
+          return -1;    
+      } else if (a[prop] < b[prop]) {    
+          return 1;    
+      }    
+      return 0;    
+  }    
+} 
 
   render() {
 
     console.log("TopViewProduct render");
 
+    let prods= this.props.products
+    console.log(prods)
 
-    let p = this.props.products.map((product) => {
+    let products=prods.sort(this.GetSortOrder("views"));
 
+  
 
-
+    let p = products.map((product) => {
       return product.views
     })
 
-    let q = this.props.products.map((product) => {
+    let q = products.map((product) => {
 
       console.log(product.productName)
 
@@ -52,7 +68,7 @@ class TopViewProduct extends React.Component {
     };
     let Top = "Top"
     const options = [
-      'one', 'two', 'three'
+      "3", "5", "10"
     ];
     const defaultOption = options[0];
 
@@ -68,7 +84,11 @@ class TopViewProduct extends React.Component {
             Top
             <Dropdown
               options={options}
-              onChange={this._onSelect}
+              onChange={ (selected)=>
+               
+                console.log(selected)
+                       
+              }
               value={defaultOption}
               placeholder="Select an option" />
 
