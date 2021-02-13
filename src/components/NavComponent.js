@@ -15,15 +15,15 @@ export default class NavComponent extends React.Component {
         if(this.props.user) {
             buttons = (
                 <>
-                    <Nav.Link href="/" onClick={() => localStorage.clear()}>Logout</Nav.Link>
+                    <Link to="/" onClick={() => localStorage.clear()}>Logout</Link>
                 </>
             )
         }
         else {
             buttons = (
                 <>
-                    <Nav.Link href="/Login">Login</Nav.Link>
-                    <Nav.Link href="/Signup">SignUp</Nav.Link>
+                    <Link to="/Login">Login</Link>
+                    <Link to="/Signup">SignUp</Link>
                 </>
             )
         }

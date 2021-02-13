@@ -82,13 +82,13 @@
       "id": 9
     },
     {
-      "productName": "mango banana",
+      "id": 10,
+      "productName": "Dheeraj Pundir",
       "productDescription": "3",
       "manufacturer": "3",
       "quantity": 3,
       "price": 3,
-      "views": 1,
-      "id": 10
+      "views": 1
     }
   ],
   "users": [
@@ -136,6 +136,15 @@
       "mobileNumber": "333",
       "location": "33333333",
       "id": 5
+    },
+    {
+      "email": "dheer@gmail.com",
+      "password": "$2a$10$uDsPIgJRbuzP8P7qQwtMr.6.jwayVH00ArenAfMYCbeMnLYxX0UEi",
+      "fistName": "1234",
+      "lastName": "1234",
+      "mobileNumber": "1234",
+      "location": "1234",
+      "id": 6
     }
   ]
 }
