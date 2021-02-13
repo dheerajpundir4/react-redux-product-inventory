@@ -1,45 +1,43 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Bar } from 'react-chartjs-2';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
-import {Bar} from 'react-chartjs-2';
 
-
-// Using bootstrap
-import Table from 'react-bootstrap/Table';
 
 
 class TopViewProduct extends React.Component {
-  
-    constructor(){
-      console.log("TopViewProduct Constructor")      
-      super()
-    }
+
+  constructor() {
+    console.log("TopViewProduct Constructor")
+    super()
+  }
 
   render() {
 
     console.log("TopViewProduct render");
- 
 
-    let p = this.props.products.map((product) => { 
-      
-      
-    
-    return product.views
-  }) 
 
-  let q = this.props.products.map((product) => { 
-      
-    console.log(product.productName)
-  
-  return product.productName
-}) 
+    let p = this.props.products.map((product) => {
 
-console.log("pppppppppppppppppppppp")
-console.log(p)
+
+
+      return product.views
+    })
+
+    let q = this.props.products.map((product) => {
+
+      console.log(product.productName)
+
+      return product.productName
+    })
+
+    console.log("pppppppppppppppppppppp")
+    console.log(p)
 
     const data = {
-     labels: q,
+      labels: q,
       datasets: [
         {
           label: 'Total Views',
@@ -52,37 +50,58 @@ console.log(p)
         }
       ]
     };
-    
+    let Top = "Top"
+    const options = [
+      'one', 'two', 'three'
+    ];
+    const defaultOption = options[0];
 
-  
-    
-   
+
+
 
     return (
-    <>
-       <Bar
-          data={data}
-          width={100}
-          height={500}
-          options={{
-            maintainAspectRatio: false
-          }}
-        />
-    </>
+      <>
+
+       
+         
+          <div className="w-auto h-auto d-inline-block">
+            Top
+            <Dropdown
+              options={options}
+              onChange={this._onSelect}
+              value={defaultOption}
+              placeholder="Select an option" />
+
+
+
+          </div>
+
+
+
+
+          <Bar
+            data={data}
+            width={100}
+            height={500}
+            options={{
+              maintainAspectRatio: false
+            }}
+          />
+      </>
     );
   }
 }
 
 const mapStatetoProps = (state) => {
   return {
-    products: state.products
+          products: state.products
   }
 }
 
 const mapDispatchtoProps = (dispatch) => {
   return {
 
-  }
+        }
 }
 
 export default connect(mapStatetoProps, mapDispatchtoProps)(TopViewProduct);

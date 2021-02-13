@@ -128,9 +128,9 @@ class AllProductListPage extends React.Component {
       <Container>
 
       <React.Suspense fallback={<h1>LazyLoading</h1>}>
-        <Row>
-
-          <Col sm="3">
+      
+      <div className="w-auto h-auto d-inline-block">
+       
             <Form>
               <Form.Control type="text"
                 onChange={this.handleFilter}
@@ -139,16 +139,15 @@ class AllProductListPage extends React.Component {
                 className="mr-sm-2" />
 
             </Form>
-          </Col>
+        
+            </div>
 
-          <Col  >
+            <div className="w-auto h-auto d-inline-block float-right">
         
             {<CustomizationField handleCustomizationField={this.handleCustom} />}
            
-          </Col>
+            </div>
 
-
-        </Row>
 
         </React.Suspense>
 
