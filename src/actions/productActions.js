@@ -2,7 +2,6 @@ import * as types from './actionTypes';
 import axios from 'axios';
 
 
-let currentID=100;
 
 const URL ="http://localhost:4000/products";
 
