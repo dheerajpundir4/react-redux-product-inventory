@@ -13,7 +13,8 @@ class DeleteProductPage extends React.Component {
   }
 
   render() {
-    history.push('/')
+    //history.push('/')
+    //What is the use of it
     console.log("DeleteProduct render")
     console.log(this.props)
     if(localStorage.getItem("isLogin")=="false")
