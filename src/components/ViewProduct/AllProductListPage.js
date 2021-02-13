@@ -1,6 +1,5 @@
 import React,{Suspense} from 'react'
 
-import { loadProduct } from '../../actions/productActions';
 
 import { connect } from 'react-redux';
 
@@ -15,7 +14,7 @@ import { TableBody, TableHead } from './TableData.js';
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
-import { Col, Row, Container } from 'react-bootstrap';
+import {Container } from 'react-bootstrap';
 
 
 
