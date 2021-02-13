@@ -12,6 +12,10 @@ class TopViewProduct extends React.Component {
   constructor() {
     console.log("TopViewProduct Constructor")
     super()
+    this.state={
+      value:3,
+      label:"3"
+    }
    
   }
 
@@ -36,7 +40,7 @@ GetSortOrder(prop) {
 
     let products=prods.sort(this.GetSortOrder("views"));
 
-  
+  products=products.slice(0,this.state.value)
 
     let p = products.map((product) => {
       return product.views
@@ -67,10 +71,16 @@ GetSortOrder(prop) {
       ]
     };
     let Top = "Top"
-    const options = [
-      "3", "5", "10"
+/*    const options = [
+      "", "5", "10"
+    ];*/
+
+       const options = [
+        { value: 3, label: '3' },
+        { value: 5, label: '5' },
+        { value: 10, label: '10' },
     ];
-    const defaultOption = options[0];
+    const defaultOption = this.state.label
 
 
 
@@ -84,10 +94,11 @@ GetSortOrder(prop) {
             Top
             <Dropdown
               options={options}
-              onChange={ (selected)=>
+              onChange={ (selected)=>{
                
-                console.log(selected)
-                       
+                console.log(selected.value)
+                this.setState({value:selected.value, label:selected.label})
+              }                       
               }
               value={defaultOption}
               placeholder="Select an option" />
