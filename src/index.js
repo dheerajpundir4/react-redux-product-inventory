@@ -18,11 +18,15 @@ console.log("We are in index page")
 
 axios.defaults.baseURL='http://localhost:4000/';
 
+console.log("loadProduct")
 
+console.log(loadProduct())
 // fist it go to action and then call reducer
-store.dispatch(loadProduct());
 
 
+setTimeout(() => {
+  store.dispatch(loadProduct()); 
+}, 3000)
 
 
 

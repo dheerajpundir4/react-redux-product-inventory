@@ -5,6 +5,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Container } from 'react-bootstrap';
 
+import { Link } from 'react-router-dom'
+
 export default class NavComponent extends React.Component {
     render() {
         let buttons
@@ -30,8 +32,9 @@ export default class NavComponent extends React.Component {
             <Navbar bg="light" variant="blue">
 
                 <Nav>
-                    <Nav.Link href="/products">Products</Nav.Link>
-                    <Nav.Link href="/about">About</Nav.Link>
+                    
+                    <Link to="/">Products</Link>
+                    <Link to="/about">About</Link>
                 </Nav>
                 <Navbar.Collapse className="justify-content-end">
                     <Nav>

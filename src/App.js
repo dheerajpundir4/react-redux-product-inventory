@@ -95,18 +95,17 @@ import axios from 'axios';
       <Container fluid="xl">
         <Container>
 
-          <NavComponent user={this.state.user} />
+         
         </Container>
 
         <Container>
 
 
           <Router history={history}>
+          <NavComponent user={this.state.user} />
             <Switch>
            
-              <Route path="/products" >
-                <AllProductPage products={this.props.products}/>
-              </Route>             
+                      
               <Route path="/about" component={AboutPage} />
               <Route path="/topViewProduct" component={TopViewProduct} />
             
@@ -120,7 +119,7 @@ import axios from 'axios';
               <Route path="/Signup" component={Signup} />
               <Route path="/Logout" component={Logout} />
               <Route path="/success/:id" component={SuccessComponent} />
-              <Route path="/" >
+              <Route exact path="/" >
                 <AllProductPage/>
               </Route>
             </Switch>

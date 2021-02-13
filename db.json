@@ -7,7 +7,7 @@
       "manufacturer": "111",
       "quantity": 111,
       "price": 111,
-      "views": 117
+      "views": 121
     },
     {
       "productName": "Speaker",
@@ -45,7 +45,8 @@
       "views": 0,
       "id": 5
     },
-   { "id": 6,
+    {
+      "id": 6,
       "productName": "Mobile Phone",
       "productDescription": "gggg",
       "manufacturer": "111",
@@ -86,7 +87,7 @@
       "manufacturer": "3",
       "quantity": 3,
       "price": 3,
-      "views": 0,
+      "views": 1,
       "id": 10
     }
   ],

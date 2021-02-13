@@ -183,6 +183,6 @@ const mapStatetoProps = (state) => {
 }
 
 
-export default connect(mapStatetoProps, null)(AllProductListPage);
+export default connect(mapStatetoProps)(AllProductListPage);
 
 
