@@ -5,14 +5,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Using component
 import AllProductPage from './components/ViewProduct/AllProductListPage';
-import AboutPage from './pages/AboutPage';
+import AboutPage from './AboutPage';
 
 import AddProductPage from './components/AddProduct/AddProductPage';
 import ViewProductPage from './components/ViewProduct/ViewProductPage';
-import TopViewProduct from './pages/TopViewProduct'
-import Login from './user/Login';
-import Signup from './user/Signup';
-import Logout from './user/Logout';
+import TopViewProduct from './components/ViewProduct/TopViewProduct'
+import Login from './components/user/Login';
+import Signup from './components/user/Signup';
+import Logout from './components/user/Logout';
 import DeleteProductPage from './components/DeleteProduct/DeleteProductForm';
 import EditProductPage from './components/EditProduct/EditProductPage';
 
