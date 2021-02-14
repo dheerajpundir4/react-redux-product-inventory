@@ -9,9 +9,9 @@ import { Link, NavLink } from 'react-router-dom'
 
 export default class NavComponent extends React.Component {
     render() {
+       
+        console.log("Nav Component render")
         let buttons
-        console.log("Nav Component")
-        console.log(this.props.user)
         if(this.props.user) {
             buttons = (
                 <>
