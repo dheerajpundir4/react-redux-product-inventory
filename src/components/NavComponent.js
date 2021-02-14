@@ -9,44 +9,60 @@ import { Link, NavLink } from 'react-router-dom'
 
 export default class NavComponent extends React.Component {
     render() {
-       
+
         console.log("Nav Component render")
         let buttons
-        if(this.props.user) {
+        if (this.props.user) {
             buttons = (
                 <>
-                  
-                  <Link to="/addProduct">Add Product</Link>
-                    <Link to="/Logout">Logout</Link>        
-                   
+
+
+                    <Nav>
+
+                        <Link class="nav-link" to="/addProduct">Add Product</Link>
+
+
+                        <Link class="nav-link" to="/Logout">Logout</Link>
+
+                    </Nav>
+            
                 </>
             )
         }
         else {
             buttons = (
                 <>
-                  
-                    <Link to="/Login">Login</Link>
-                    <Link to="/Signup">SignUp</Link>
+
+
+                    <Nav>
+
+                        <Link class="nav-link" to="/Login">Login</Link>
+
+                        <Link class="nav-link" to="/Signup">SignUp</Link>
+
+
+
+                    </Nav>
+
+
                 </>
             )
         }
         return (
             <Container>
-            <Navbar bg="light" variant="blue">
+                <Navbar collapseOnSelect expand="lg" bg="blue" variant="light">
+                    <Navbar.Brand href="/">Product-Inventory</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="mr-auto">
+                            <Link class="nav-link" to="/">Products</Link>
+                            <Link class="nav-link" to="/topViewProduct">Top View Product</Link>
+                            <Link class="nav-link" to="/about">About</Link>
 
-                <Nav>
-                    
-                    <Link to="/">Products</Link>
-                    <Link to="/topViewProduct">Top View Product</Link>
-                    <Link to="/about">About</Link>
-                </Nav>
-                <Navbar.Collapse className="justify-content-end">
-                    <Nav>
-                        {buttons}
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+                        </Nav>
+                       {buttons}
+                    </Navbar.Collapse>
+                </Navbar>                
             </Container>
         );
     }
