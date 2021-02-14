@@ -162,10 +162,10 @@ class AllProductListPage extends React.Component {
         </Table>
 
         <br />
-        <Link to="/addProduct">Add Product</Link>
+      
         <br />
 
-        <Link to="/topViewProduct">Top View Product</Link>
+     
       </Container>
 
       </React.Suspense>

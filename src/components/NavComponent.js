@@ -15,6 +15,8 @@ export default class NavComponent extends React.Component {
         if(this.props.user) {
             buttons = (
                 <>
+                   <Link to="/topViewProduct">Top View Product</Link>
+                  <Link to="/addProduct">Add Product</Link>
                     <Link to="/Logout">Logout</Link>        
                    
                 </>
@@ -23,6 +25,7 @@ export default class NavComponent extends React.Component {
         else {
             buttons = (
                 <>
+                   <Link to="/topViewProduct">Top View Product</Link>
                     <Link to="/Login">Login</Link>
                     <Link to="/Signup">SignUp</Link>
                 </>
