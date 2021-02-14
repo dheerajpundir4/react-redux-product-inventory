@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { Prompt } from 'react-router'
 
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
@@ -34,6 +35,8 @@ class ViewProductPage extends React.Component {
 
     return (
       <div>
+        <Prompt message="Are you sure you want to leave?" />
+
         <h2>Product Description</h2>
         <Table striped bordered hover>
           <tr>

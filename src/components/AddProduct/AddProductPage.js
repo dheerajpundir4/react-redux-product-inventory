@@ -5,18 +5,25 @@ import { withRouter } from 'react-router-dom';
 import AddProductForm from './AddProductForm';
 import * as actionCreator from '../../actions/productActions';
 
+import { Prompt } from 'react-router'
+
 
 class AddProductPage extends React.Component {
 
-  render() {
-
+  render() {  
     console.log("AddProductPage => render() run first then componentdidmount()")
 
     if(localStorage.getItem("isLogin")=="false")
     return <Redirect to="/login" />;
     
 
-    return (<AddProductForm onSave={this.props.saveProduct} />);
+    return(
+    <>
+
+   
+    <AddProductForm onSave={this.props.saveProduct}  
+    />
+     </>);
   }
 }
 

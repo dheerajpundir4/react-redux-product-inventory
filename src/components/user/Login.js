@@ -8,8 +8,6 @@ import axios from 'axios';
 // Using bootstrap
 import { Form, Button, Col, Row, Container, Card } from 'react-bootstrap';
 
-
-
 function Login(props) {
   
   const [isLoggedIn, setLoggedIn] = useState(false);
