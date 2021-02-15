@@ -89,8 +89,7 @@ export default function AddProductForm(props) {
         <>
 
         <Prompt when={WAS_USER_INPUT} message="Are you Sure want to move out"/>
-           <h1>hello</h1> 
-    
+          
             <Form onSubmit={handleSubmit}>
                 <h1>Add New Product</h1>
 
