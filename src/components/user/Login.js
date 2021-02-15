@@ -99,7 +99,7 @@ function Login(props) {
     <Container>
 
      
-      <Card style={{ width: '50rem' }}>
+     
     
      
 <Card.Body>
@@ -145,7 +145,7 @@ function Login(props) {
        </Form.Group>
       </Form>
       </Card.Body>
-      </Card>
+    
     </Container>
   )
 }

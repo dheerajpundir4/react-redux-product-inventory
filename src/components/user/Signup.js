@@ -101,7 +101,7 @@ function Signup() {
   return (
     <Container>
      
-      <Card style={{ width: '50rem' }}>
+     
 
      
       <Card.Body>
@@ -224,7 +224,7 @@ function Signup() {
 
       </Form>
       </Card.Body>
-      </Card>
+      
     </Container>
   )
 }
