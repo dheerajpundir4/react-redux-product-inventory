@@ -152,7 +152,7 @@ class AllProductListPage extends React.Component {
 
         </React.Suspense>
 
-        <Table striped bordered hover>
+        <Table responsive striped bordered hover size="sm">
           <thead>
             {tableHead}
           </thead>
