@@ -92,19 +92,14 @@ class App extends React.Component {
 
     console.log("App render")
     return (
-      <Container fluid="xl">
-        <Container>
 
 
-        </Container>
-
-        <Container>
-
-
-          <Router history={history}>
-            <header>
-              <NavComponent user={this.state.user} />
-            </header>
+      <div class="card">
+        <Router history={history}>
+          <div class="card-header">
+            <NavComponent user={this.state.user} />
+          </div>
+          <div class="card-body height:10 ">
             <Switch>
 
 
@@ -125,17 +120,15 @@ class App extends React.Component {
                 <AllProductPage />
               </Route>
             </Switch>
-            <footer class="bg-primary text-white text-center text-lg-start">
-              <div class="text-center p-3" >
+          </div>
+          <div class="card-footer text-muted text-center">
 
-                2020 Copyright:
+            2021 Copyright:
               </div>
-            </footer>
-          </Router>
-        </Container>
+        </Router>
 
 
-      </Container>
+      </div>
     );
   }
 }
