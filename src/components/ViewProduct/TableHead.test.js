@@ -1,0 +1,42 @@
+import {TableHead,TableBody} from './TableData'
+import React from 'react';
+import { mount } from '../../enzyme';
+import { shallow } from '../../enzyme';
+
+describe('TableHead Test', () => {
+
+  // total th will be 6     
+  const array_AllCusField= ["Product Description","Manufacturer","Quantity"]
+
+    // total th will be 3     
+    const array_NoCusField= []
+
+
+
+
+    const wrapperAllCusField = shallow(<TableHead customizationCol={array_AllCusField}/>);
+    const wrapperNoCusField = shallow(<TableHead customizationCol={array_NoCusField}/>);
+
+
+    
+    const headerAllCusField= wrapperAllCusField.find('th')
+    const headerNoCusField= wrapperNoCusField.find('th')
+    
+  
+   console.log(headerNoCusField.length)
+   
+  
+
+    it('array_AllCusField', () => {
+        expect(headerAllCusField.length).toEqual(6);
+      });
+
+
+      it('array_NoCusField', () => {
+        expect(headerNoCusField.length).toEqual(3);
+      });
+
+     
+
+   
+})
