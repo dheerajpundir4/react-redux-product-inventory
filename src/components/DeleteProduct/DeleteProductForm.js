@@ -8,7 +8,7 @@ class DeleteProductPage extends React.Component {
   constructor(props){
     super(props)
     console.log("We are in Delete Product Page Constructor")
-   // this.props.deleteProduct(this.props.product.id) 
+  
    console.log(props)
   }
 
