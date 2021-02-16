@@ -22,7 +22,7 @@ class EditProductPage extends React.Component {
 
     return (
       <div>
-        <h2>Edit Product Page</h2>
+       
 
         <EditProductForm onEdit={this.props.editProduct} product={product} />
 

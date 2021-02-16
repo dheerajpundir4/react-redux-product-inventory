@@ -83,7 +83,7 @@ export default function EditProductForm(props) {
           
        
         <Form onSubmit={handleSubmit}>
-
+        <h3>Edit Product Page</h3>
             <Form.Group as={Row}>
                 <Col sm="3">
                     <Form.Label>Product Name</Form.Label>
