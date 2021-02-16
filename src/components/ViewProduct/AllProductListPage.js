@@ -153,10 +153,7 @@ class AllProductListPage extends React.Component {
           </React.Suspense>
           <div class="table-responsive-sm">
 
-            <table class="table table-bordered table-hover">
-              <caption>
-                List of users
-              </caption>
+            <table class="table table-bordered table-hover">             
               <thead class="table-dark">
                 {tableHead}
               </thead>

@@ -25,7 +25,7 @@ import { Container } from 'react-bootstrap';
 
 import axios from 'axios';
 
- class App extends React.Component {
+class App extends React.Component {
 
   constructor() {
 
@@ -54,7 +54,7 @@ import axios from 'axios';
         Authorization: "Bearer" + localStorage.getItem('token')
       }
     }
-   
+
     const id = localStorage.getItem('id')
 
     axios.get('users/' + id, config).then(
@@ -63,14 +63,14 @@ import axios from 'axios';
         console.log(config)
         console.log(res)
         if (res.status = 200) {
-         this.setUser(res.data)
-            localStorage.setItem("isLogin","true")
+          this.setUser(res.data)
+          localStorage.setItem("isLogin", "true")
         }
       },
       err => {
-       
+
         console.log("--ERROR--")
-        localStorage.setItem("isLogin","false")
+        localStorage.setItem("isLogin", "false")
         console.log(err)
       }
     )
@@ -95,36 +95,46 @@ import axios from 'axios';
       <Container fluid="xl">
         <Container>
 
-         
+
         </Container>
 
         <Container>
 
 
           <Router history={history}>
-          <NavComponent user={this.state.user} />
+            <header>
+              <NavComponent user={this.state.user} />
+            </header>
             <Switch>
-           
-                      
+
+
               <Route path="/about" component={AboutPage} />
               <Route path="/topViewProduct" component={TopViewProduct} />
-            
+
               <Route path="/view/:id" component={ViewProductPage} />
-                 
+
               <Route path="/delete/:id" component={DeleteProductPage} />
               <Route path="/edit/:id" component={EditProductPage} />
               <Route path="/addProduct" component={AddProductPage} />
-             
+
               <Route path="/Login" component={() => <Login setUser={this.setUser} />} />
-              <Route path="/Signup" component={Signup} />              
+              <Route path="/Signup" component={Signup} />
               <Route path="/Logout" component={() => <Logout setUser={this.setUser} />} />
               <Route path="/success/:id" component={SuccessComponent} />
               <Route exact path="/" >
-                <AllProductPage/>
+                <AllProductPage />
               </Route>
             </Switch>
+            <footer class="bg-primary text-white text-center text-lg-start">
+              <div class="text-center p-3" >
+
+                2020 Copyright:
+              </div>
+            </footer>
           </Router>
         </Container>
+
+
       </Container>
     );
   }
