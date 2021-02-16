@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useFormik } from 'formik';
 
 // Using bootstrap
@@ -8,9 +8,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
+import { Prompt } from 'react-router'
+
+
 
 
 export default function EditProductForm(props) {
+
+    const [WAS_USER_INPUT, setUSERINPUT] = useState(false);
 
     const { handleSubmit, handleChange, values, errors } = useFormik(
         {
@@ -28,6 +33,7 @@ export default function EditProductForm(props) {
             validate,
             onSubmit(values) {
                 console.log("dheeraj")
+                setUSERINPUT(false)
                 console.log(props.product.id);
                 props.onEdit(values);
 
@@ -54,6 +60,17 @@ export default function EditProductForm(props) {
         if (values.price) {
             values.price = values.price
         }
+
+        if(values.productName!="" 
+        || Object. keys(errors).length!=0
+        
+        ){
+            setUSERINPUT(true)
+        }
+        else{
+            setUSERINPUT(false)
+        }
+       
         return errors
     }
 
@@ -61,6 +78,10 @@ export default function EditProductForm(props) {
 
 
     return (
+        <>
+        <Prompt when={WAS_USER_INPUT} message="Are you Sure want to move out"/>
+          
+       
         <Form onSubmit={handleSubmit}>
 
             <Form.Group as={Row}>
@@ -171,6 +192,7 @@ export default function EditProductForm(props) {
 
            
         </Form>
+        </>
     )
 
 }
