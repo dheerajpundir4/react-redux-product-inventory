@@ -57,21 +57,20 @@ export class TableBody extends React.Component {
                     <Link to={"/view/" + ID} style={{ textDecoration: 'none' }}>                        
                         <button type="button" class="btn btn-info">View</button>
                     </Link>
-                    &nbsp;&nbsp;
-
+                
                     <Link to={"/edit/" + ID} style={{ textDecoration: 'none' }}>
                     <button type="button" class="btn btn-secondary">Edit</button>
                     </Link>
-                    &nbsp;&nbsp;
-
-
+                  
+             
                     <Link to={"/delete/" + ID} style={{ textDecoration: 'none' }}>                        
                         <button type="button" class="btn btn-danger">Delete</button>
                     </Link>
+                 </td>
                    
                     
 
-                </td>
+             
             </tr>
         );
     }

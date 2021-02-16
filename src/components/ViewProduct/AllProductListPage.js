@@ -153,7 +153,8 @@ class AllProductListPage extends React.Component {
           </React.Suspense>
           <div class="table-responsive-sm">
 
-            <table class="table table-bordered table-hover">             
+            <table class="table table-bordered table-hover vertical-align-middle">
+            
               <thead class="table-dark">
                 {tableHead}
               </thead>
@@ -161,12 +162,7 @@ class AllProductListPage extends React.Component {
                 {tableBody}
               </tbody>
             </table>
-          </div>
-          <br />
-
-          <br />
-
-
+          </div>          
         </Container>
 
       </React.Suspense>
