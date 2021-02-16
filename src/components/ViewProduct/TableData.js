@@ -53,19 +53,28 @@ export class TableBody extends React.Component {
                 {IS_QUANTITY ? <td>{product.quantity}</td> : <></>}
 
                 <td>
-
+                <div class="btn-group shadow-0" role="group">
                     <Link to={"/view/" + ID} style={{ textDecoration: 'none' }}>                        
-                        <button type="button" class="btn btn-info">View</button>
+                       
+                        <button type="button" class="btn btn-link" data-mdb-color="dark">View</button>
                     </Link>
                 
                     <Link to={"/edit/" + ID} style={{ textDecoration: 'none' }}>
-                    <button type="button" class="btn btn-secondary">Edit</button>
+                  
+                    <button type="button" class="btn btn-link" data-mdb-color="dark">Edit</button>
                     </Link>
                   
              
                     <Link to={"/delete/" + ID} style={{ textDecoration: 'none' }}>                        
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        
+                        <button type="button" class="btn btn-link" data-mdb-color="dark">Delete</button>
                     </Link>
+
+                    
+  
+ 
+  
+</div>
                  </td>
                    
                     
