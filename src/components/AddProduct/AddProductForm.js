@@ -33,6 +33,7 @@ export default function AddProductForm(props) {
                 setUSERINPUT(false)
                 console.log("XXX on Submit Add Product Form XXX")
                 console.log(props);
+                if(window.confirm('Are you sure want to add this record!'))
                 props.onSave(values);
 
             }

@@ -6,8 +6,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-
 import { Prompt } from 'react-router'
 
 
@@ -35,6 +33,7 @@ export default function EditProductForm(props) {
                 console.log("dheeraj")
                 setUSERINPUT(false)
                 console.log(props.product.id);
+                if(window.confirm("Are you sure want to Edit this record!"))
                 props.onEdit(values);
 
             }
