@@ -34,11 +34,7 @@ describe('Table Body Test', () => {
 
     const header_OneCusField= wrapperOneCusField.find('td')
 
-    const value_OneCusField=header_OneCusField.map(name => name.text());
-
-
-      console.log(valueAllCusField)
-
+    const value_OneCusField=header_OneCusField.map(name => name.text()); 
    
     
   
