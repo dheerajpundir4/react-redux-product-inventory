@@ -21,8 +21,8 @@ class DeleteProductPage extends React.Component {
     return <Redirect to="/login" />;
 
    
-    
-    if(this.props.product!=null){
+  
+    if( window.confirm("Are you sure want to delete this record!") && this.props.product!=null){
       console.log(this.props.product.id)
       this.props.deleteProduct(this.props.product.id) 
      
@@ -34,6 +34,8 @@ class DeleteProductPage extends React.Component {
     
     return(
     <>
+   
+  
      <Redirect to="/" />
     </>
     );  

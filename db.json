@@ -1,15 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "productName": "Moto G5",
-      "productDescription": "Moto G5 Product Description",
-      "manufacturer": "India",
-      "quantity": 2,
-      "price": 13000,
-      "views": 132
-    },
-    {
       "productName": "Racold Geyser",
       "productDescription": "Racold Geyser Product Description",
       "manufacturer": "India",
