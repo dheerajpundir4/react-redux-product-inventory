@@ -23,7 +23,6 @@ describe('EditProductForm', () => {
 
   
 
-    console.log(value)
 
     it('Page header should be Edit form header', () => {
         expect(value).toEqual('Edit Product Page');

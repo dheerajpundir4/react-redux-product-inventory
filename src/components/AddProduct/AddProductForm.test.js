@@ -9,7 +9,6 @@ describe('Add New Product Form', () => {
 
   
 
-    console.log(value)
 
     it('Add New Product form header check', () => {
         expect(value).toEqual('Add New Product');

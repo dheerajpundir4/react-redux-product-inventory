@@ -9,7 +9,7 @@ describe('Signup', () => {
 
   
 
-    console.log(value)
+
 
     it('Page header should be login', () => {
         expect(value).toEqual('SignUp');

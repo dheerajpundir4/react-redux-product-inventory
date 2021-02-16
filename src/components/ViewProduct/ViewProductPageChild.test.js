@@ -17,12 +17,10 @@ describe('ViewProductPageChild', () => {
     }]
 
     const wrapper = shallow(<ViewProductPageChild product={product}/>);
-    const value= wrapper.find('h3').text()
-
-   
+    const value= wrapper.find('h3').text()  
   
 
-    console.log(value)
+   
 
     it('View Product Page Header Check', () => {
         expect(value).toEqual('Product Description');
