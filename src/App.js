@@ -92,17 +92,15 @@ class App extends React.Component {
 
     console.log("App render")
     return (
-
-
       <div class="card">
         <Router history={history}>
           <div class="card-header">
             <NavComponent user={this.state.user} />
           </div>
-          <div class="card-body height:10 ">
+
+
+          <div class="card-body" style={{height:1000 }} >
             <Switch>
-
-
               <Route path="/about" component={AboutPage} />
               <Route path="/topViewProduct" component={TopViewProduct} />
 
