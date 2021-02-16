@@ -1,4 +1,4 @@
-import React,{Suspense} from 'react'
+import React, { Suspense } from 'react'
 
 
 import { connect } from 'react-redux';
@@ -14,12 +14,12 @@ import { TableBody, TableHead } from './TableData.js';
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
-import {Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 
 
 
-const CustomizationField=React.lazy(() => {
+const CustomizationField = React.lazy(() => {
 
   return new Promise(resolve => setTimeout(resolve, 5 * 1000)).then(
     () =>
@@ -27,7 +27,7 @@ const CustomizationField=React.lazy(() => {
         ? import('./CustomizationField')
         : Promise.reject(new Error())
   );
-  
+
 });
 
 
@@ -37,7 +37,7 @@ class AllProductListPage extends React.Component {
 
   constructor() {
     console.log("Inside All ProductListPage Constructor")
-   
+
     super()
     this.state = {
       VALUE_OF_FILTER_FORM: '',
@@ -45,27 +45,27 @@ class AllProductListPage extends React.Component {
       IS_FILTER: false,
       ARRAY_CUSTOM_COLUMN: ''
     };
-  
-  
+
+
     this.handleFilter = this.handleFilter.bind(this)
     this.handleCustom = this.handleCustom.bind(this)
 
   }
   componentDidMount() {
-    console.log("ProductListPage CompnentDidMount")   
-  
+    console.log("ProductListPage CompnentDidMount")
+
   }
 
   handleCustom(arrayOfSelectedColumn) {
-   
-    this.setState({ 
-      ARRAY_CUSTOM_COLUMN: arrayOfSelectedColumn 
+
+    this.setState({
+      ARRAY_CUSTOM_COLUMN: arrayOfSelectedColumn
     })
 
   }
 
   handleFilter(event) {
-   
+
 
     if (event.target.value == "") {
 
@@ -93,11 +93,11 @@ class AllProductListPage extends React.Component {
   }
 
 
-  render() {   
+  render() {
 
     console.log("ProductListPage render")
     console.log(this.props)
-   
+
 
     let tableHead = (<TableHead customizationCol={this.state.ARRAY_CUSTOM_COLUMN} />)
     let tableBody = ""
@@ -124,50 +124,53 @@ class AllProductListPage extends React.Component {
     return (
       <React.Suspense fallback={<h1>LazyLoading</h1>}>
 
-      <Container>
+        <Container>
 
-      <React.Suspense fallback={<h1>LazyLoading</h1>}>
+          <React.Suspense fallback={<h1>LazyLoading</h1>}>
 
-      <div className="w-auto h-auto">
-        
-        {<CustomizationField handleCustomizationField={this.handleCustom} />}
-       
-        </div>
+            <div className="w-auto h-auto">
 
-      
-      <div className="w-auto h-auto d-inline-block">
-       
-            <Form>
-              <Form.Control type="text"
-                onChange={this.handleFilter}
-                placeholder="Filter"
-                value={this.state.VALUE_OF_FILTER_FORM}
-                className="mr-sm-2" />
+              {<CustomizationField handleCustomizationField={this.handleCustom} />}
 
-            </Form>
-        
             </div>
 
-          
 
-        </React.Suspense>
-        <div class="table-responsive">
+            <div className="w-auto h-auto d-inline-block">
 
-        <table class="table table-bordered">
-          <thead>
-            {tableHead}
-          </thead>
-          <tbody>
-            {tableBody}
-          </tbody>
-        </table>
-        </div>
-        <br />
-      
-        <br />
+              <Form>
+                <Form.Control type="text"
+                  onChange={this.handleFilter}
+                  placeholder="Filter"
+                  value={this.state.VALUE_OF_FILTER_FORM}
+                  className="mr-sm-2" />
 
-     
-      </Container>
+              </Form>
+
+            </div>
+
+
+
+          </React.Suspense>
+          <div class="table-responsive-sm">
+
+            <table class="table table-bordered table-hover">
+              <caption>
+                List of users
+              </caption>
+              <thead class="table-dark">
+                {tableHead}
+              </thead>
+              <tbody>
+                {tableBody}
+              </tbody>
+            </table>
+          </div>
+          <br />
+
+          <br />
+
+
+        </Container>
 
       </React.Suspense>
     );
