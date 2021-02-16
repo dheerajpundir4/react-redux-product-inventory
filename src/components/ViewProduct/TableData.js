@@ -59,8 +59,8 @@ export class TableBody extends React.Component {
                     </Link>
                     &nbsp;&nbsp;
 
-                    <Link to={"/delete/" + ID} style={{ textDecoration: 'none' }}>
-                        <Button variant="secondary" size="sm"> Delete</Button>
+                    <Link to={"/delete/" + ID} style={{ textDecoration: 'none' }}>                        
+                        <button type="button" class="btn btn-danger">Delete</button>
                     </Link>
                     &nbsp;&nbsp;
 
