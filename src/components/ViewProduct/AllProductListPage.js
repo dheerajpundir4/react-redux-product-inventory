@@ -151,16 +151,17 @@ class AllProductListPage extends React.Component {
           
 
         </React.Suspense>
+        <div class="table-responsive">
 
-        <Table responsive striped bordered hover size="sm">
+        <table class="table table-bordered">
           <thead>
             {tableHead}
           </thead>
           <tbody>
             {tableBody}
           </tbody>
-        </Table>
-
+        </table>
+        </div>
         <br />
       
         <br />
