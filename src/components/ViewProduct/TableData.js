@@ -46,11 +46,11 @@ export class TableBody extends React.Component {
         return (
             <tr>
 
-                <td>  {product.productName}</td>
-                {IS_PRO_DESC ? <td>  {product.productDescription}</td> : <></>}
-                {IS_MANFACTURER ? <td>  {product.manufacturer}</td> : <></>}
-                <td>  {product.price}</td>
-                {IS_QUANTITY ? <td>  {product.quantity}</td> : <></>}
+                <td>{product.productName}</td>
+                {IS_PRO_DESC ?<td>{product.productDescription}</td> : <></>}
+                {IS_MANFACTURER ?<td>{product.manufacturer}</td> : <></>}
+                <td>{product.price}</td>
+                {IS_QUANTITY ? <td>{product.quantity}</td> : <></>}
 
                 <td>
 
