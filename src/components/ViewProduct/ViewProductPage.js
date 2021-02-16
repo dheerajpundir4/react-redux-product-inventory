@@ -7,6 +7,7 @@ import { Prompt } from 'react-router'
 import Table from 'react-bootstrap/Table';
 import { useParams } from 'react-router-dom';
 import axios from 'axios'
+import ViewProductPageChild from './ViewProductPageChild';
 
 
 class ViewProductPage extends React.Component {
@@ -35,29 +36,9 @@ class ViewProductPage extends React.Component {
 
     return (
       <div>
-        <Prompt message="Are you sure you want to leave?" />
-
-        <h2>Product Description</h2>
-        <Table striped bordered hover>
-          <tr>
-            <th>ID#</th>
-            <th>Product Name</th>
-            <th>Product Description</th>
-            <th>Manufacturer</th>
-            <th>Price</th>
-            <th>Quantity</th>
-          </tr>
-          <tr>
-            <td>{product.id}</td>
-            <td>{product.productName}</td>
-            <td>{product.productDescription}</td>
-            <td>{product.manufacturer}</td>
-            <td>{product.price}</td>
-            <td>{product.quantity}</td>
-          </tr>
-        </Table>
-
-        <a href="javascript:history.go(-1)"> Back </a>
+       
+      <ViewProductPageChild product={this.props.product}/>
+       
       </div>
     );
   }
