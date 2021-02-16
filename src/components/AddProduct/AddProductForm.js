@@ -91,7 +91,7 @@ export default function AddProductForm(props) {
         <Prompt when={WAS_USER_INPUT} message="Are you Sure want to move out"/>
           
             <Form onSubmit={handleSubmit}>
-                <h1>Add New Product</h1>
+                <h3>Add New Product</h3>
 
                 <Form.Group as={Row}>
                     <Col sm="3">
