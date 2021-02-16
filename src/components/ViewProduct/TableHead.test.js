@@ -23,7 +23,6 @@ describe('TableHead Test', () => {
     const headerNoCusField= wrapperNoCusField.find('th')
     
   
-   console.log(headerNoCusField.length)
    
   
 
