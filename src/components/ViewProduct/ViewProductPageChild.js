@@ -10,36 +10,60 @@ import axios from 'axios'
 
 
 class ViewProductPageChild extends React.Component {
-    constructor(props){
-        super(props)       
-    }
+  constructor(props) {
+    super(props)
+  }
   render() {
     return (
-      <div>
-        <Prompt message="Are you sure you want to leave?" />
+      <>
+      
+      
+          <Prompt message="Are you sure you want to leave?" />
 
-        <h3>Product Description</h3>
-        <Table striped bordered hover>
-          <tr>
-            <th>ID#</th>
-            <th>Product Name</th>
-            <th>Product Description</th>
-            <th>Manufacturer</th>
-            <th>Price</th>
-            <th>Quantity</th>
-          </tr>
-          <tr>
-            <td>{this.props.product.id}</td>
+          <h3>Product Description</h3>
+          <div class="card table response">
+
+
+          <table class="table table-striped" >
+            
+            <tr>
+              <td>ID#</td>
+              <td>{this.props.product.id}</td>
+            </tr>
+            <tr>
+            <td>Product Name</td>
             <td>{this.props.product.productName}</td>
-            <td>{this.props.product.productDescription}</td>
-            <td>{this.props.product.manufacturer}</td>
-            <td>{this.props.product.price}</td>
-            <td>{this.props.product.quantity}</td>
-          </tr>
-        </Table>
+            </tr>
+            <tr>
+              <td>
+              Product Description
+              </td>
+              <td>{this.props.product.productDescription}</td>
+            </tr>
+            <tr>
+              <td>
+              Manufacturer
+              </td>
+              <td>{this.props.product.manufacturer}</td>
+            </tr>
+            <tr>
+              <td>
+              Price
+              </td>
+              <td>{this.props.product.price}</td>
+            </tr>
+            <tr>
+              <td>
+              Quantity
+              </td>
+              <td>{this.props.product.quantity}</td>
+            </tr>  
+           
+          </table>
+          </div>
+          <a href="javascript:history.go(-1)"> Back </a>
 
-        <a href="javascript:history.go(-1)"> Back </a>
-      </div>
+      </>
     );
   }
 }
