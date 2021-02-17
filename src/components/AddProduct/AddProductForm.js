@@ -83,8 +83,7 @@ export default function AddProductForm(props) {
         return errors
     }
 
-    console.log("asdf")
-    console.log(WAS_USER_INPUT)
+   
    
     return (
         <>

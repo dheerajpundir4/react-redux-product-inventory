@@ -13,7 +13,7 @@ export default class NavComponent extends React.Component {
         console.log("Nav Component render")
         let buttons
 
-        console.log(this.props)
+      
         if (this.props.user!=null) {
             buttons = (
                 <>
