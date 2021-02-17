@@ -1,7 +1,7 @@
 import Signup from './Signup'
 import React from 'react';
-import { mount } from '../test/enzyme';
-import { shallow } from '../test/enzyme';
+import { mount } from '../test/enzymes';
+import { shallow } from '../test/enzymes';
 
 describe('Signup', () => {
     const wrapper = shallow(<Signup/>);

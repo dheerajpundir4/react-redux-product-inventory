@@ -1,7 +1,7 @@
 import {TableHead ,TableBody} from '../components/ViewProduct/TableData'
 import React from 'react';
-import { mount } from './enzyme';
-import { shallow } from './enzyme';
+import { mount } from './enzymes';
+import { shallow } from './enzymes';
 
 describe('Table Body Test', () => {
 

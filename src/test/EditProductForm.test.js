@@ -1,7 +1,7 @@
 import EditProductForm from '../components/EditProduct/EditProductForm'
 import React from 'react';
-import { mount } from './enzyme';
-import { shallow } from './enzyme';
+import { mount } from './enzymes';
+import { shallow } from './enzymes';
 
 describe('EditProductForm', () => {
 
