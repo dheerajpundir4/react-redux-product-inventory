@@ -20,7 +20,7 @@ import SuccessComponent from './components/SuccessComponent'
 
 
 
-import NavComponent from './components/NavComponent'
+import NavComponent from './components/Nav/NavComponent'
 import { Container } from 'react-bootstrap';
 
 import axios from 'axios';
