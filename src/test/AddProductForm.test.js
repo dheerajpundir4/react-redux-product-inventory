@@ -1,7 +1,7 @@
-import AddProductForm from './AddProductForm'
+import AddProductForm from '../components/AddProduct/AddProductForm'
 import React from 'react';
-import { mount } from '../../enzyme';
-import { shallow } from '../../enzyme';
+import { mount } from '../enzyme';
+import { shallow } from '../enzyme';
 
 describe('Add New Product Form', () => {
     const wrapper = shallow(<AddProductForm/>);
