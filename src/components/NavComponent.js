@@ -12,7 +12,9 @@ export default class NavComponent extends React.Component {
 
         console.log("Nav Component render")
         let buttons
-        if (this.props.user) {
+
+        console.log(this.props)
+        if (this.props.user!=null) {
             buttons = (
                 <>
 
@@ -21,7 +23,7 @@ export default class NavComponent extends React.Component {
 
                         <Link class="nav-link" to="/addProduct">Add Product</Link>
 
-
+                        <Link class="nav-link" to="#">{this.props.user.fistName}</Link>
                         <Link class="nav-link" to="/Logout">Logout</Link>
 
                     </Nav>

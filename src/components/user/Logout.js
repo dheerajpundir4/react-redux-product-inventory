@@ -17,7 +17,7 @@ export default class Logout extends React.Component{
     
     render(){
     localStorage.clear();
-    this.props.setUser("")
+    this.props.setUser(null)
     return (
 
         <Redirect to="/" />

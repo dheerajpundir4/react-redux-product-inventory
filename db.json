@@ -24,7 +24,7 @@
       "manufacturer": "India",
       "quantity": 5,
       "price": 3000,
-      "views": 311,
+      "views": 313,
       "id": 4
     }
   ],
@@ -50,8 +50,8 @@
     {
       "email": "dhee@gmail.com",
       "password": "$2a$10$fTQwZSSlyTiwfrDupmnvVexOlRrmC2MF6d7WbTEv7EO61Syb.nss6",
-      "fistName": "1",
-      "lastName": "1",
+      "fistName": "Dheeraj",
+      "lastName": "Pundir",
       "mobileNumber": "1",
       "location": "1",
       "id": 3

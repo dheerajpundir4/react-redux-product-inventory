@@ -31,7 +31,9 @@ class App extends React.Component {
 
     console.log("App Constructor")
     super()
-    this.state = {}
+    this.state = {
+      user:null
+    }
     this.checkUserValidation = this.checkUserValidation.bind(this)
     this.setUser = this.setUser.bind(this)
 
@@ -78,7 +80,8 @@ class App extends React.Component {
       },
       err => {
 
-        console.log("--ERROR--")      
+        console.log("--ERROR--") 
+        this.setUser(null)     
         console.log(err)
       }
     )
