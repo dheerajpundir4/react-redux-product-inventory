@@ -1,7 +1,7 @@
 import NavComponent from '../components/Nav/NavComponent'
 import React from 'react';
-import { mount } from '../enzyme';
-import { shallow } from '../enzyme';
+import { mount } from './enzyme';
+import { shallow } from './enzyme';
 
 describe('Login', () => {
 
