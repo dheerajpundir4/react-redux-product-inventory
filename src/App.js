@@ -38,6 +38,7 @@ class App extends React.Component {
   }
 
 
+  //This method is called when we do first time login
   setUser = (user) => {
 
     console.log("App setUser")
@@ -46,6 +47,7 @@ class App extends React.Component {
     })
   }
 
+  //This method is called when we fully load the App data
   checkUserValidation() {
 
     console.log("App checkUserValidation")
