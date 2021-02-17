@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 // get all the product
-import {loadProduct} from './actions/productActions';
+import {loadProduct} from './store/actions/productActions';
 
 //It is used to call server directly
 import axios from 'axios';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import EditProductForm from './EditProductForm';
-import * as actionCreator from '../../actions/productActions'
+import * as actionCreator from '../../store/actions/productActions'
 import { Redirect } from 'react-router-dom';
 
 

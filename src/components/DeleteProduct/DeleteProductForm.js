@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actioncreator from '../../actions/productActions';
+import * as actioncreator from '../../store/actions/productActions';
 import history from '../../history';
 import { Redirect } from 'react-router-dom';
 
