@@ -80,7 +80,8 @@ class App extends React.Component {
       },
       err => {
 
-        console.log("--ERROR--") 
+        console.log("--Here the status code is 401 so we are jsut clear the local storage----") 
+        localStorage.clear()
         this.setUser(null)     
         console.log(err)
       }
