@@ -62,13 +62,13 @@ class App extends React.Component {
 
     const config = {
       headers: {
-        Authorization: "Bearer" + accessToken
+        Authorization: 'Bearer ' + accessToken
       }
     }
 
    
 
-    axios.get('users/' + userId, config).then(
+    axios.get('600/users/' + userId, config).then(
       res => {
         console.log("--SUCCESS--")
         console.log(config)
