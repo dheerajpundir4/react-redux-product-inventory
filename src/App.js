@@ -73,13 +73,12 @@ class App extends React.Component {
         console.log(res)
         if (res.status = 200) {
           this.setUser(res.data)
-          localStorage.setItem("isLogin", "true")
+         
         }
       },
       err => {
 
-        console.log("--ERROR--")
-        localStorage.setItem("isLogin", "false")
+        console.log("--ERROR--")      
         console.log(err)
       }
     )
@@ -93,9 +92,6 @@ class App extends React.Component {
 
     this.checkUserValidation()
   }
-
-
-
 
   render() {
 
