@@ -4,8 +4,21 @@ import { mount } from '../enzyme';
 import { shallow } from '../enzyme';
 
 describe('Login', () => {
-    const wrapperLogout = shallow(<NavComponent user={true}/>);
-    const wrapperLogin = shallow(<NavComponent user={false}/>);
+
+  const user={
+    "email": "asdf@gmail1",
+    "password": "$2a$10$zf0CFjUA/8NNnA7G.83MS.pR18ML5LJRXGYnB4VoV2bYNSdgrRtnC",
+    "fistName": "asdf",
+    "lastName": "asdf",
+    "mobileNumber": "asdf",
+    "location": "sadf",
+    "id": 2
+
+  }
+    const wrapperLogout = shallow(<NavComponent user={user}/>);
+    const wrapperLogin = shallow(<NavComponent user={null}/>);
+
+
     const headLogout= wrapperLogout.find('Link')
     const headLogin= wrapperLogin.find('Link')
    
@@ -14,7 +27,7 @@ describe('Login', () => {
     const headervalueLogin = headLogin.map(name => name.text()); 
 
     it('When user logined, form looked logout checking', () => {
-        expect(headervalueLogout[4]).toEqual('Logout');
+        expect(headervalueLogout[5]).toEqual('Logout');
       });
 
       it('add product nav checking', () => {
