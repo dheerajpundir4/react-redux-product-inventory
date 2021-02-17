@@ -12,7 +12,11 @@ class EditProductPage extends React.Component {
 
     console.log("EditProductPage render")
     
-    if(localStorage.getItem("isLogin")=="false")
+    const accessToken=localStorage.getItem('accessToken')
+    const userID=localStorage.getItem('userId')
+    const isLoggedIn= localStorage.getItem('isLoggedIn')
+   
+    if (accessToken==null || userID==null || isLoggedIn==null)
   return <Redirect to="/login" />;
   
    

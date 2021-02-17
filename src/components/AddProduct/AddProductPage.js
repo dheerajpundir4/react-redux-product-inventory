@@ -13,7 +13,11 @@ class AddProductPage extends React.Component {
   render() {  
     console.log("AddProductPage => render() run first then componentdidmount()")
 
-    if(localStorage.getItem("isLogin")=="false")
+    const accessToken=localStorage.getItem('accessToken')
+    const userID=localStorage.getItem('userId')
+    const isLoggedIn= localStorage.getItem('isLoggedIn')
+   
+    if (accessToken==null || userID==null || isLoggedIn==null)
     return <Redirect to="/login" />;
     
 

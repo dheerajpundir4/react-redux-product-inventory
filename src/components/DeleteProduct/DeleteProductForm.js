@@ -17,7 +17,11 @@ class DeleteProductPage extends React.Component {
     //What is the use of it
     console.log("DeleteProduct render")
     console.log(this.props)
-    if(localStorage.getItem("isLogin")=="false")
+    const accessToken=localStorage.getItem('accessToken')
+    const userID=localStorage.getItem('userId')
+    const isLoggedIn= localStorage.getItem('isLoggedIn')
+   
+    if (accessToken==null || userID==null || isLoggedIn==null)
     return <Redirect to="/login" />;
 
    

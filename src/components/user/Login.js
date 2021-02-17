@@ -53,7 +53,7 @@ function Login(props) {
 
                 localStorage.setItem('accessToken', accessToken)
                 localStorage.setItem('userId', res.data[0].id)
-                localStorage.setItem("isLogin", "true")
+                localStorage.setItem('isLoggedIn', accessToken)
 
                 setLoggedIn(true);
                 props.setUser(res.data[0])

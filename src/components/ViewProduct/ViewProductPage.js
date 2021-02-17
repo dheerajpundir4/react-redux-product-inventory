@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Prompt } from 'react-router'
 
+
 // Using bootstrap
 import Table from 'react-bootstrap/Table';
 import { useParams } from 'react-router-dom';
@@ -12,12 +13,20 @@ import ViewProductPageChild from './ViewProductPageChild';
 
 class ViewProductPage extends React.Component {
   render() {
-
     console.log("ViewProductPage render")
 
-    if (localStorage.getItem("isLogin") == "false")
+    const accessToken=localStorage.getItem('accessToken')
+    const userID=localStorage.getItem('userId')
+    const isLoggedIn= localStorage.getItem('isLoggedIn')
+
+    console.log(accessToken)
+    console.log(userID)
+    console.log(isLoggedIn)
+   
+    if (accessToken==null || userID==null || isLoggedIn==null)
       return <Redirect to="/login" />;
 
+      console.log("hellol")
 
     let product = this.props.product
 
