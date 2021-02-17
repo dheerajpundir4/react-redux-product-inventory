@@ -9,7 +9,7 @@ import axios from 'axios';
 import { Form, Button, Col, Row, Container, Card } from 'react-bootstrap';
 
 function Login(props) {
-  
+
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isErrorMessage, setIsErrorMessage] = useState("");
@@ -18,50 +18,58 @@ function Login(props) {
 
   const { handleSubmit, handleChange, values, errors } = useFormik(
     {
-    
+
       initialValues: {
         email: "",
         password: ""
       },
       validate,
       onSubmit(values) {
-        console.log("success");
-        console.log(values)
-        axios.post('login', values).then(
 
-          res => {
+
+        axios.post('login', values).then(res => {
+          if (res.status == 200) {
+
+            console.log("After successfully login")
+
+            console.log("res")
             console.log(res)
-            console.log(res.status)
-            if(res.status==200){
-              {
-               localStorage.setItem("isLogin","true")
-               
-                console.log(res.data.accessToken)
-                localStorage.setItem('token',res.data.accessToken)
-                console.log("calling another")
-               axios.get('users/?email=dhee@gmail.com').then(
-                 res=>{
-                   console.log(res)
-                   if(res.status==200){
-                      console.log("+++++============")
-                      console.log(res.data[0].id);
-                      localStorage.setItem('id',res.data[0].id)
-                      setLoggedIn(true);
-                      props.setUser(res.data[0].email)
-                
-                      //<Redirect to="/products" />
-                 }
-                }
-               )
-               
+
+            console.log("res data")
+            console.log(res.data)           
+           
+
+            console.log("email is values.email " + values.email)
+            console.log("Getting Id via email id -- need to correct this logic")
+
+
+            const email = values.email
+            const accessToken=res.data.accessToken
+
+            axios.get('users/?email=' + email).then(res => {
+              console.log("After successfully getting full user id")
+              console.log(res)
+              if (res.status == 200) {
+
+                localStorage.setItem('accessToken', accessToken)
+                localStorage.setItem('userId', res.data[0].id)
+                localStorage.setItem("isLogin", "true")
+
+                setLoggedIn(true);
+                props.setUser(res.data[0])
+
               }
             }
+            )
+
+
           }
+        }
 
         ).catch(
-          err => {           
+          err => {
             console.log(err)
-           
+              
             setIsErrorMessage("Invalid Email Id and password")
           }
         )
@@ -86,8 +94,8 @@ function Login(props) {
     return errors
   }
 
-  if(localStorage.getItem("isLogin")=="true")
-  return <Redirect to="/" />;
+  if (localStorage.getItem("isLogin") == "true")
+    return <Redirect to="/" />;
 
 
 
@@ -98,54 +106,54 @@ function Login(props) {
   return (
     <Container>
 
-     
-     
-    
-     
-<Card.Body>
-<h3>Login</h3>
-      <Form onSubmit={handleSubmit}>
-      
-        <Form.Group>
-       
-          <Form.Label>Email</Form.Label>
-      
-         
-          <Form.Control 
-          as="input"
-           type="email"
-            name="email" onChange={handleChange}
-            values={values.email} />
-           
-        
-          <Form.Text className="text-muted">
-            {errors.email ? errors.email : null}
-          </Form.Text>
-         
-        </Form.Group>
 
-        <Form.Group>
-          <Form.Label>Password</Form.Label>
 
-          <Form.Control 
-          type="password"
-            name="password" onChange={handleChange}
-            values={values.password} />
-          <Form.Text className="text-muted">
-            {errors.password ? errors.password : null}
-          </Form.Text>
-        </Form.Group>
 
-        <Form.Group>
-          <Button variant="primary" type="submit">Sign In</Button>
-        </Form.Group>
 
-        <Form.Group>
-       {isErrorMessage}
-       </Form.Group>
-      </Form>
+      <Card.Body>
+        <h3>Login</h3>
+        <Form onSubmit={handleSubmit}>
+
+          <Form.Group>
+
+            <Form.Label>Email</Form.Label>
+
+
+            <Form.Control
+              as="input"
+              type="email"
+              name="email" onChange={handleChange}
+              values={values.email} />
+
+
+            <Form.Text className="text-muted">
+              {errors.email ? errors.email : null}
+            </Form.Text>
+
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Password</Form.Label>
+
+            <Form.Control
+              type="password"
+              name="password" onChange={handleChange}
+              values={values.password} />
+            <Form.Text className="text-muted">
+              {errors.password ? errors.password : null}
+            </Form.Text>
+          </Form.Group>
+
+          <Form.Group>
+            <Button variant="primary" type="submit">Sign In</Button>
+          </Form.Group>
+
+          <Form.Group>
+            {isErrorMessage}
+          </Form.Group>
+        </Form>
       </Card.Body>
-    
+
     </Container>
   )
 }

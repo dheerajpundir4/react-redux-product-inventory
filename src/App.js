@@ -47,17 +47,24 @@ class App extends React.Component {
   }
 
   checkUserValidation() {
+
     console.log("App checkUserValidation")
+
+    const accessToken = localStorage.getItem('accessToken')
+    const userId = localStorage.getItem('userId')
+
+    console.log("accessToken "+accessToken)
+    console.log("userId "+userId)
 
     const config = {
       headers: {
-        Authorization: "Bearer" + localStorage.getItem('token')
+        Authorization: "Bearer" + accessToken
       }
     }
 
-    const id = localStorage.getItem('id')
+   
 
-    axios.get('users/' + id, config).then(
+    axios.get('users/' + userId, config).then(
       res => {
         console.log("--SUCCESS--")
         console.log(config)
