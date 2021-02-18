@@ -28,7 +28,7 @@ function Signup() {
       initialValues: {
         email: "",
         password: "",
-        fistName: "",
+        firstName: "",
         lastName: "",
         mobileNumber: "",
         location: ""
@@ -71,7 +71,7 @@ function Signup() {
     if (!values.password) {
       errors.password = "Password is required";
     }
-    if (!values.fistName) {
+    if (!values.firstName) {
       errors.fistName = "fistName Name is required";
     }
     if (!values.lastName) {
@@ -149,13 +149,13 @@ function Signup() {
           </Col>
           <Col>
             <Form.Control type="text"
-              name="fistName" onChange={handleChange}
-              values={values.fistName} />
+              name="firstName" onChange={handleChange}
+              values={values.firstName} />
 
           </Col>
           <Col>
             <Form.Text className="text-muted">
-              {errors.fistName ? errors.fistName : null}
+              {errors.firstName ? errors.firstName : null}
             </Form.Text>
           </Col>
         </Form.Group>

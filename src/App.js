@@ -17,6 +17,7 @@ import DeleteProductPage from './components/DeleteProduct/DeleteProductForm';
 import EditProductPage from './components/EditProduct/EditProductPage';
 
 import SuccessComponent from './components/SuccessComponent'
+import Profile from './components/Profile'
 
 
 
@@ -32,7 +33,7 @@ class App extends React.Component {
     console.log("App Constructor")
     super()
     this.state = {
-      user:null
+      user: null
     }
     this.checkUserValidation = this.checkUserValidation.bind(this)
     this.setUser = this.setUser.bind(this)
@@ -57,8 +58,8 @@ class App extends React.Component {
     const accessToken = localStorage.getItem('accessToken')
     const userId = localStorage.getItem('userId')
 
-    console.log("accessToken "+accessToken)
-    console.log("userId "+userId)
+    console.log("accessToken " + accessToken)
+    console.log("userId " + userId)
 
     const config = {
       headers: {
@@ -66,7 +67,7 @@ class App extends React.Component {
       }
     }
 
-   
+
 
     axios.get('600/users/' + userId, config).then(
       res => {
@@ -75,14 +76,14 @@ class App extends React.Component {
         console.log(res)
         if (res.status = 200) {
           this.setUser(res.data)
-         
+
         }
       },
       err => {
 
-        console.log("--Here the status code is 401 so we are jsut clear the local storage----") 
+        console.log("--Here the status code is 401 so we are jsut clear the local storage----")
         localStorage.clear()
-        this.setUser(null)     
+        this.setUser(null)
         console.log(err)
       }
     )
@@ -108,7 +109,7 @@ class App extends React.Component {
           </div>
 
 
-          <div class="card-body" style={{height:1000 }} >
+          <div class="card-body" style={{ height: 1000 }} >
             <Switch>
               <Route path="/about" component={AboutPage} />
               <Route path="/topViewProduct" component={TopViewProduct} />
@@ -123,6 +124,12 @@ class App extends React.Component {
               <Route path="/Signup" component={Signup} />
               <Route path="/Logout" component={() => <Logout setUser={this.setUser} />} />
               <Route path="/success/:id" component={SuccessComponent} />
+
+              <Route path="/profile">
+
+                <Profile user={this.state.user} />
+              </Route>
+
               <Route exact path="/" >
                 <AllProductPage />
               </Route>

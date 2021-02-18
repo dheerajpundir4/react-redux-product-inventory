@@ -23,7 +23,7 @@ export default class NavComponent extends React.Component {
 
                         <Link class="nav-link" to="/addProduct">Add Product</Link>
 
-                        <Link class="nav-link" to="#">{this.props.user.fistName}</Link>
+                        <Link class="nav-link" to={"/profile/:"+this.props.user.id}>{this.props.user.firstName}</Link>
                         <Link class="nav-link" to="/Logout">Logout</Link>
 
                     </Nav>

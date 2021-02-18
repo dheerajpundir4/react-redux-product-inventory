@@ -32,7 +32,7 @@
     {
       "email": "asdf@gmail",
       "password": "$2a$10$8w2uRcJmTtmuR4pF3lfgKO.w5IjqvG8Mv8fPfrylQd3F.s9aGMxKm",
-      "fistName": "sadf",
+      "firstName": "sadf",
       "lastName": "sadf",
       "mobileNumber": "sadf",
       "location": "sdf",
@@ -41,7 +41,7 @@
     {
       "email": "asdf@gmail1",
       "password": "$2a$10$zf0CFjUA/8NNnA7G.83MS.pR18ML5LJRXGYnB4VoV2bYNSdgrRtnC",
-      "fistName": "asdf",
+      "firstName": "asdf",
       "lastName": "asdf",
       "mobileNumber": "asdf",
       "location": "sadf",
@@ -50,7 +50,7 @@
     {
       "email": "dhee@gmail.com",
       "password": "$2a$10$fTQwZSSlyTiwfrDupmnvVexOlRrmC2MF6d7WbTEv7EO61Syb.nss6",
-      "fistName": "Dheeraj",
+      "firstName": "Dheeraj",
       "lastName": "Pundir",
       "mobileNumber": "1",
       "location": "1",
@@ -59,7 +59,7 @@
     {
       "email": "san@gmail.com",
       "password": "$2a$10$mZq2Zjvl6OOMmUZ/Pqe13.Y/Yzx8VD2cr9bGQ3ssdYsdNk4RWTes6",
-      "fistName": "1234",
+      "firstName": "1234",
       "lastName": "1",
       "mobileNumber": "1",
       "location": "1",
@@ -68,7 +68,7 @@
     {
       "email": "dhee@gmail.come",
       "password": "$2a$10$vd49sYfDlgUbyBTz/E3Yt.bHH7bZHRvHUVaKZMDQW8kIQFRoU7r7W",
-      "fistName": "333",
+      "firstName": "333",
       "lastName": "33",
       "mobileNumber": "333",
       "location": "33333333",
@@ -77,7 +77,7 @@
     {
       "email": "dheer@gmail.com",
       "password": "$2a$10$uDsPIgJRbuzP8P7qQwtMr.6.jwayVH00ArenAfMYCbeMnLYxX0UEi",
-      "fistName": "1234",
+      "firstName": "1234",
       "lastName": "1234",
       "mobileNumber": "1234",
       "location": "1234",
