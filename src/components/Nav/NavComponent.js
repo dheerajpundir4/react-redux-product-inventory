@@ -62,9 +62,9 @@ export default class NavComponent extends React.Component {
 
                     <Nav>
 
-                        <Link class="nav-link" to="/Login">Login</Link>
+                        <Link class="nav-link" to="/Login"><u>Login</u></Link>
 
-                        <Link class="nav-link" to="/Signup">SignUp</Link>
+                        <Link class="nav-link" to="/Signup"><u>SignUp</u></Link>
 
                     </Nav>
 
@@ -80,13 +80,13 @@ export default class NavComponent extends React.Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                           <Nav.Link>
-                         <Link class="nav-link" to="/">Products</Link>
+                         <Link class="nav-link" to="/"><u>Products</u></Link>
                          </Nav.Link>
                          <Nav.Link>
-                            <Link class="nav-link" to="/topViewProduct">Top View Product</Link>
+                            <Link class="nav-link" to="/topViewProduct"><u>Top View Product</u></Link>
                             </Nav.Link>
                             <Nav.Link>
-                            <Link class="nav-link" to="/about">About</Link>
+                            <Link class="nav-link" to="/about"><u>About</u></Link>
                             </Nav.Link>
                         </Nav>
                         {buttons}
