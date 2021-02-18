@@ -29,7 +29,7 @@ export default class NavComponent extends React.Component {
                     <Nav>
 
                           
-                        <NavDropdown title={"Hello, "+this.props.user.firstName} id="basic-nav-dropdown">
+                       <b><NavDropdown title={"Hello, "+this.props.user.firstName} id="basic-nav-dropdown">
                           
                         <NavDropdown.Item>
                         <Link class="nav-link" to="/addProduct">Add Product</Link>
@@ -44,7 +44,7 @@ export default class NavComponent extends React.Component {
                             <NavDropdown.Item>
                             <Link class="nav-link" to="/Logout">Logout</Link>
                             </NavDropdown.Item>
-                        </NavDropdown>
+                        </NavDropdown></b>
 
 
                     </Nav>
@@ -62,9 +62,9 @@ export default class NavComponent extends React.Component {
 
                     <Nav>
 
-                        <Link class="nav-link" to="/Login"><u>Login</u></Link>
+                        <Link class="nav-link" to="/Login"><u><b>Login</b></u></Link>
 
-                        <Link class="nav-link" to="/Signup"><u>SignUp</u></Link>
+                        <Link class="nav-link" to="/Signup"><u><b>SignUp</b></u></Link>
 
                     </Nav>
 
@@ -80,13 +80,13 @@ export default class NavComponent extends React.Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                           <Nav.Link>
-                         <Link class="nav-link" to="/"><u>Products</u></Link>
+                         <Link class="nav-link" to="/"><u><b>Products</b></u></Link>
                          </Nav.Link>
                          <Nav.Link>
-                            <Link class="nav-link" to="/topViewProduct"><u>Top View Product</u></Link>
+                            <Link class="nav-link" to="/topViewProduct"><u><b>Top View Product</b></u></Link>
                             </Nav.Link>
                             <Nav.Link>
-                            <Link class="nav-link" to="/about"><u>About</u></Link>
+                            <Link class="nav-link" to="/about"><u><b>About</b></u></Link>
                             </Nav.Link>
                         </Nav>
                         {buttons}
