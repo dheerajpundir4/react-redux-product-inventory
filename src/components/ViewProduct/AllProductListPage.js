@@ -21,7 +21,7 @@ import { Container } from 'react-bootstrap';
 
 const CustomizationField = React.lazy(() => {
 
-  return new Promise(resolve => setTimeout(resolve, 5 * 1000)).then(
+  return new Promise(resolve => setTimeout(resolve,  1000)).then(
     () =>
       Math.floor(Math.random() * 10) >= 0
         ? import('./CustomizationField')
@@ -122,39 +122,39 @@ class AllProductListPage extends React.Component {
 
 
     return (
-      <React.Suspense fallback={<h1>LazyLoading</h1>}>
-
-        <Container>
-
-          <React.Suspense fallback={<h1>LazyLoading</h1>}>
-
-            <div className="w-auto h-auto">
-
-              {<CustomizationField handleCustomizationField={this.handleCustom} />}
-
-            </div>
 
 
-            <div className="w-auto h-auto d-inline-block">
-
-              <Form>
-                <Form.Control type="text"
-                  onChange={this.handleFilter}
-                  placeholder="Filter"
-                  value={this.state.VALUE_OF_FILTER_FORM}
-                  className="mr-sm-2" />
-
-              </Form>
-
-            </div>
+      <Container>
+        <React.Suspense fallback={<h1>Loading...</h1>}>
 
 
+          <div className="w-auto h-auto">
 
-          </React.Suspense>
+            {<CustomizationField handleCustomizationField={this.handleCustom} />}
+
+          </div>
+
+
+          <div className="w-auto h-auto d-inline-block">
+
+            <Form>
+              <Form.Control type="text"
+                onChange={this.handleFilter}
+                placeholder="Filter"
+                value={this.state.VALUE_OF_FILTER_FORM}
+                className="mr-sm-2" />
+
+            </Form>
+
+          </div>
+
+
+
+
           <div class="table-responsive-sm">
 
             <table class="table table-bordered table-hover vertical-align-middle">
-            
+
               <thead class="table-dark">
                 {tableHead}
               </thead>
@@ -162,10 +162,10 @@ class AllProductListPage extends React.Component {
                 {tableBody}
               </tbody>
             </table>
-          </div>          
-        </Container>
+          </div>
+        </React.Suspense>
+      </Container>
 
-      </React.Suspense>
     );
   }
 

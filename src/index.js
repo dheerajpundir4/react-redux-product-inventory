@@ -24,9 +24,8 @@ console.log(loadProduct())
 // fist it go to action and then call reducer
 
 
-setTimeout(() => {
   store.dispatch(loadProduct()); 
-}, 3000)
+
 
 
 
