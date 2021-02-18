@@ -15,9 +15,9 @@ export default class AboutPage extends React.Component{
 </p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">Wherever list of records are viewed, there should be Search filter provided to only display a subset of records, so that user can quickly see it when there are many records to be viewed</li>
+              <li class="list-group-item">While viewing product list, when different fields of the products are displayed, customization should be provided to display only a subset of the fields.</li>
+              <li class="list-group-item">The details of the product which has been viewed often (through the “View Product detail”) is considered as a top viewed product. Provision should be there to display a chart of the top viewed products</li>
             </ul>
             <div class="card-body">
               <a href="/" class="card-link">Go to Home Page</a>
