@@ -1,5 +1,9 @@
 import React from 'react'
 
+
+import NavDropdown from 'react-bootstrap/NavDropdown'
+
+
 // Using bootstrap
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -13,21 +17,38 @@ export default class NavComponent extends React.Component {
         console.log("Nav Component render")
         let buttons
 
-      
-        if (this.props.user!=null) {
+
+        if (this.props.user != null) {
             buttons = (
                 <>
 
 
                     <Nav>
 
+                          
+                        <NavDropdown title={"Hello, "+this.props.user.firstName} id="basic-nav-dropdown">
+                          
+                        <NavDropdown.Item>
                         <Link class="nav-link" to="/addProduct">Add Product</Link>
 
-                        <Link class="nav-link" to={"/profile/:"+this.props.user.id}>{this.props.user.firstName}</Link>
-                        <Link class="nav-link" to="/Logout">Logout</Link>
+                    
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                            <Link class="nav-link" to={"/profile/:" + this.props.user.id}>View Profile</Link>
+                      
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item>
+                            <Link class="nav-link" to="/Logout">Logout</Link>
+                            </NavDropdown.Item>
+                        </NavDropdown>
+
 
                     </Nav>
-            
+
+
+
+
                 </>
             )
         }
@@ -41,8 +62,6 @@ export default class NavComponent extends React.Component {
                         <Link class="nav-link" to="/Login">Login</Link>
 
                         <Link class="nav-link" to="/Signup">SignUp</Link>
-
-
 
                     </Nav>
 
@@ -62,9 +81,9 @@ export default class NavComponent extends React.Component {
                             <Link class="nav-link" to="/about">About</Link>
 
                         </Nav>
-                       {buttons}
+                        {buttons}
                     </Navbar.Collapse>
-                </Navbar>                
+                </Navbar>
             </Container>
         );
     }
