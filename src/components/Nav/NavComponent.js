@@ -76,10 +76,15 @@ export default class NavComponent extends React.Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                            <Link class="nav-link" to="/">Products</Link>
+                          <Nav.Link>
+                         <Link class="nav-link" to="/">Products</Link>
+                         </Nav.Link>
+                         <Nav.Link>
                             <Link class="nav-link" to="/topViewProduct">Top View Product</Link>
+                            </Nav.Link>
+                            <Nav.Link>
                             <Link class="nav-link" to="/about">About</Link>
-
+                            </Nav.Link>
                         </Nav>
                         {buttons}
                     </Navbar.Collapse>
