@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import EditProductForm from './EditProductForm';
 import * as actionCreator from '../../store/actions/productActions'
 import { Redirect } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 
 
@@ -25,12 +26,13 @@ class EditProductPage extends React.Component {
     let product=this.props.product
 
     return (
-      <div>
-       
+      <>
+       <Container>
 
         <EditProductForm onEdit={this.props.editProduct} product={product} />
+        </Container>
 
-      </div>
+      </>
     );
   }
 }

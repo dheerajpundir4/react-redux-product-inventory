@@ -1,4 +1,7 @@
 import React from 'react'
+import { Container } from 'react-bootstrap';
+
+
 
 class Profile extends React.Component {
     constructor() {
@@ -10,6 +13,7 @@ class Profile extends React.Component {
         console.log(this.props.user)
         return (
             <>
+            <Container>
                 <div class="card table response">
                     <h3>Profile</h3>
                     <table class="table table-striped" >
@@ -49,6 +53,7 @@ class Profile extends React.Component {
 
                     </table>
                 </div>
+                </Container>
             </>
 
         );

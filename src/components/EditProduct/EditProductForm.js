@@ -50,14 +50,14 @@ export default function EditProductForm(props) {
         if (!values.productDescription) {
             errors.productDescription = "Product Description is required";
         }
+        if (!values.manufacturer) {
+            errors.manufacturer = "Manufacturer is required";
+        }
         if (!values.quantity) {
             errors.quantity = "Quantity is required";
         }
-        if (!values.price) {
-            errors.price = "Price is required";
-        }
         if (values.price) {
-            values.price = values.price
+            errors.price = "Price is required";
         }
 
         if(values.productName!="" 
@@ -106,7 +106,7 @@ export default function EditProductForm(props) {
                     <Form.Label>Product Description</Form.Label>
                 </Col>
                 <Col>
-                <input type="text"
+                <Form.Control  type="text"
                  placeholder={props.product.productDescription} 
                  name="productDescription" 
                  onChange={handleChange}
@@ -127,7 +127,7 @@ export default function EditProductForm(props) {
                     <Form.Label>Manufacturer</Form.Label>
                 </Col>
                 <Col>
-                <input type="text" 
+                <Form.Control  type="text" 
                 placeholder={props.product.manufacturer} 
                 name="manufacturer" 
                 onChange={handleChange}
@@ -136,7 +136,7 @@ export default function EditProductForm(props) {
                 </Col>
                 <Col>
                     <Form.Text className="text-muted">
-                    {errors.productName ? errors.productName : null}
+                    {errors.manufacturer ? errors.manufacturer : null}
                     </Form.Text>
                 </Col>
             </Form.Group>
@@ -148,7 +148,7 @@ export default function EditProductForm(props) {
                     <Form.Label>Quantity</Form.Label>
                 </Col>
                 <Col>
-                <input type="number" placeholder={props.product.quantity} name="quantity" onChange={handleChange} values={values.quantity} />
+                <Form.Control  type="number" placeholder={props.product.quantity} name="quantity" onChange={handleChange} values={values.quantity} />
               
                 </Col>
                 <Col>
@@ -165,7 +165,7 @@ export default function EditProductForm(props) {
                     <Form.Label>Price</Form.Label>
                 </Col>
                 <Col>
-                <input type="number" placeholder={props.product.price} name="price" onChange={handleChange} values={values.price} />
+                <Form.Control  type="number" placeholder={props.product.price} name="price" onChange={handleChange} values={values.price} />
               
                 </Col>
                 <Col>

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Bar } from 'react-chartjs-2';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import { Container } from 'react-bootstrap';
+
 
 
 
@@ -78,6 +80,7 @@ class TopViewProduct extends React.Component {
 
     return (
       <> 
+      <Container>
        <div className="w-auto h-auto d-inline-block">
           Top
             <Dropdown
@@ -114,6 +117,7 @@ class TopViewProduct extends React.Component {
             value={this.state.LABEL}
             />
         </div>
+        </Container>
       </>
     );
   }

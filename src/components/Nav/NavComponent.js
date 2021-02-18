@@ -4,6 +4,9 @@ import React from 'react'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
 
+
+
+
 // Using bootstrap
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -21,7 +24,7 @@ export default class NavComponent extends React.Component {
         if (this.props.user != null) {
             buttons = (
                 <>
-
+            
 
                     <Nav>
 

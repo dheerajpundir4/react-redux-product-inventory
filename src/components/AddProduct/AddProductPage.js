@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import AddProductForm from './AddProductForm';
 import * as actionCreator from '../../store/actions/productActions';
+import { Container } from 'react-bootstrap';
+
 
 import { Prompt } from 'react-router'
 
@@ -23,10 +25,11 @@ class AddProductPage extends React.Component {
 
     return(
     <>
-
+    <Container>
    
     <AddProductForm onSave={this.props.saveProduct}  
     />
+    </Container>
      </>);
   }
 }

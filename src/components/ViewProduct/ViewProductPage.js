@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Prompt } from 'react-router'
+import { Container } from 'react-bootstrap';
+
 
 
 // Using bootstrap
@@ -44,11 +46,13 @@ class ViewProductPage extends React.Component {
     })
 
     return (
-      <div>
+      <>
+      <Container>
        
       <ViewProductPageChild product={this.props.product}/>
        
-      </div>
+      </Container>
+      </>
     );
   }
 }
