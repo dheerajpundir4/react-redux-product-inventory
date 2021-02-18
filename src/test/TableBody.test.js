@@ -42,22 +42,22 @@ describe('Table Body Test', () => {
   
 
     it('Customizable all Field Inclued', () => {
-        expect(headerAllCusField.length).toEqual(6);
+        expect(headerAllCusField.length).toEqual(5);
       });
 
 
       it('Customizaion 1 field selected', () => {
-        expect(header_OneCusField.length).toEqual(4);
+        expect(header_OneCusField.length).toEqual(3);
       });
 
 
 
-    it('Customizable all Field search 3rd column value that is manufacturer', () => {
-      expect(valueAllCusField[2]).toEqual("India");
+    it('Customizable all Field search 3rd column value that is Price', () => {
+      expect(valueAllCusField[2]).toEqual("13000");
     });
 
-    it('Customizable all Field search 5th column value that is quantity', () => {
-      expect(valueAllCusField[4]).toEqual("2");
+    it('Customizable all Field search 4th column value that is quantity', () => {
+      expect(valueAllCusField[3]).toEqual("2");
     });
 
     it('Customizaion 1 field selected search 1st column value that is product name', () => {

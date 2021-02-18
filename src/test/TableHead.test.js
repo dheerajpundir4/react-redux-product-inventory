@@ -27,7 +27,7 @@ describe('TableHead Test', () => {
   
 
     it('array_AllCusField', () => {
-        expect(headerAllCusField.length).toEqual(6);
+        expect(headerAllCusField.length).toEqual(5);
       });
 
 

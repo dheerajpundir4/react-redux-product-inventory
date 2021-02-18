@@ -9,7 +9,7 @@ class CustomizationField extends React.Component {
         return (
             <>
                 <DropdownMultiselect
-                    options={["Product Description", "Manufacturer", "Quantity"]}
+                    options={["Manufacturer", "Quantity"]}
                     name="customizationField"
                     placeholder="Customizable field"
                     handleOnChange={(selected) => {

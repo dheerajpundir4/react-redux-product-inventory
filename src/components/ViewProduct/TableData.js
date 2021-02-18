@@ -9,7 +9,7 @@ export class TableHead extends React.Component {
     render() {
 
         let { customizationCol } = this.props;
-        let IS_PRO_DESC = customizationCol.includes('Product Description')
+     
         let IS_MANFACTURER = customizationCol.includes('Manufacturer')
         let IS_QUANTITY = customizationCol.includes('Quantity')
         return (
@@ -17,9 +17,8 @@ export class TableHead extends React.Component {
             <tr>
                 <th>Product Name</th>
 
-                {IS_PRO_DESC ? <th>Product Desctiption</th> : <></>}
-
-                {IS_MANFACTURER ? <th>manufacturer</th> : <></>}
+             
+                {IS_MANFACTURER ? <th>Manufacturer</th> : <></>}
 
                 <th>Price</th>
 
@@ -38,8 +37,7 @@ export class TableBody extends React.Component {
         let { customizationCol, product } = this.props;
 
         let ID = product.id
-
-        let IS_PRO_DESC = customizationCol.includes('Product Description')
+       
         let IS_MANFACTURER = customizationCol.includes('Manufacturer')
         let IS_QUANTITY = customizationCol.includes('Quantity')
 
@@ -47,7 +45,6 @@ export class TableBody extends React.Component {
             <tr>
 
                 <td>{product.productName}</td>
-                {IS_PRO_DESC ?<td>{product.productDescription}</td> : <></>}
                 {IS_MANFACTURER ?<td>{product.manufacturer}</td> : <></>}
                 <td>{product.price}</td>
                 {IS_QUANTITY ? <td>{product.quantity}</td> : <></>}
