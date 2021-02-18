@@ -56,7 +56,7 @@ export default function EditProductForm(props) {
         if (!values.quantity) {
             errors.quantity = "Quantity is required";
         }
-        if (values.price) {
+        if (!values.price) {
             errors.price = "Price is required";
         }
 
