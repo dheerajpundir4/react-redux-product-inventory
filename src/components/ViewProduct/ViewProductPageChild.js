@@ -15,10 +15,7 @@ class ViewProductPageChild extends React.Component {
   }
   render() {
     return (
-      <>
-      
-      
-          <Prompt message="Are you sure you want to leave?" />
+      <>   
 
           <h3>Product Description</h3>
           <div class="card table response">

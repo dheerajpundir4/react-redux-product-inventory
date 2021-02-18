@@ -37,7 +37,7 @@ export default class NavComponent extends React.Component {
                     
                             </NavDropdown.Item>
                             <NavDropdown.Item>
-                            <Link class="nav-link" to={"/profile/:" + this.props.user.id}>View Profile</Link>
+                            <Link class="nav-link" to={"/profile"}>View Profile</Link>
                       
                             </NavDropdown.Item>
                             <NavDropdown.Divider />

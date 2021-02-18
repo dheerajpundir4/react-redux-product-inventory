@@ -6,7 +6,7 @@
       "manufacturer": "India",
       "quantity": 3,
       "price": 6000,
-      "views": 19,
+      "views": 20,
       "id": 2
     },
     {
@@ -15,7 +15,7 @@
       "manufacturer": "India",
       "quantity": 5,
       "price": 50000,
-      "views": 50,
+      "views": 51,
       "id": 3
     },
     {
@@ -52,8 +52,8 @@
       "password": "$2a$10$fTQwZSSlyTiwfrDupmnvVexOlRrmC2MF6d7WbTEv7EO61Syb.nss6",
       "firstName": "Dheeraj",
       "lastName": "Pundir",
-      "mobileNumber": "1",
-      "location": "1",
+      "mobileNumber": "7395965034",
+      "location": "India",
       "id": 3
     },
     {
