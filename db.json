@@ -1,13 +1,13 @@
 {
   "products": [
     {
+      "id": 2,
       "productName": "Racold Geyser",
       "productDescription": "Racold Geyser Product Description",
       "manufacturer": "India",
       "quantity": 3,
-      "price": 6000,
-      "views": 24,
-      "id": 2
+      "price": 9000,
+      "views": 24
     },
     {
       "productName": "Dell Inspiron",
@@ -19,13 +19,13 @@
       "id": 3
     },
     {
+      "id": 4,
       "productName": "Portronics",
       "productDescription": "Portronics Product Description",
       "manufacturer": "India",
-      "quantity": 5,
+      "quantity": 50,
       "price": 3000,
-      "views": 333,
-      "id": 4
+      "views": 333
     }
   ],
   "users": [
@@ -82,6 +82,15 @@
       "mobileNumber": "1234",
       "location": "1234",
       "id": 6
+    },
+    {
+      "email": "q@gmail.com",
+      "password": "$2a$10$POQqAR9kzF6dVHSL67cNGuHoHMMtTXXsDvnWmwtd7t/y76RMhDk6q",
+      "firstName": "dheeraj",
+      "lastName": "pundir",
+      "mobileNumber": "7395965034",
+      "location": "india",
+      "id": 7
     }
   ]
 }

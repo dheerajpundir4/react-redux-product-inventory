@@ -17,7 +17,7 @@ export default function productReducer(state = initialState.products, action) {
 
 
         case types.DELETE_PRODUCT_SUCCESS:
-            let newStateDelete = state.filter(product => product.id != action.id); // ES6 arrow funciton
+            let newStateDelete = state.filter(product => product.id !== action.id); // ES6 arrow funciton
             return newStateDelete;
 
         case types.EDIT_PRODUCT_SUCCESS:
@@ -25,7 +25,7 @@ export default function productReducer(state = initialState.products, action) {
             console.log("we are in edit reducer funciton")
 
             let newStateEdit = state.map(product => {
-                if (product.id != action.product.id)
+                if (product.id !== action.product.id)
                     return product
                 return action.product
             });  // ES6 arrow fns

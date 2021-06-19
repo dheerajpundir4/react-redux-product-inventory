@@ -15,8 +15,6 @@ function Signup() {
 
 
     const [isSignUp, setSignUp] = useState(false);
-    const [isError, setIsError] = useState(false);
-    const [isUserExist, setIsUserExist] = useState(false);
     const [isErrorMessage, setIsErrorMessage] = useState("");
 
     const {handleSubmit, handleChange, values, errors} = useFormik(
@@ -38,7 +36,7 @@ function Signup() {
                     res => {
                         console.log(res)
                         console.log(res.status)
-                        if (res.status == 201)
+                        if (res.status === 201)
                             setSignUp(true)
 
                     }
@@ -82,7 +80,7 @@ function Signup() {
         return errors
     }
 
-    if (localStorage.getItem("isLogin") == "true")
+    if (localStorage.getItem("isLogin") === "true")
         return <Redirect to="/"/>;
 
 

@@ -11,7 +11,6 @@ import {Button, Card, Container, Form} from 'react-bootstrap';
 function Login(props) {
 
     const [isLoggedIn, setLoggedIn] = useState(false);
-    const [isError, setIsError] = useState(false);
     const [isErrorMessage, setIsErrorMessage] = useState("");
 
 
@@ -27,7 +26,7 @@ function Login(props) {
 
 
                 axios.post('login', values).then(res => {
-                        if (res.status == 200) {
+                        if (res.status === 200) {
 
                             console.log("After successfully login")
 
@@ -48,7 +47,7 @@ function Login(props) {
                             axios.get('users/?email=' + email).then(res => {
                                     console.log("After successfully getting full user id")
                                     console.log(res)
-                                    if (res.status == 200) {
+                                    if (res.status === 200) {
 
                                         localStorage.setItem('accessToken', accessToken)
                                         localStorage.setItem('userId', res.data[0].id)
@@ -92,7 +91,7 @@ function Login(props) {
         return errors
     }
 
-    if (localStorage.getItem("isLogin") == "true")
+    if (localStorage.getItem("isLogin") === "true")
         return <Redirect to="/"/>;
 
 
