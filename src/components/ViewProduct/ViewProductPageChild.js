@@ -1,75 +1,70 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { Prompt } from 'react-router'
 
 // Using bootstrap
-import Table from 'react-bootstrap/Table';
-import { useParams } from 'react-router-dom';
-import axios from 'axios'
 
 
 class ViewProductPageChild extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    return (
-      <>   
+    constructor(props) {
+        super(props)
+    }
 
-          <h3>Product Description</h3>
-          <div class="card table response">
+    render() {
+        return (
+            <>
+
+                <h3>Product Description</h3>
+                <div class="card table response">
 
 
-          <table class="table table-striped" >
-            
-            <tr>
-              <td>ID#</td>
-              <td>{this.props.product.id}</td>
-            </tr>
-            <tr>
-            <td>Product Name</td>
-            <td>{this.props.product.productName}</td>
-            </tr>
-            <tr>
-              <td>
-              Product Description
-              </td>
-              <td>{this.props.product.productDescription}</td>
-            </tr>
-            <tr>
-              <td>
-              Manufacturer
-              </td>
-              <td>{this.props.product.manufacturer}</td>
-            </tr>
-            <tr>
-              <td>
-              Price
-              </td>
-              <td>{this.props.product.price}</td>
-            </tr>
-            <tr>
-              <td>
-              Quantity
-              </td>
-              <td>{this.props.product.quantity}</td>
-            </tr>  
-           
-          </table>
-          </div>
-          <a href="javascript:history.go(-1)"> Back </a>
+                    <table class="table table-striped">
 
-      </>
-    );
-  }
+                        <tr>
+                            <td>ID#</td>
+                            <td>{this.props.product.id}</td>
+                        </tr>
+                        <tr>
+                            <td>Product Name</td>
+                            <td>{this.props.product.productName}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Product Description
+                            </td>
+                            <td>{this.props.product.productDescription}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Manufacturer
+                            </td>
+                            <td>{this.props.product.manufacturer}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Price
+                            </td>
+                            <td>{this.props.product.price}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Quantity
+                            </td>
+                            <td>{this.props.product.quantity}</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <a href="javascript:history.go(-1)"> Back </a>
+
+            </>
+        );
+    }
 }
 
 const mapStatetoProps = (state, ownProps) => {
-  let id = ownProps.match.params.id
-  return {
-    product: state.products.find(product => product.id == id)
-  }
+    let id = ownProps.match.params.id
+    return {
+        product: state.products.find(product => product.id == id)
+    }
 }
 
 export default ViewProductPageChild;

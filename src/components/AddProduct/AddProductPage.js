@@ -1,51 +1,47 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {Redirect, withRouter} from 'react-router-dom';
 import AddProductForm from './AddProductForm';
 import * as actionCreator from '../../store/actions/productActions';
-import { Container } from 'react-bootstrap';
-
-
-import { Prompt } from 'react-router'
+import {Container} from 'react-bootstrap';
 
 
 class AddProductPage extends React.Component {
 
-  render() {  
-    console.log("AddProductPage => render() run first then componentdidmount()")
+    render() {
+        console.log("AddProductPage => render() run first then componentdidmount()")
 
-    const accessToken=localStorage.getItem('accessToken')
-    const userID=localStorage.getItem('userId')
-    const isLoggedIn= localStorage.getItem('isLoggedIn')
-   
-    if (accessToken==null || userID==null || isLoggedIn==null)
-    return <Redirect to="/login" />;
-    
+        const accessToken = localStorage.getItem('accessToken')
+        const userID = localStorage.getItem('userId')
+        const isLoggedIn = localStorage.getItem('isLoggedIn')
 
-    return(
-    <>
-    <Container>
-   
-    <AddProductForm onSave={this.props.saveProduct}  
-    />
-    </Container>
-     </>);
-  }
+        if (accessToken == null || userID == null || isLoggedIn == null)
+            return <Redirect to="/login"/>;
+
+
+        return (
+            <>
+                <Container>
+
+                    <AddProductForm onSave={this.props.saveProduct}
+                    />
+                </Container>
+            </>);
+    }
 }
 
 function mapStateToProps(state) {
-  return {
-    product: state.product
-  };
+    return {
+        product: state.product
+    };
 }
 
 function mapDispatchToProps(dispatch) {
-  console.log("Dispatch method");
-  return {
+    console.log("Dispatch method");
+    return {
 
-    saveProduct: (product) => dispatch(actionCreator.addProduct(product))
-  }
+        saveProduct: (product) => dispatch(actionCreator.addProduct(product))
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AddProductPage));

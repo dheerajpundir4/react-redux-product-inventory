@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import { useFormik } from 'formik';
+import {useFormik} from 'formik';
 
-import { Prompt } from 'react-router'
+import {Prompt} from 'react-router'
 
 
 // Using bootstrap
@@ -13,11 +13,11 @@ import Col from 'react-bootstrap/Col';
 
 export default function AddProductForm(props) {
 
-  
- const [WAS_USER_INPUT, setUSERINPUT] = useState(false);
+
+    const [WAS_USER_INPUT, setUSERINPUT] = useState(false);
 
 
-    const { handleSubmit, handleChange, values, errors} = useFormik(
+    const {handleSubmit, handleChange, values, errors} = useFormik(
         {
             initialValues: {
                 productName: "",
@@ -29,12 +29,12 @@ export default function AddProductForm(props) {
             },
             validate,
             onSubmit(values) {
-               console.log("WE are in submit method")
+                console.log("WE are in submit method")
                 setUSERINPUT(false)
                 console.log("XXX on Submit Add Product Form XXX")
                 console.log(props);
-                if(window.confirm('Are you sure want to add this record!'))
-                props.onSave(values);
+                if (window.confirm('Are you sure want to add this record!'))
+                    props.onSave(values);
 
             }
         }
@@ -42,54 +42,52 @@ export default function AddProductForm(props) {
 
 
     function validate(values) {
-        const errors = {};            
-       
+        const errors = {};
+
 
         if (!values.productName) {
             errors.productName = "Product Name is required";
-           
+
         }
         if (!values.productDescription) {
             errors.productDescription = "Product Description is required";
-            
+
         }
         if (!values.manufacturer) {
             errors.manufacturer = "Manufacturer is required";
-            
+
         }
         if (!values.quantity) {
             errors.quantity = "Quantity is required";
-           
+
         }
         if (!values.price) {
             errors.price = "Price is required";
-            
+
         }
 
-      
+
         console.log(values)
-        console.log(Object. keys(errors).length)
-        if(values.productName!="" 
-        || Object. keys(errors).length!=0
-        
-        ){
+        console.log(Object.keys(errors).length)
+        if (values.productName != ""
+            || Object.keys(errors).length != 0
+
+        ) {
             setUSERINPUT(true)
-        }
-        else{
+        } else {
             setUSERINPUT(false)
         }
-       
-      
+
+
         return errors
     }
 
-   
-   
+
     return (
         <>
 
-        <Prompt when={WAS_USER_INPUT} message="Are you Sure want to move out"/>
-          
+            <Prompt when={WAS_USER_INPUT} message="Are you Sure want to move out"/>
+
             <Form onSubmit={handleSubmit}>
                 <h3>Add New Product</h3>
 
@@ -99,7 +97,7 @@ export default function AddProductForm(props) {
                     </Col>
                     <Col>
                         <Form.Control type="text"
-                            name="productName" onChange={handleChange} values={values.productName} />
+                                      name="productName" onChange={handleChange} values={values.productName}/>
 
                     </Col>
                     <Col>
@@ -110,20 +108,15 @@ export default function AddProductForm(props) {
                 </Form.Group>
 
 
-
-
-
-
-
                 <Form.Group as={Row}>
                     <Col sm="3">
                         <Form.Label>Product Description</Form.Label>
                     </Col>
                     <Col>
                         <Form.Control type="text"
-                            name="productDescription"
-                            onChange={handleChange}
-                            values={values.productDescription} />
+                                      name="productDescription"
+                                      onChange={handleChange}
+                                      values={values.productDescription}/>
 
                     </Col>
                     <Col>
@@ -134,14 +127,13 @@ export default function AddProductForm(props) {
                 </Form.Group>
 
 
-
                 <Form.Group as={Row}>
                     <Col sm="3">
                         <Form.Label>Manufacturer</Form.Label>
                     </Col>
                     <Col>
                         <Form.Control type="text"
-                            name="manufacturer" onChange={handleChange} values={values.manufacturer} />
+                                      name="manufacturer" onChange={handleChange} values={values.manufacturer}/>
 
                     </Col>
                     <Col>
@@ -152,14 +144,13 @@ export default function AddProductForm(props) {
                 </Form.Group>
 
 
-
                 <Form.Group as={Row}>
                     <Col sm="3">
                         <Form.Label>Quantity</Form.Label>
                     </Col>
                     <Col>
                         <Form.Control type="number"
-                            name="quantity" onChange={handleChange} values={values.quantity} />
+                                      name="quantity" onChange={handleChange} values={values.quantity}/>
 
                     </Col>
                     <Col>
@@ -170,15 +161,13 @@ export default function AddProductForm(props) {
                 </Form.Group>
 
 
-
-
                 <Form.Group as={Row}>
                     <Col sm="3">
                         <Form.Label>Price</Form.Label>
                     </Col>
                     <Col>
                         <Form.Control type="number"
-                            name="price" onChange={handleChange} values={values.price} />
+                                      name="price" onChange={handleChange} values={values.price}/>
 
                     </Col>
                     <Col>
@@ -187,8 +176,6 @@ export default function AddProductForm(props) {
                         </Form.Text>
                     </Col>
                 </Form.Group>
-
-
 
 
                 <Form.Group as={Row}>
@@ -202,7 +189,6 @@ export default function AddProductForm(props) {
 
                     </Col>
                 </Form.Group>
-
 
 
             </Form>

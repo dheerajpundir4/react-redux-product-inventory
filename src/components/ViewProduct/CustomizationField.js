@@ -5,7 +5,7 @@ import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 class CustomizationField extends React.Component {
     render() {
 
-        let { handleCustomizationField } = this.props
+        let {handleCustomizationField} = this.props
         return (
             <>
                 <DropdownMultiselect

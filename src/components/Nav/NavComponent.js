@@ -4,15 +4,12 @@ import React from 'react'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
 
-
-
-
 // Using bootstrap
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { Container } from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 
-import { Link, NavLink } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export default class NavComponent extends React.Component {
     render() {
@@ -24,25 +21,25 @@ export default class NavComponent extends React.Component {
         if (this.props.user != null) {
             buttons = (
                 <>
-            
+
 
                     <Nav>
 
-                          
-                       <b><NavDropdown title={"Hello, "+this.props.user.firstName} id="basic-nav-dropdown">
-                          
-                        <NavDropdown.Item>
-                        <Link class="nav-link" to="/addProduct">Add Product</Link>
 
-                    
+                        <b><NavDropdown title={"Hello, " + this.props.user.firstName} id="basic-nav-dropdown">
+
+                            <NavDropdown.Item>
+                                <Link class="nav-link" to="/addProduct">Add Product</Link>
+
+
                             </NavDropdown.Item>
                             <NavDropdown.Item>
-                            <Link class="nav-link" to={"/profile"}>View Profile</Link>
-                      
+                                <Link class="nav-link" to={"/profile"}>View Profile</Link>
+
                             </NavDropdown.Item>
-                            <NavDropdown.Divider />
+                            <NavDropdown.Divider/>
                             <NavDropdown.Item>
-                            <Link class="nav-link" to="/Logout">Logout</Link>
+                                <Link class="nav-link" to="/Logout">Logout</Link>
                             </NavDropdown.Item>
                         </NavDropdown></b>
 
@@ -50,12 +47,9 @@ export default class NavComponent extends React.Component {
                     </Nav>
 
 
-
-
                 </>
             )
-        }
-        else {
+        } else {
             buttons = (
                 <>
 
@@ -76,17 +70,17 @@ export default class NavComponent extends React.Component {
             <Container>
                 <Navbar collapseOnSelect expand="lg" bg="blue" variant="light">
                     <Navbar.Brand href="/">Product-Inventory</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                          <Nav.Link>
-                         <Link class="nav-link" to="/"><u><b>Products</b></u></Link>
-                         </Nav.Link>
-                         <Nav.Link>
-                            <Link class="nav-link" to="/topViewProduct"><u><b>Top View Product</b></u></Link>
+                            <Nav.Link>
+                                <Link class="nav-link" to="/"><u><b>Products</b></u></Link>
                             </Nav.Link>
                             <Nav.Link>
-                            <Link class="nav-link" to="/about"><u><b>About</b></u></Link>
+                                <Link class="nav-link" to="/topViewProduct"><u><b>Top View Product</b></u></Link>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <Link class="nav-link" to="/about"><u><b>About</b></u></Link>
                             </Nav.Link>
                         </Nav>
                         {buttons}

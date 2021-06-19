@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 //using bootstrap
-import Button from 'react-bootstrap/Button'
 import * as PropTypes from "prop-types";
 
 export class TableHead extends React.Component {
     render() {
 
-        let { customizationCol } = this.props;
-     
+        let {customizationCol} = this.props;
+
         let IS_MANFACTURER = customizationCol.includes('Manufacturer')
         let IS_QUANTITY = customizationCol.includes('Quantity')
         return (
@@ -17,7 +16,7 @@ export class TableHead extends React.Component {
             <tr>
                 <th>Product Name</th>
 
-             
+
                 {IS_MANFACTURER ? <th>Manufacturer</th> : <></>}
 
                 <th>Price</th>
@@ -34,10 +33,10 @@ export class TableHead extends React.Component {
 
 export class TableBody extends React.Component {
     render() {
-        let { customizationCol, product } = this.props;
+        let {customizationCol, product} = this.props;
 
         let ID = product.id
-       
+
         let IS_MANFACTURER = customizationCol.includes('Manufacturer')
         let IS_QUANTITY = customizationCol.includes('Quantity')
 
@@ -45,38 +44,33 @@ export class TableBody extends React.Component {
             <tr>
 
                 <td>{product.productName}</td>
-                {IS_MANFACTURER ?<td>{product.manufacturer}</td> : <></>}
+                {IS_MANFACTURER ? <td>{product.manufacturer}</td> : <></>}
                 <td>{product.price}</td>
                 {IS_QUANTITY ? <td>{product.quantity}</td> : <></>}
 
                 <td>
-                <div class="btn-group shadow-0" role="group">
-                    <Link to={"/view/" + ID} style={{ textDecoration: 'none' }}>                        
-                       
-                        <button type="button" class="btn btn-link" data-mdb-color="dark">View</button>
-                    </Link>
-                
-                    <Link to={"/edit/" + ID} style={{ textDecoration: 'none' }}>
-                  
-                    <button type="button" class="btn btn-link" data-mdb-color="dark">Edit</button>
-                    </Link>
-                  
-             
-                    <Link to={"/delete/" + ID} style={{ textDecoration: 'none' }}>                        
-                        
-                        <button type="button" class="btn btn-link" data-mdb-color="dark">Delete</button>
-                    </Link>
+                    <div class="btn-group shadow-0" role="group">
+                        <Link to={"/view/" + ID} style={{textDecoration: 'none'}}>
 
-                    
-  
- 
-  
-</div>
-                 </td>
-                   
-                    
+                            <button type="button" class="btn btn-link" data-mdb-color="dark">View</button>
+                        </Link>
 
-             
+                        <Link to={"/edit/" + ID} style={{textDecoration: 'none'}}>
+
+                            <button type="button" class="btn btn-link" data-mdb-color="dark">Edit</button>
+                        </Link>
+
+
+                        <Link to={"/delete/" + ID} style={{textDecoration: 'none'}}>
+
+                            <button type="button" class="btn btn-link" data-mdb-color="dark">Delete</button>
+                        </Link>
+
+
+                    </div>
+                </td>
+
+
             </tr>
         );
     }
@@ -88,7 +82,7 @@ TableBody.propTypes = {
 }
 
 TableHead.propTypes = {
-    customizationCol: PropTypes.any   
+    customizationCol: PropTypes.any
 }
 
 
