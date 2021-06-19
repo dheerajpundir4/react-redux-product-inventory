@@ -16,7 +16,7 @@ const store = configureStore();
 
 console.log("We are in index page")
 
-axios.defaults.baseURL='http://localhost:4000/';
+axios.defaults.baseURL = 'http://localhost:4000/';
 
 console.log("loadProduct")
 
@@ -24,15 +24,12 @@ console.log(loadProduct())
 // fist it go to action and then call reducer
 
 
-  store.dispatch(loadProduct()); 
-
-
+store.dispatch(loadProduct());
 
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
+    <Provider store={store}>
+        <App/>
     </Provider>,
-  document.getElementById('root')
+    document.getElementById('root')
 );
-
